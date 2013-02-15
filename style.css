@@ -56,10 +56,6 @@ a:visited {
 	float:left;
 	width:100%;
 }
-.main-article {
-	border-bottom:1px solid #EEE;
-	margin:0 340px 0 0;
-}
 .header {
 	border-left:8px solid #2BA6CB;
 	margin:20px 0;
@@ -79,7 +75,17 @@ a:visited {
 	padding:40px;
 	background:#F9F9F9;
 }
+.posts {
+	
+}
+.posts-list {
+	list-style:none;
+}
 .post {
+	border-bottom:1px solid #EEE;
+	margin:0 340px 0 0;
+}
+.post a {
 	border-left:8px solid #CCC;
 	display:block;
 	font-size:16px;

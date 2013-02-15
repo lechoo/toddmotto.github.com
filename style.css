@@ -118,6 +118,9 @@ a:visited {
 	color:#888;
 	overflow:hidden;
 }
+.pagination a {
+	color:#FFF;
+}
 .pagination a,
 .pagination span {
 	padding:5px 15px;

@@ -85,6 +85,10 @@ a:visited {
 .post:hover {
 	border-left:8px solid #2BA6CB;
 }
+.carbonad {
+	border:0 !important;
+	width:320px !important;
+}
 
 /*------------------------------------*\
     $TYPOGRAPHY

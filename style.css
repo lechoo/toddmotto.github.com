@@ -81,6 +81,7 @@ a:visited {
 .post {
 	border-left:8px solid #CCC;
 	display:block;
+	font-size:16px;
 }
 .post:hover {
 	border-left:8px solid #2BA6CB;

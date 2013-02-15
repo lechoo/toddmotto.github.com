@@ -33,7 +33,13 @@ img {
 body {
 	font:100 15px/1.6 'Museo Slab 500', Helvetica, Arial, sans-serif;
 	color:#717171;
-	background:#DDD;
+	background:#F0F0F0;
+}
+a,
+a:hover,
+a:visited {
+	color:#2BA6CB;
+	text-decoration:none;
 }
 
 /*------------------------------------*\

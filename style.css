@@ -153,6 +153,9 @@ a:visited {
 	color:#FFF;
 	font-size:13px;
 }
+iframe[src*="twitter"] {
+	vertical-align:middle;
+}
 #carbonads {
 	margin:0 0 20px;
 }

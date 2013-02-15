@@ -115,6 +115,10 @@ a:visited {
 .pagination {
 	margin:0 340px 0 0;
 	background:#444;
+	color:#FFF;
+}
+.pagination a {
+	padding:5px 15px;
 }
 .pagination-previous {
 	float:left;

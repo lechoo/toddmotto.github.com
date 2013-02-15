@@ -102,6 +102,9 @@ a:visited {
 	color:#444;
 	font-size:12px;
 }
+.hidden {
+	display:none;
+}
 .carbonad {
 	border:0 !important;
 	width:320px !important;

@@ -81,6 +81,10 @@ body {
 	padding:40px;
 	background:#F0F0F0;
 }
+.post {
+	padding:40px;
+	display:block;
+}
 
 /*------------------------------------*\
     $MISC

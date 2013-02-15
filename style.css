@@ -59,6 +59,7 @@ a:visited {
 .header {
 	border-left:8px solid #2BA6CB;
 	margin:20px 0;
+	overflow:hidden;
 }
 .footer {
 	margin:20px 0;
@@ -69,16 +70,16 @@ a:visited {
 	width:100%;
 }
 .logo {
-	
+	float:left;
 }
 .logo-img {
 	
 }
 .nav {
-	
+	float:right;
 }
 .nav li {
-	
+	display:inline-block;
 }
 .nav li a {
 	

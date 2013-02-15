@@ -59,7 +59,7 @@ body {
 	border-left:8px solid #CCC;
 }
 .main-article:hover {
-	border-left:8px solid #CCC;
+	border-left:8px solid #2BA6CB;
 }
 .header {
 	border-left:8px solid #2BA6CB;
@@ -89,7 +89,7 @@ body {
     $MISC
 \*------------------------------------*/
 
-.smooth {
+.transition {
 	-webkit-transition:all 0.3s ease-in-out;
 	-moz-transition:all 0.3s ease-in-out;
 	-o-transition:all 0.3s ease-in-out;

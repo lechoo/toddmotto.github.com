@@ -117,7 +117,8 @@ a:visited {
 	background:#444;
 	color:#FFF;
 }
-.pagination a {
+.pagination a,
+.pagination span {
 	padding:5px 15px;
 }
 .pagination-previous {

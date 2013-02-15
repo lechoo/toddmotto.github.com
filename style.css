@@ -54,6 +54,8 @@ body {
 	width:100%;
 }
 .main-article {
+	padding:40px;
+	background:#F0F0F0;
 	margin:0 320px 0 0;
 }
 .header {

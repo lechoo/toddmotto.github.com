@@ -116,6 +116,10 @@ a:visited {
 	margin:0 340px 0 0;
 	background:#444;
 }
+.pagination a {
+	float:left;
+	width:50%;
+}
 .bio {
 	margin:0 0 20px;
 	background:#444;

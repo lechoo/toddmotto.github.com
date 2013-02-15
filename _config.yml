@@ -2,5 +2,5 @@ auto: true
 server: true
 markdown: rdiscount
 pygments: true
-permalink: title
+permalink: /:year/:month/:title
 paginate: 10

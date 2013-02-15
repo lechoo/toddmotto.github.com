@@ -61,11 +61,12 @@ a:visited {
 	margin:20px 0;
 }
 .footer {
-	clear:both;
 	margin:20px 0;
 	padding:20px;
 	background:#444;
 	color:#FFF;
+	float:left;
+	width:100%;
 }
 .logo {
 	

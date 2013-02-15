@@ -14,25 +14,20 @@ title: Todd Motto
 						</li>
 						{% endfor %}
 					</ul>
+					<div class="pagination">
+							{% if paginator.previous_page %}
+							{% if paginator.previous_page == 1 %}
+								<a href="/" class="pagination-previous">Previous</a>
+							{% else %}
+								<a href="/page{{paginator.previous_page}}" class="pagination-previous">Previous</a>
+							{% endif %}
+							{% else %}
+								Previous
+							{% endif %}
+							{% if paginator.next_page %}
+								<a href="/page{{paginator.next_page}}" class="pagination-next">Next</a>
+							{% else %}
+								Next
+							{% endif %}
+					</div>
 				</section>
-				
-				<ol class="pagination">
-					<li class="pagination-prev">
-						{% if paginator.previous_page %}
-						{% if paginator.previous_page == 1 %}
-							<a href="/">Previous</a>
-						{% else %}
-							<a href="/page{{paginator.previous_page}}">Previous</a>
-						{% endif %}
-						{% else %}
-							Previous
-						{% endif %}
-					</li>
-					<li class="pagination__next">
-						{% if paginator.next_page %}
-							<a href="/page{{paginator.next_page}}">Next</a>
-						{% else %}
-							Next
-						{% endif %}
-					</li>
-				</ol>

@@ -61,6 +61,7 @@ a:visited {
 	margin:20px 0;
 }
 .footer {
+	clear:both;
 	margin:20px 0;
 	padding:20px;
 	background:#444;
@@ -110,6 +111,10 @@ a:visited {
 }
 .hidden {
 	display:none;
+}
+.pagination {
+	margin:0 340px 0 0;
+	background:#444;
 }
 .bio {
 	margin:0 0 20px;

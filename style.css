@@ -116,8 +116,12 @@ a:visited {
 	margin:0 340px 0 0;
 	background:#444;
 }
-.pagination a {
+.pagination-previous {
 	float:left;
+	width:50%;
+}
+.pagination-next {
+	float:right;
 	width:50%;
 }
 .bio {

@@ -60,6 +60,12 @@ a:visited {
 	border-left:8px solid #2BA6CB;
 	margin:20px 0;
 }
+.footer {
+	margin:20px 0;
+	padding:20px;
+	background:#444;
+	color:#FFF;
+}
 .logo {
 	
 }

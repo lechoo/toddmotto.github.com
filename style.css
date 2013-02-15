@@ -21,6 +21,10 @@
 	font-smoothing:antialiased;
 	text-rendering:optimizeLegibility;
 }
+img {
+	max-width:100%;
+	vertical-align:bottom;
+}
 
 /*------------------------------------*\
     $MAIN

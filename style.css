@@ -57,12 +57,7 @@ a:visited {
 	width:100%;
 }
 .main-article {
-	background:#F0F0F0;
 	margin:0 340px 0 0;
-	border-left:8px solid #CCC;
-}
-.main-article:hover {
-	border-left:8px solid #2BA6CB;
 }
 .header {
 	border-left:8px solid #2BA6CB;
@@ -84,8 +79,13 @@ a:visited {
 	background:#F0F0F0;
 }
 .post {
+	background:#F0F0F0;
+	border-left:8px solid #CCC;
 	padding:40px;
 	display:block;
+}
+.post:hover {
+	border-left:8px solid #2BA6CB;
 }
 
 /*------------------------------------*\

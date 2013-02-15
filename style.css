@@ -105,6 +105,13 @@ a:visited {
 .hidden {
 	display:none;
 }
+.bio {
+	margin:0 0 20px;
+	background:#444;
+	padding:20px;
+	color:#FFF;
+	font-size:13px;
+}
 .carbonad {
 	border:0 !important;
 	width:320px !important;

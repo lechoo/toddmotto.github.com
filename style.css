@@ -49,6 +49,10 @@ body {
 	margin:0 auto;
 	position:relative;
 }
+.main {
+	float:left;
+	margin:0 320px 0 0;
+}
 .header {
 	border-left:8px solid #2BA6CB;
 }
@@ -59,7 +63,8 @@ body {
 	
 }
 .sidebar {
-	float:right;
+	position:absolute;
+	width:300px;
 }
 .box {
 	margin:20px;

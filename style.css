@@ -71,8 +71,8 @@ a:visited {
 }
 .sidebar {
 	position:absolute;
-	right:20px;
-	width:300px;
+	right:0;
+	width:320px;
 }
 .box {
 	padding:40px;

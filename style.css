@@ -86,6 +86,11 @@ a:visited {
 .post:hover {
 	border-left:8px solid #2BA6CB;
 }
+.post-date {
+	display:block;
+	color:#444;
+	font-size:12px;
+}
 .carbonad {
 	border:0 !important;
 	width:320px !important;

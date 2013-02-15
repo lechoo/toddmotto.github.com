@@ -51,6 +51,9 @@ body {
 }
 .main {
 	float:left;
+	width:100%;
+}
+.main-article {
 	margin:0 320px 0 0;
 }
 .header {
@@ -64,6 +67,7 @@ body {
 }
 .sidebar {
 	position:absolute;
+	right:20px;
 	width:300px;
 }
 .box {

@@ -38,8 +38,22 @@ body {
 	color:#717171;
 	background:#DDD;
 }
+
+/*------------------------------------*\
+    $STRUCTURE
+\*------------------------------------*/
+
 .header {
 	border-left:8px solid #2BA6CB;
+}
+.logo {
+	
+}
+.logo-img {
+	
+}
+.sidebar {
+	float:right;
 }
 .box {
 	margin:20px;

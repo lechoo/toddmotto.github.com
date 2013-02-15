@@ -26,18 +26,18 @@
     $MAIN
 \*------------------------------------*/
 
-html {
-	background:#DDD;
-	padding:20px;
-}
-
 body {
 	font-family:'Museo Sans 500', Helvetica, Arial, sans-serif;
 	font-size:14px;
 	font-weight:900;
 	line-height:24px;
 	color:#717171;
-	background:#F0F0F0;
+	background:#DDD;
+}
+.header {
 	border-left:8px solid #2BA6CB;
-	padding:100px
+}
+.box {
+	margin:20px;
+	padding:20px;
 }

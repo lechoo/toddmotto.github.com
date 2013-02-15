@@ -43,6 +43,12 @@ body {
     $STRUCTURE
 \*------------------------------------*/
 
+.wrapper {
+	max-width:1280px;
+	width:95%;
+	margin:0 auto;
+	position:relative;
+}
 .header {
 	border-left:8px solid #2BA6CB;
 }

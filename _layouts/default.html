@@ -11,27 +11,29 @@
 		<link href="/style.css" rel="stylesheet">
 	</head>
 	<body>
-		<header class="header box">
-			<div class="logo">
-				<a href="/">
-					<img src="/img/logo.svg" class="logo-img" alt="Logo">
-				</a>
-			</div>
-		</header>
-		
-		<section class="main">
-			<article class="main-article box">
-				{{ content }}
-			</article>
-		</section>
-		
-		<aside class="sidebar">
-			<div id="carbonads">
-				<div class="carbonad">
-					<div id="azcarbon"></div>
+		<div class="wrapper">
+			<header class="header box">
+				<div class="logo">
+					<a href="/">
+						<img src="/img/logo.svg" class="logo-img" alt="Logo">
+					</a>
 				</div>
-			</div>
-		</aside>
+			</header>
+			
+			<section class="main">
+				<article class="main-article box">
+					{{ content }}
+				</article>
+			</section>
+			
+			<aside class="sidebar">
+				<div id="carbonads">
+					<div class="carbonad">
+						<div id="azcarbon"></div>
+					</div>
+				</div>
+			</aside>
+		</div>
 		
 	<script>
 		var z = document.createElement('script');

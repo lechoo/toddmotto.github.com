@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>{{ page.title }}</title>
-        
-        <!-- DNS Prefetch -->
-        <link rel="dns-prefetch" href="//www.google-analytics.com">
-        
-        <!-- Meta -->
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        
-        <!-- CSS -->
-        <link href="/style.css" rel="stylesheet">
-    </head>
-    <body>
-    	<header class="header box">
-	    	<div class="logo">
-	    		<img src="/img/logo.svg" class="logo-img" alt="Logo">
-	    	</div>
-    	</header>
-
-        {{ content }}
-
-    </body>
+	<head>
+		<meta charset="utf-8">
+		<title>{{ page.title }}</title>
+		
+		<link rel="dns-prefetch" href="//www.google-analytics.com">
+		
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		
+		<link href="/style.css" rel="stylesheet">
+	</head>
+	<body>
+		<header class="header box">
+			<div class="logo">
+				<img src="/img/logo.svg" class="logo-img" alt="Logo">
+			</div>
+		</header>
+		
+		{{ content }}
+		
+		<aside class="sidebar">
+			<div id="carbonads">
+				<div class="carbonad">
+					<div id="azcarbon"></div>
+				</div>
+			</div>
+		</aside>
+		
+	<script>
+		var z = document.createElement('script');
+		z.async = z.src = '//engine.carbonads.com/z/20676/azcarbon_2_1_0_HORIZDARK';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(z, s);
+	</script>
+	
+	</body>
 </html>

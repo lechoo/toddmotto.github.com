@@ -116,16 +116,19 @@ a:visited {
 	margin:0 340px 0 0;
 	background:#444;
 	color:#FFF;
+	overflow:hidden;
 }
 .pagination a,
 .pagination span {
 	padding:5px 15px;
+	display:inline-block;
 }
 .pagination-previous {
 	float:left;
 	width:50%;
 }
 .pagination-next {
+	text-align:right;
 	float:right;
 	width:50%;
 }

@@ -25,7 +25,12 @@
 /*------------------------------------*\
     $MAIN
 \*------------------------------------*/
-	
+
+html {
+	background:#DDD;
+	padding:20px;
+}
+
 body {
 	font-family:'Museo Sans 500', Helvetica, Arial, sans-serif;
 	font-size:14px;
@@ -34,4 +39,5 @@ body {
 	color:#717171;
 	background:#F0F0F0;
 	border-left:8px solid #2BA6CB;
+	padding:100px
 }

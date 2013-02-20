@@ -41,6 +41,9 @@ a:visited {
 	color:#2BA6CB;
 	text-decoration:none;
 }
+p {
+	margin:0 0 20px;
+}
 
 /*------------------------------------*\
     $STRUCTURE

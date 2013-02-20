@@ -93,12 +93,16 @@ p {
 }
 .nav {
 	float:right;
+	margin:15px 0 0 0;
 }
 .nav li {
 	display:inline-block;
+	*display:inline;
+	zoom:1;
 }
 .nav li a {
-	
+	display:block;
+	padding:5px 10px;
 }
 .sidebar {
 	position:absolute;

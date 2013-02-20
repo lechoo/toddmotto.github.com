@@ -35,6 +35,11 @@ body {
 	color:#717171;
 	background:#DDD;
 }
+h1,
+h2,
+h3 {
+	font-weight:100;
+}
 a,
 a:hover,
 a:visited {
@@ -106,7 +111,6 @@ p {
 }
 .full-title {
 	color:#2BA6CB;
-	font-weight:100;
 	font-size:20px;
 	margin:0 0 35px;
 }
@@ -127,7 +131,6 @@ p {
 }
 .post-title {
 	font-size:16px;
-	font-weight:100;
 }
 .post-date {
 	display:block;

@@ -117,6 +117,7 @@ p {
 	
 }
 .full-post {
+	min-height:600px;
 	background:#FFF;
 	padding:45px;
 	margin:0 340px 0 0;

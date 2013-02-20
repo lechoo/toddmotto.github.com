@@ -189,6 +189,15 @@ iframe[src*="twitter"] {
 	width:320px !important;
 	background-color:#444 !important;
 }
+pre {
+	background:#444;
+	color:#FFF;
+	padding:40px;
+	margin:30px 0;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+}
 
 /*------------------------------------*\
     $TYPOGRAPHY

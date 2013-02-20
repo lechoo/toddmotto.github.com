@@ -208,6 +208,11 @@ pre {
 	-moz-border-radius:5px;
 	overflow-x:scroll;
 }
+.full-post a[href*="//toddmotto.com/labs/"],
+.full-post a[href*="//github.com/toddmotto/"] {
+	display:block;
+	padding:10px 15px;
+}
 
 /*------------------------------------*\
     $TYPOGRAPHY

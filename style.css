@@ -162,6 +162,10 @@ p {
 .pagination a {
 	color:#FFF;
 }
+.pagination a:hover {
+    color:#2BA6CB;
+    background:#333;
+}
 .pagination a,
 .pagination span {
 	padding:15px 25px;
@@ -224,7 +228,7 @@ pre {
     $MISC
 \*------------------------------------*/
 
-.transition {
+a:hover {
 	-webkit-transition:all 0.3s ease-in-out;
 	-moz-transition:all 0.3s ease-in-out;
 	-o-transition:all 0.3s ease-in-out;

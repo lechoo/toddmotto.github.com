@@ -96,6 +96,17 @@ a:visited {
 .posts {
 	
 }
+.full-post {
+	background:#FFF;
+	padding:45px;
+	margin:0 340px 0 0;
+}
+.full-title {
+	color:#2BA6CB;
+	font-weight:100;
+	font-size:20px;
+	margin:0 0 35px;
+}
 .posts-list {
 	list-style:none;
 }

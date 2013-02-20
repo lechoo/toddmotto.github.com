@@ -43,6 +43,11 @@ h5 {
 	color:#2BA6CB;
 	font-weight:100;
 }
+h3 {
+	margin:20px 0 20px -45px;
+	border-left:5px solid #2BA6CB;
+	padding:0 0 0 40px;
+}
 a,
 a:hover,
 a:visited {

@@ -1,0 +1,41 @@
+* {
+	margin:0;
+	padding:0;
+	-webkit-font-smoothing:antialiased;
+	-moz-font-smoothing:antialiased;
+	-o-font-smoothing:antialiased;
+	font-smoothing:antialiased;
+	text-rendering:optimizeLegibility;
+}
+#carbonads-container {
+	position:fixed;
+	z-index:99998;
+	right:10px;
+	top:85px;
+	background:#FFF !important;
+	background:rgba(255, 255, 255, 0.7) !important;
+	border:0 !important;
+	padding:30px 0 0 0;
+	box-shadow:0 1px 4px #CCC;
+	border-radius:4px;
+}
+.carbonad {
+	background-color:transparent !important;
+	border:0 !important;
+}
+.carbonad-tag {
+	color:#444;
+}
+.carbonad-tag a {
+	color:#04A4CC;
+}
+.hide-ad {
+	z-index:99999;
+	cursor:pointer;
+	width:20px;
+	height:20px;
+	position:absolute;
+	top:5px;
+	right:5px;
+	background:url(img/hide.png) no-repeat center center;
+}

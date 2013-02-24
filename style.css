@@ -211,6 +211,15 @@ pre {
 	-moz-border-radius:5px;
 	overflow-x:scroll;
 }
+.licensing-mit {
+	background:#444;
+	color:#FFF;
+	padding:25px;
+	margin:30px 0;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+}
 .download-item {
 	margin:0 0 25px;
 	overflow:hidden;

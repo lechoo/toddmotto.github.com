@@ -211,6 +211,15 @@ pre {
 	-moz-border-radius:5px;
 	overflow-x:scroll;
 }
+.download-item {
+	padding:0 0 0 275px;
+	position:relative;
+}
+.download-item img {
+	position:absolute;
+	top:0;
+	left:0;
+}
 .download-box a {
 	display:inline-block;
 	padding:10px 25px;

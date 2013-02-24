@@ -11,41 +11,41 @@ IE has always caused headaches for every developer, and as the web is moving for
 
 We all know a site won’t look the same in every browser, but to take advantage of features such as the great box-sizing: border-box; and CSS3, we must keep moving on. IE8 isn’t perfect, but one of the best features is that it supports the border-box model without any polyfills.
 
-[Demo][1][Download][2][Fork][3] 
+<div class="download-box">
+	<a href="//www.toddmotto.com/labs/browserblast/" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo BrowserBlast', 'BrowserBlast Demo']);">Demo</a>
+	<a href="//github.com/markgoodyear/BrowserBlast/archive/master.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download BrowserBlast', 'BrowserBlast Download']);">Download</a>
+	<a href="//github.com/markgoodyear/BrowserBlast" onclick="_gaq.push(['_trackEvent', 'Click', 'Fork BrowserBlast', 'BrowserBlast Fork']);">Fork</a>
+</div>
 
 ### What is border-box?
-
- [1]: //www.toddmotto.com/labs/browserblast/
- [2]: //github.com/markgoodyear/BrowserBlast/archive/master.zip
- [3]: //github.com/markgoodyear/BrowserBlast
 
 If you haven’t heard about it, the border-box model solves a lot of issues with the default box model—especially in responsive design. Another thing it’s great for is when using a grid system. It allows us to write less markup if we need to add any inner borders or padding to a grid box. A perhaps slightly over exaggerated example would be:
 
 Without box-sizing:
 
-    
-    .grid_6 { width: 460px; }
-    .inner-border { border: 1px solid #000; }
-    .inner-padding { padding: 20px; }
-    
-    
-    	
-    		
-    			Content here
-    		
-    	
-    
-
+    <style>
+	.grid_6 { width: 460px; }
+	.inner-border { border: 1px solid #000; }
+	.inner-padding { padding: 20px; }
+	</style>
+	<div class="box grid_6">
+		<div class="inner-border">
+			<div class="inner-padding">
+				Content here
+			</div>
+		</div>
+	</div>
+	
 Without border-box, if we applied the padding and border on .box the width would grow to 502px—breaking the layout. This is because the total width equals the element width padding borders. In this case; 460px (element width) 40px (left and right padding) 2px (left and right border). This is why the extra divs are needed to keep .box at 460px wide. However with border-box we can do this:
 
-    
-    .grid_6 { width: 460px; }
-    .box { border: 1px solid #000; padding: 20px; }
-    
-    
-    
-    	Content here
-    
+    <style>
+	.grid_6 { width: 460px; }
+	.box { border: 1px solid #000; padding: 20px; }
+	</style>
+	
+	<div class="box grid_6">
+		Content here
+	</div>
 
 As the border-box box model’s total width includes the padding and borders, this keeps .box at the width we want when padding and borders are applied. Basically, padding and borders no longer affect the overall width. Awesome. I can see border-box being included in future CSS resets as it makes things a lot simpler.
 
@@ -67,36 +67,39 @@ To make theming the banner simple to fit in, or stand out if you wish, with your
 
 Below is an example of usage with all the options:
 
-    
-    
-    
-    
-    
-    $(function() {
-    	$.browserBlast({
-    		devMode: false, // Toggle dev mode
-    		supportedIE: "8", // Supported IE version
-    		customCSS: false, // Use custom CSS
-    		fixed: true, // Toggle between a fixed and non-fixed banner
-    		linkColor: '#56a119', // Set link color
-    		linkHover: '#333', // Set link hover color
-    		linkUnderline: true, // Toggle link underline
-    		bannerHeight: '40', // Height of banner
-    		background: '#FAF4AF', // Background color of banner
-    		textColor: '#333', // Text color
-    		fontSize: '12px', // Font size
-    		fontFamily: 'sans-serif', // Font familiy
-    		borderSize: '2', // Border size
-    		borderStyle: 'solid', // Border style
-    		borderColor: '#D4C790', // Border color
-    		warningID: 'unsupported', // Selector ID of banner
-    		message: "Hey! Your browser is unsupported. Please &#038;lt7a href='http://browsehappy.com' target='_blank'>upgrade for the best experience." // Set your message, allows HTML
-    	});
-    });
-    
+    <script src="jquery.js"></script>
+    <script src="browserblast.min.js"></script>
+
+	<script>
+	$(function() {
+		$.browserBlast({
+			devMode: false, // Toggle dev mode
+			supportedIE: "8", // Supported IE version
+			customCSS: false, // Use custom CSS
+			fixed: true, // Toggle between a fixed and non-fixed banner
+			linkColor: '#56a119', // Set link color
+			linkHover: '#333', // Set link hover color
+			linkUnderline: true, // Toggle link underline
+			bannerHeight: '40', // Height of banner
+			background: '#FAF4AF', // Background color of banner
+			textColor: '#333', // Text color
+			fontSize: '12px', // Font size
+			fontFamily: 'sans-serif', // Font familiy
+			borderSize: '2', // Border size
+			borderStyle: 'solid', // Border style
+			borderColor: '#D4C790', // Border color
+			warningID: 'unsupported', // Selector ID of banner
+			message: "Hey! Your browser is unsupported. Please &lt7a href='http://browsehappy.com' target='_blank'>upgrade</a> for the best experience." // Set your message, allows HTML
+		});
+	});
+	</script>
 
 ### Summary
 
 As developers we can help strip the last usage of IE7 as much as possible using BrowserBlast, leaving us happy, headache free and to not worry so much about the remaining small percentage of people who are using it.
 
-[Demo][1][Download][2][Fork][3]
+<div class="download-box">
+	<a href="//www.toddmotto.com/labs/browserblast/" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo BrowserBlast', 'BrowserBlast Demo']);">Demo</a>
+	<a href="//github.com/markgoodyear/BrowserBlast/archive/master.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download BrowserBlast', 'BrowserBlast Download']);">Download</a>
+	<a href="//github.com/markgoodyear/BrowserBlast" onclick="_gaq.push(['_trackEvent', 'Click', 'Fork BrowserBlast', 'BrowserBlast Fork']);">Fork</a>
+</div>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>ViewPort, retina and pixel ratio JavaScript widget | toddmotto.com</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0;">
+	<meta name="author" content="@toddmotto">		
+</head>
+
+<body>
+	<div id="header">
+		<div id="logo">
+			<a href="http://www.toddmotto.com">
+				<img src="img/logo.png" alt="Logo">
+			</a>
+		</div>
+		<div id="view-tut">
+			<ul>
+				<li><a href="http://www.toddmotto.com/viewport-dynamic-width-calculation-retina-and-pixel-ratio-javascript-widget">Visit the Tutorial</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div class="wrapper">
+		<div id="main"></div>
+	</div>
+	
+	<!-- ViewPort Detector JavaScript -->
+	<script>
+	(function() {
+		// Create the ViewPort detector
+		var viewDetector = document.createElement('div');
+		document.getElementsByTagName('body')[0].insertBefore(viewDetector).id = 'viewport-detector';
+		// Load and Resize events
+		window.onresize = dynamicResizer;
+		window.onload = dynamicResizer;
+	
+		function dynamicResizer() {
+			var docWidth = window.innerWidth,
+				docHeight = window.innerHeight;
+			spanDimensions.innerHTML = docWidth + " x " + docHeight;
+		}
+		// Create <span class="dimensions"> and append
+		var spanDimensions = document.createElement('span');
+		spanDimensions.className = 'dimensions';
+		document.getElementById('viewport-detector').appendChild(spanDimensions);
+		// Create <span class="retina"> and append
+		var spanRetina = document.createElement('span');
+		spanRetina.className = 'retina';
+		document.getElementById('viewport-detector').appendChild(spanRetina);
+		// Create <span class="pixel-ratio"> and append
+		var spanPixels = document.createElement('span');
+		spanPixels.className = 'pixel-ratio';
+		document.getElementById('viewport-detector').appendChild(spanPixels);
+		spanPixels.innerHTML = 'Pixel Ratio: ' + window.devicePixelRatio;
+		// Retina detect
+		if(window.devicePixelRatio >= 2) {
+			spanRetina.innerHTML = 'Retina Device';
+		} else {
+			spanRetina.innerHTML = 'No Retina Device';
+		}
+	})();
+	</script>
+	
+	<!-- ViewPort/Retina Widget Styles -->
+	<style>
+		#viewport-detector {position:fixed;top:80px;left:0;padding:5px 10px;background:#FFF;background:rgba(255, 255, 255, 0.85);}
+		#viewport-detector span {display:block;padding:2px 0 2px 30px;font:400 12px/1.625 "Helvetica Neue", Helvetica, Arial, sans-serif;}
+		#viewport-detector .dimensions {background:url(img/icon-1.png) no-repeat left center;}
+		#viewport-detector .retina {background:url(img/icon-2.png) no-repeat left center;}
+		#viewport-detector .pixel-ratio {background:url(img/icon-3.png) no-repeat left center;}
+	</style>
+	
+	<!-- Styles (Demo only) -->
+	<style>
+		* {margin:0;padding:0;}
+		a img {border:none;}
+		a {text-decoration:none;}
+		body {font:400 12px/1.625 "Helvetica Neue", Helvetica, Arial, sans-serif;-webkit-font-smoothing:antialiased;-moz-font-smoothing:antialiased;
+		-o-font-smoothing:antialiased;font-smoothing:antialiased;text-rendering:optimizeLegibility;color:#444;background:url(img/star.png);}
+		.wrapper {max-width:1000px;width:95%;margin:0 auto;position:relative;}
+		#header {overflow:auto;background:#33363C;border-top:5px solid #2F3135;border-bottom:2px solid #04A4CC;}
+		#logo {float:left;margin:10px 0 5px 40px;}
+		#logo img {width:80px;height:36px;}
+		#view-tut {float:right;font-size:13px;font-weight:900;margin:10px 40px 5px 0;}
+		#view-tut ul {margin:0;}
+		#view-tut ul li {display:inline-block;*display:inline;zoom:1;margin:0 5px 0 0;}
+		#view-tut ul li a {display:block;padding:5px 10px;background:#04A4CC;color:#FFF;border-radius:20px;}
+		#view-tut ul li a:hover {background:#0097CD;}
+		#main {height:500px;margin:120px auto;text-align:center;}
+		#main p {padding:0;margin:10px 0 0;}
+		#main .calling {background:#FFF;color:#222;padding:15px 20px;display:inline-block;border-radius:6px;box-shadow:0 1px 3px #000;}
+		#main .calling a {display:inline-block;background:#333;color:#FFF;padding:10px 20px;margin:5px;border-radius:4px;}
+	</style>
+	
+	<!-- Analytics (Demo only) -->
+	<script>
+		var _gaq=[['_setAccount','UA-20440416-10'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+	</script>
+	
+	<!-- Carbon Ads Script (Demo only) -->
+	<script src="http://www.toddmotto.com/ads/ads.js"></script>
+		
+</body>
+</html>

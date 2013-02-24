@@ -11,9 +11,7 @@ Better attempts have been made, jQuery plugins, scripts. Some work great, but so
 
  [1]: //fitvidsjs.com
 
-We’re in a world full of plugins, it’s time to start writing your own stuff. So here’s my raw JavaScript alternative to FitVids, it’s much lighter in code, doesn’t require the hefty jQuery library – and [much faster too][2]. FluidVids!
-
- [2]: //jsperf.com/fitvids-v-fluidvids
+We’re in a world full of plugins, it’s time to start writing your own stuff. So here’s my raw JavaScript alternative to FitVids, it’s much lighter in code, doesn’t require the hefty jQuery library – and much faster too. FluidVids!
 
 The demo includes both a YouTube and Vimeo iframe embed, both at different aspect ratios. Both fluid, both 100% width.
 

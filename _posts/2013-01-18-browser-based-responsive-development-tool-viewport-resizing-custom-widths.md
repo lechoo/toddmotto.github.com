@@ -11,11 +11,11 @@ Designing in the browser is increasingly popular, especially with responsive web
 
 Just load your website up, add any custom widths you wish to use, or use the ones I’ve included, which are an array of popular viewport widths, and get developing.
 
-[Demo][2] 
+<div class="download-box">
+	<a href="//toddmotto.com/labs/responsive" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo Responsive Tool, 'Responsive Tool Demo']);">Demo</a>
+</div>
 
 ### Feature: ViewPort resizing
-
- [2]: //toddmotto.com/labs/responsive/
 
 Choose from amongst the most popular viewport widths to scale your responsive sites and develop with ease.
 
@@ -137,4 +137,6 @@ Here’s the main script, for those wishing to see how it works.
 
 The ViewPort resizer works best on HTML5/CSS3 supported browsers. If you spot any errors, or suggestions for improvement then please leave your thoughts via a comment below.
 
-[Demo][2]
+<div class="download-box">
+	<a href="//toddmotto.com/labs/responsive" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo Responsive Tool, 'Responsive Tool Demo']);">Demo</a>
+</div>

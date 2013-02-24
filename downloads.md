@@ -5,7 +5,7 @@ layout: page
 
 <div class="download-item">
 	<img src="/img/downloads/fluidvids.jpg" alt="FluidVids">
-	<div class="details">
+	<div class="download-details">
 		<h2>FluidVids</h2>
 		<h4>A raw JavaScript alternative to FitVids jQuery plugin, fluid-width video embeds for responsive design, works faster, more efficient.</h4>
 		<a href="//toddmotto.com/labs/fluidvids" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo FluidVids, 'FluidVids Demo']);">Demo</a>
@@ -15,7 +15,7 @@ layout: page
 </div>
 <div class="download-item">
 	<img src="/img/downloads/bounce-this.jpg" alt="BounceThis">
-	<div class="details">
+	<div class="download-details">
 		<h2>bounceThis</h2>
 		<h4>Super slick and sharp bouncing headers, mimics CSS3 keyframes, a cross-browser jQuery plugin.</h4>
 		<a href="//toddmotto.com/labs/bouncethis/" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo bounceThis', 'bounceThis Demo']);" target="_blank">Demo</a>

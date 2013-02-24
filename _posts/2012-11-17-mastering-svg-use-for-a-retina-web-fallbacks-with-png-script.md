@@ -4,7 +4,6 @@ author: Todd Motto
 layout: post
 permalink: /mastering-svg-use-for-a-retina-web-fallbacks-with-png-script
 ---
-# 
 
 SVGs (Scalable Vector Graphics) are the future graphics format of the web, they offer resolution-independent, fully scalable and crystal clear graphics. SVGs use XML to define paths and shapes, to create our graphic. Moving past JPG and PNG, SVG is the answer to Retina (HiDPI) displays, they even look better on standard display.
 
@@ -118,7 +117,7 @@ Some server setups support SVGs by default, if yours doesn’t, add this to your
 `AddType image/svg xml svg svgz
 AddEncoding gzip svgz`
 
-### UPDATE: Custom SVG Feature Detection, Without Modernizr and jQuery
+<h3 id="update">UPDATE: Custom SVG Feature Detection, Without Modernizr and jQuery</h3>
 
 Here’s my SVG feature detection script, which creates an SVG from a NameSpace URI (w3.org/200/svg) and the qualifiedName. It’s entirely Modernizr and jQuery independent, so you can use it without either library. If the browser supports SVG, it adds an ‘svg’ class to the  tag. If SVG isn’t supported, you’ll get a ‘no-svg’ class complete with the fallback script to rip all the (.svg) extensions to (.png). I’ve optimised the JavaScript from the previous iteration too.
 

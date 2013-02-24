@@ -25,6 +25,9 @@ img {
 	max-width:100%;
 	vertical-align:bottom;
 }
+img a {
+	border:0;
+}
 
 /*------------------------------------*\
     MAIN

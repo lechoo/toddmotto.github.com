@@ -4,7 +4,6 @@ author: Todd Motto
 layout: post
 permalink: /creating-a-responsive-dynamic-mobile-navigation-from-pure-javascript
 ---
-# 
 
 Here’s how to create a select menu from an existing menu using JavaScript. The select menu will be comprised of an existing menu, which dynamically creates a select menu and populates it with menu items.
 
@@ -16,13 +15,13 @@ So here’s how to create a JavaScript navigation that doesn’t rely on jQuery 
 
 Tip: The demo has no CSS styling on the navigation to show it’s structure.
 
-[Demo][2][Download][3][Fork][4] 
+<div class="download-box">
+	<a href="//toddmotto.com/labs/selectnav" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo selectnav, 'selectnav Demo']);">Demo</a>
+	<a href="//toddmotto.com/labs/selectnav/selectnav.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download selectnav, 'selectnav Download']);">Download</a>
+	<a href="//github.com/toddmotto/selectnav" onclick="_gaq.push(['_trackEvent', 'Click', 'Fork selectnav, 'selectnav Fork']);">Fork</a>
+</div>
 
 ### Navigation Markup
-
- [2]: //www.toddmotto.com/labs/selectnav/
- [3]: //www.toddmotto.com/zipball.php?file=selectnav
- [4]: //github.com/toddmotto/selectnav
 
 Let’s look at the current, demo, navigation structure, which you’ll see has three levels of hierarchy, Top Level, Sub Item, Sub-sub Item. I’ve merely named them as these for the demo. The task for our script is to then take these levels of hierarchy, and dynamically append each item to a new  inside a  element.
 
@@ -322,4 +321,8 @@ If you are using a DOM ready function handler, then you can of course remove the
 
 I've tested this in IE6, IE7, IE8, IE9, Chrome, iOS Safari & Chrome, Safari, FireFox, Opera. If you do run into any browser compatibility issues, drop a comment or pull/issue request on GitHub.
 
-[Demo][2][Download][3][Fork][4]
+<div class="download-box">
+	<a href="//toddmotto.com/labs/selectnav" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo selectnav, 'selectnav Demo']);">Demo</a>
+	<a href="//toddmotto.com/labs/selectnav/selectnav.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download selectnav, 'selectnav Download']);">Download</a>
+	<a href="//github.com/toddmotto/selectnav" onclick="_gaq.push(['_trackEvent', 'Click', 'Fork selectnav, 'selectnav Fork']);">Fork</a>
+</div>

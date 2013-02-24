@@ -1,21 +1,18 @@
 ---
-title: >
-  Creating jQuery-style functions in JavaScript, hasClass, addClass, removeClass,
-  toggleClass
+title: Creating jQuery-style functions in JavaScript, hasClass, addClass, removeClass, toggleClass
 author: Todd Motto
 layout: post
 permalink: /creating-jquery-style-functions-in-javascript-hasclass-addclass-removeclass-toggleclass
 ---
-# 
 
 jQuery is a pretty cool framework, it has it’s uses, it’s pretty reliable, but remember: it’s written with JavaScript. It’s not a language by itself, it’s not a magical tool, nor the answer to our prayers. It doesn’t make front-end animation/AJAX/DOM maniuplating easy, it makes you think less and miss out on vital knowledgable. What happened before jQuery?
 
-[Demo][1][Download][2]
+<div class="download-box">
+	<a href="//toddmotto.com/labs/reusable-js" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo Reusable JS, 'Reusable JS Demo']);">Demo</a>
+	<a href="//toddmotto.com/labs/reusable-js/reusable-js.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download Reusable JS, 'Reusable JS Download']);">Download</a>
+</div>
 
 jQuery makes you as a developer reliant on a framework, and (I’m going to say it!)… lazy, to some extent. I’d succumbed to being lazy, and at times have included the mighty jquery.js file for a few simple lines of code. What an idiot.
-
- [1]: //toddmotto.com/labs/reusable-js
- [2]: //toddmotto.com/zipball.php?file=reusable-js
 
 I believe to fully master your front-end development you must learn the workings behind it, find out how jQuery works. For too long I’ve relied on jQuery as a supplement to get my jobs done, and from it my vanilla/raw JavaScript has suffered. I’m slowly phasing jQuery out, and focusing more on my JavaScript skills to become fully framework agnostic. My blog is now totally jQuery-free.
 
@@ -35,12 +32,6 @@ I believe to fully master your front-end development you must learn the workings
 12. JavaScript is in-fact more similar than you think to jQuery
 
 So what does this tell us? We don’t want to write our own scripts (or know how), we don’t get it if we even tried, we’d rather include a huge framework that we don’t understand to get a job done, it’s not a standard practice or web standard. It’s got its own bugs, and creating without jQuery – you’re screwed. Wasted resources as we’re including stuff we don’t need too.
-
-> Write a tutorial in raw JavaScript, someone tweets it with hashtag jQuery. Oh man.
-> 
-> — Todd Motto (@toddmotto) [January 23, 2013][3]
-
- [3]: //twitter.com/toddmotto/status/294030356619870208
 
 ### Reasons to use jQuery
 
@@ -179,4 +170,7 @@ As you can see, we can start to move into a jQuery-free state of mind. What’s 
 
 The possibilities are endless for what you decide to create.
 
-[Demo][1][Download][2]
+<div class="download-box">
+	<a href="//toddmotto.com/labs/reusable-js" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo Reusable JS, 'Reusable JS Demo']);">Demo</a>
+	<a href="//toddmotto.com/labs/reusable-js/reusable-js.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download Reusable JS, 'Reusable JS Download']);">Download</a>
+</div>

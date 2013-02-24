@@ -122,6 +122,9 @@ p {
 	padding:45px;
 	margin:0 340px 0 0;
 }
+.full-post ol {
+	margin:0 0 15px 30px;
+}
 .full-title {
 	color:#2BA6CB;
 	font-size:20px;

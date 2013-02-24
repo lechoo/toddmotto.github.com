@@ -4,7 +4,6 @@ author: Todd Motto
 layout: post
 permalink: /fluid-and-responsive-youtube-and-vimeo-videos-with-fluidvids-js
 ---
-# 
 
 One of the major drawbacks to responsive design is managing external plugins/resources, such as YouTube and Vimeo videos – which we can embed into our sites using an iframe. This is where we lose control. Working with iframes is sometimes tricky, especially with video and maintaining aspect ratios. There are some CSS hacks we can do to attempt making iframe videos responsive, but to no success.
 
@@ -16,18 +15,19 @@ We’re in a world full of plugins, it’s time to start writing your own stuff.
 
  [2]: //jsperf.com/fitvids-v-fluidvids
 
-The demo includes both a YouTube and Vimeo iframe embed, both at different aspect ratios. Both fluid, both 100% width.  
-[Demo][3][Download][4][Fork][5]
+The demo includes both a YouTube and Vimeo iframe embed, both at different aspect ratios. Both fluid, both 100% width.
 
- [3]: //toddmotto.com/labs/fluidvids
- [4]: //toddmotto.com/zipball.php?file=fluidvids
- [5]: //github.com/toddmotto/fluidvids
+<div class="download-box">
+	<a href="//toddmotto.com/labs/fluidvids" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo FluidVids, 'FluidVids Demo']);">Demo</a>
+	<a href="//toddmotto.com/labs/fluidvids/fluidvids.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download FluidVids, 'FluidVids Download']);">Download</a>
+	<a href="//github.com/toddmotto/fluidvids" onclick="_gaq.push(['_trackEvent', 'Click', 'Fork FluidVids, 'FluidVids Fork']);">Fork</a>
+</div>
 
 ### The iFrame
 
 Before attacking our iframe and ripping the attributes off it, let’s have a think of what we can use. Let’s look at our YouTube iframe:
 
-    
+    <iframe width="560" height="315" src="//www.youtube.com/embed/JMl8cQjBfqk" frameborder="0" allowfullscreen></iframe>
 
 A width and height attribute already exist, I see no reason to ‘remove’ these like other plugins, let’s simply overwrite them with our future code. The inline width and height attributes may be oldschool, but they’re here for a reason this time – so let’s keep them. It saves extra lines of markup removing the attributes and adding new inline styles.
 
@@ -83,7 +83,7 @@ You'll notice I've used the style attribute here in the JavaScript, and width an
     iframe.style.height = '';
     iframe.style.width = '';
 
-### Fluid  wrap
+### Fluid div wrap
 
 Now we've added some styles to our iframes, they're all ready to go. But now we need to wrap them in a  with fluid properties.
 
@@ -95,7 +95,7 @@ Now we've added some styles to our iframes, they're all ready to go. But now we 
 
 The trick I've used here is to apply the styles inline, using style="", instead of injecting styles into the  - saving additional script. What I have done though is include a class, which is appended to the div, for extra styling purposes should you need it. You'll notice at the end, we bring back our videoRatio (which we multiplied by 100 to use as a percentage). Then we add this figure to a percentage sign, which uses padding-top to 'emulate' the video aspect ratio. It's merely a clever hack-trick, but a brilliant one (used in FitVids but taken from A List Apart).
 
-### Wrapping the 
+### Wrapping the div
 
 Our script is almost complete, we just need to wrap our iframe in our newly created div. This is similar to jQuery's $.wrap(); function.
 
@@ -111,7 +111,7 @@ Here's what our finished script looks like. The things we've been able to achiev
 - Minimal scripting  
 - Enhanced performance
 
-    
+    <script>
     (function() {
     	var iframes = document.getElementsByTagName('iframe');
     	
@@ -139,7 +139,7 @@ Here's what our finished script looks like. The things we've been able to achiev
     		}
     	}
     })();
-    
+    </script>
 
 ### Usage
 
@@ -147,6 +147,10 @@ Just drop the JavaScript file into your page, and let it work it's magic. No con
 
 ### Browser Compatibility
 
-I've tested in Chrome, FireFox, Opera, Safari, IE7, IE8 and IE9, and all is well. Though if you run into any problems or even have a suggestion on improving FluidVids.js, feel free to comment or submit a [pull request][5] on GitHub.
+I've tested in Chrome, FireFox, Opera, Safari, IE7, IE8 and IE9, and all is well. Though if you run into any problems or even have a suggestion on improving FluidVids.js, feel free to comment or submit a on GitHub or Fork.
 
-[Demo][3][Download][4][Fork][5]
+<div class="download-box">
+	<a href="//toddmotto.com/labs/fluidvids" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo FluidVids, 'FluidVids Demo']);">Demo</a>
+	<a href="//toddmotto.com/labs/fluidvids/fluidvids.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download FluidVids, 'FluidVids Download']);">Download</a>
+	<a href="//github.com/toddmotto/fluidvids" onclick="_gaq.push(['_trackEvent', 'Click', 'Fork FluidVids, 'FluidVids Fork']);">Fork</a>
+</div>

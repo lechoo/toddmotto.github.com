@@ -109,6 +109,9 @@ p {
 	right:0;
 	width:320px;
 }
+.sidebar img[src=*"todd.jpg"] {
+	width:100%;
+}
 .box {
 	padding:40px;
 	background:#FFF;
@@ -305,6 +308,8 @@ pre {
 		position:static;
 		width:100%;
 		text-align:center;
+		float:left;
+		margin:25px 0 0;
 	}
 	.full-post,
 	.pagination,
@@ -327,6 +332,8 @@ pre {
 	.sidebar {
 		position:absolute;
 		text-align:left;
+		float:none;
+		margin:0;
 	}
 	.full-post,
 	.pagination,

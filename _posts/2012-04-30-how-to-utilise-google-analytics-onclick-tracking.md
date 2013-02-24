@@ -16,18 +16,17 @@ First of all, if you’re not using Google Analytics, get on over [here][1] and 
 
  [1]: http://www.google.com/analytics
 
-    
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-XXXXXXXX-XX']);
-      _gaq.push(['_trackPageview']);
-    
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www')   '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    
-    
+    <script>
+    	var _gaq = _gaq || [];
+    	_gaq.push(['_setAccount', 'UA-XXXXXXXX-XX']);
+    	_gaq.push(['_trackPageview']);
+    	
+    	(function() {
+    		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    	})();
+	</script>
 
 ### What’s this onClick Tracking stuff?
 
@@ -45,14 +44,12 @@ So where do we use it? And how? The easiest way to integrate your onClick functi
 
 The above piece of code is the inline JavaScript that we need to use for tracking, but it needs to be setup correctly in order to get results. You’ll notice the quotation marks near the end are empty, this is because we need to set a few fields for data collecting.
 
-
-
 The piece of code below was taken from the Download button from my previous article which includes a Free Download link, you can see it in the flesh [here][2] if you [Inspect Element][3] on the button (end of the article). So here’s what the inline JavaScript looks like inside the working Download hyperlink:
 
  [2]: /creative-and-professional-cv-resume-download
  [3]: http://getfirebug.com
 
-    Download
+    <a href="/downloads/CVDownload.zip" class="download" onClick="_gaq.push(['_trackEvent', 'Click', 'CV Pack Download', 'CV Zip Downloads']);">Download</a>
     
 
 You’ll notice I’ve populated the end fields (quotations) with the Events that will be pushed back to my Google Analytics account. The sequence is as follows: 
@@ -63,14 +60,11 @@ Which really means:
 
 Category, Action, and followed by an Optional Label.
 
-
-
 ### What now?
 
 Copy this snippet of code and use it on any of your hyperlinks:
 
-    Click here!
-    
+    <a href="" onClick="_gaq.push(['_trackEvent', 'Category', 'Action', 'Extra Label if you like!']);">Click here!</a>    
 
 ### Inside Analytics
 

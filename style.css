@@ -213,6 +213,7 @@ pre {
 }
 .download-item {
 	padding:0 0 0 275px;
+	margin:0 0 25px;
 	position:relative;
 }
 .download-item a {

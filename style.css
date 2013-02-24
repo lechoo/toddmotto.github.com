@@ -301,6 +301,10 @@ pre {
 		cursor:pointer;
 		z-index:1;
 	}
+	.post {
+		margin:0;
+	}
+	
 }
 @media only screen and (min-width: 480px) {
 
@@ -312,6 +316,9 @@ pre {
 	#nav #mobile,
 	#nav .mobile {
 		display:none;
+	}
+	.post {
+		margin:0 340px 0 0;
 	}
 }
 @media only screen and (min-width: 1024px) {

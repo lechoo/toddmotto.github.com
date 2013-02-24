@@ -17,9 +17,9 @@ Consider your options for SVG use, and then realise the full power of them; logo
 
 ### HTML5 and SVG
 
-There are a few ways to use SVG, as an <object>, <embed>, <iframe>, <svg> and last but not least, the <img> tag – my favourite.
+There are a few ways to use SVG, as an &lt;object&gt;, &lt;embed&gt;, &lt;iframe&gt;, &lt;svg&gt; and last but not least, the &lt;img&gt; tag – my favourite.
 
-HTML5 spec allows for the use of an SVG inside the <img> tag, which makes it super easy and fast to get started using SVG, and this is where we’ll go in this tutorial. Here’s what our source code could look like using SVG inside an <img> tag:
+HTML5 spec allows for the use of an SVG inside the &lt;img&gt; tag, which makes it super easy and fast to get started using SVG, and this is where we’ll go in this tutorial. Here’s what our source code could look like using SVG inside an &lt;img&gt; tag:
 
     <img src="logo.svg" alt="Logo">
 

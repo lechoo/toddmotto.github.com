@@ -6,3 +6,15 @@ layout: default
 			<h1 class="full-title">{{ page.title }}</h1>
 			{{ content }}
 		</article>
+		
+		<div class="disqus">
+			<div id="disqus_thread"></div>
+		</div>
+		
+		<script>
+			(function() {
+				var dsq = document.createElement('script');
+				dsq.async = dsq.src = '//toddmotto.disqus.com/embed.js';
+				document.getElementsByTagName('head')[0].appendChild(dsq);
+			})();
+		</script>

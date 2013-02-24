@@ -23,8 +23,8 @@ Prior to CSS3 gradients, box-shadows, border-radius and other fancy features, we
 
 Before we start to ‘think’ OOCSS, let’s look at how a basic button might look in regular HTML/CSS on a typical website:
 
-    Click me!
-    
+    <a href="#" class="button-blue">Click me!</a>
+    <style>
     .button-blue-small {
     	display:inline-block;
     	zoom:1;
@@ -50,6 +50,7 @@ Before we start to ‘think’ OOCSS, let’s look at how a basic button might l
     	font-size:13px;
     	padding:5px 20px;	
     }
+    </style>
     
 
 Okay I’ll think you’ll agree, even without the vendor-prefixes it’s a nasty sight. Imagine creating a set of buttons for a few different colours and sizes, and 400 lines of CSS later you’ve done your buttons, ouch! It’ll slow down your CSS performance and also cause maintenance issues and inconsistencies. I myself have even struggled keeping everything in order, and I think OOCSS is the answer to this problem. The idea is that elements *share* properties, so play nice. I’m not advocating OOCSS for every aspect of your website, we would still like semantics, but for a lot of cases it can be a great idea to use it.

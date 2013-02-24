@@ -130,11 +130,13 @@ Here we wrap it in an anonymous function, with the aforementioned semi-colon. De
     		});
     	});
     });
-    Most of the code is commented, but I feel the main parts here to talk about are the outerHeight(true) property, which is passed to include the margins on the selected element as well.
+
+Most of the code is commented, but I feel the main parts here to talk about are the outerHeight(true) property, which is passed to include the margins on the selected element as well.
+
+To animate the header we need to effectively &#8216;remove it&#8217;. This posed questions on how to tackle the issue of it&#8217;s physical space being removed. This is where we use jQuery wrap to wrap our element in a  and hook off the outerHeight(true) declaration to effectively clone it&#8217;s physical space. We then position it relative, to allow for no conflicts and more relative positioning inside, which allows us to animate the header nicely, and let it drop into it&#8217;s reserved space.
     
-    
-    To animate the header we need to effectively &#8216;remove it&#8217;. This posed questions on how to tackle the issue of it&#8217;s physical space being removed. This is where we use jQuery wrap to wrap our element in a  and hook off the outerHeight(true) declaration to effectively clone it&#8217;s physical space. We then position it relative, to allow for no conflicts and more relative positioning inside, which allows us to animate the header nicely, and let it drop into it&#8217;s reserved space.
-    
-    
-    
-    [Demo][1][Download][2][Fork][3]
+<div class="download-box">
+	<a href="//www.toddmotto.com/labs/bouncethis" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo bounceThis', 'bounceThis Demo']);">Demo</a>
+	<a href="//www.toddmotto.com/labs/bouncethis/bouncethis.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download bounceThis', 'bounceThis Download']);">Download</a>
+	<a href="//github.com/toddmotto/bounceThis" onclick="_gaq.push(['_trackEvent', 'Click', 'Fork bounceThis', 'bounceThis Fork']);">Fork</a>
+</div>

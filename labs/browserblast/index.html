@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>BrowserBlast by @markgdyr | toddmotto.com</title>
+	<style>
+	* {margin:0;padding:0;}
+	iframe {width:100%;height:100%;position:absolute;top:0;left:0;right:0;bottom:0;}
+	</style>
+</head>
+
+<body>
+
+	<script>
+	(function(){
+	
+		var iframe = document.createElement('iframe');
+			
+		iframe.src = '//markgoodyear.com/labs/browserblast';
+		
+		iframe.frameBorder = 0;
+		
+		document.getElementsByTagName('body')[0].appendChild(iframe);
+		
+	})();
+	</script>
+	
+	<!-- Analytics (Demo only) -->
+	<script>
+		var _gaq=[['_setAccount','UA-20440416-10'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src='//www.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+	</script>
+	
+	<!-- Carbon Ads Script (Demo only) -->
+	<script src="http://www.toddmotto.com/ads/ads.js"></script>
+	
+</body>
+</html>

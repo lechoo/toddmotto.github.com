@@ -4,19 +4,18 @@ author: Todd Motto
 layout: post
 permalink: /imgshufflr-randomised-inline-and-css-background-images-plugin
 ---
-# 
 
 imgShufflr is quick and lightweight plugin for generating a random image upon page load. Simply load your images onto the server, and include the plugin on your page with a quick call, and you’ll be randomly generating their order with ease.
 
 imgShufflr started as purely an inline image randomiser, using the  tag, but includes options for using the background-image: property to use it as a background instead, it’s pretty flexible.
 
-[Demo][1][Download][2][Fork][3] 
+<div class="download-box">
+	<a href="//www.toddmotto.com/labs/imgshufflr" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo imgShufflr', 'imgShufflr Demo']);">Demo</a>
+	<a href="//www.toddmotto.com/labs/imgshufflr/imgshufflr.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download imgShufflr', 'imgShufflr Download']);">Download</a>
+	<a href="//github.com/toddmotto/imgShufflr" onclick="_gaq.push(['_trackEvent', 'Click', 'Fork imgShufflr', 'imgShufflr Fork']);">Fork</a>
+</div>
 
 ### Markup and Usage
-
- [1]: //www.toddmotto.com/labs/imgshufflr/
- [2]: //www.toddmotto.com/zipball.php?file=imgshufflr
- [3]: //github.com/toddmotto/imgShufflr
 
 Include the file in your page, the minified or full version. You’ll need to call the imgShufflr in your page like so:
 
@@ -24,24 +23,24 @@ Include the file in your page, the minified or full version. You’ll need to ca
 
 You’ll also need an HTML element with your chosen ID:
 
-    
+    <div id="imgShufflr"></div>
 
 Let’s look at the options included and the full markup:
 
-    
-    
-    
-    $(function() {
-    	$('#imgShufflr').imgShufflr({
-    		imgType  : 'inline', // inline or background
-    		imgs     : ["image-1.jpg","image-2.jpg","image-3.jpg","image-4.jpg"], // Image array
-    		imgPath  : 'img/shuffle/', // Image directory
-    		imgAlt   : 'Random Image', // Alternate text on images
-    		imgTitle : 'Title', // Title text on images
-    		imgClass : 'shuffled' // Class name for the images
-    	});
-    });
-    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="js/imgshufflr.min.js"></script>
+	<script>
+	$(function() {
+		$('#imgShufflr').imgShufflr({
+			imgType  : 'inline', // inline or background
+			imgs     : ["image-1.jpg","image-2.jpg","image-3.jpg","image-4.jpg"], // Image array
+			imgPath  : 'img/shuffle/', // Image directory
+			imgAlt   : 'Random Image', // Alternate text on images
+			imgTitle : 'Title', // Title text on images
+			imgClass : 'shuffled' // Class name for the images
+		});
+	});
+	</script>
 
 Options explained:  
 imgType – inline or background. Choosing ‘inline’ will produce an  tag with your options and attributes inside, whereas choosing background will use background-image as CSS instead. It’s as simple as that.
@@ -128,4 +127,8 @@ if (settings.imgType === ‘background’) – here we run a check to see if the
 
 When using the ‘background’ option, you’ll need to set the background size to the height and width of your image or it won’t appear.
 
-[Demo][1][Download][2][Fork][3]
+<div class="download-box">
+	<a href="//www.toddmotto.com/labs/imgshufflr" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo imgShufflr', 'imgShufflr Demo']);">Demo</a>
+	<a href="//www.toddmotto.com/labs/imgshufflr/imgshufflr.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download imgShufflr', 'imgShufflr Download']);">Download</a>
+	<a href="//github.com/toddmotto/imgShufflr" onclick="_gaq.push(['_trackEvent', 'Click', 'Fork imgShufflr', 'imgShufflr Fork']);">Fork</a>
+</div>

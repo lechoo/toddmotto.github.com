@@ -66,7 +66,7 @@ I’ve put together a superb little jQuery script to do exactly that, and will s
     });
     
 
-First targeting an  element, and using a special CSS selector (that searches for any images that contain a source that includes ‘svg’). If so, we then run another function on the source attribute. We use jQuery’s .replace(); function to replace the ‘.svg’ in the filename with ‘.png’. And that’s the job done. All it means is that for any SVG you use, you’ll need to add a PNG fallback. It takes an extra minute at most per image.
+First targeting an &lt;img&gt; element, and using a special CSS selector (that searches for any images that contain a source that includes ‘svg’). If so, we then run another function on the source attribute. We use jQuery’s .replace(); function to replace the ‘.svg’ in the filename with ‘.png’. And that’s the job done. All it means is that for any SVG you use, you’ll need to add a PNG fallback. It takes an extra minute at most per image.
 
 ### Final Markup
 
@@ -99,7 +99,7 @@ If you’re not running jQuery, you can use this as a raw JavaScript alternative
 
 ### CSS: SVG as Background
 
-As far as I know, it’s impossible to detect and swap out an SVG as a background image, thankfully Modernizr has an alternative to running a script. When Modernizr loads, it adds all the browser supporting classes to the  tag. You’ll end up with something like this:
+As far as I know, it’s impossible to detect and swap out an SVG as a background image, thankfully Modernizr has an alternative to running a script. When Modernizr loads, it adds all the browser supporting classes to the &lt;html&gt; tag. You’ll end up with something like this:
 
     <html class="js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
 
@@ -119,7 +119,7 @@ AddEncoding gzip svgz`
 
 <h3 id="update">UPDATE: Custom SVG Feature Detection, Without Modernizr and jQuery</h3>
 
-Here’s my SVG feature detection script, which creates an SVG from a NameSpace URI (w3.org/200/svg) and the qualifiedName. It’s entirely Modernizr and jQuery independent, so you can use it without either library. If the browser supports SVG, it adds an ‘svg’ class to the  tag. If SVG isn’t supported, you’ll get a ‘no-svg’ class complete with the fallback script to rip all the (.svg) extensions to (.png). I’ve optimised the JavaScript from the previous iteration too.
+Here’s my SVG feature detection script, which creates an SVG from a NameSpace URI (w3.org/200/svg) and the qualifiedName. It’s entirely Modernizr and jQuery independent, so you can use it without either library. If the browser supports SVG, it adds an ‘svg’ class to the &lt;html&gt; tag. If SVG isn’t supported, you’ll get a ‘no-svg’ class complete with the fallback script to rip all the (.svg) extensions to (.png). I’ve optimised the JavaScript from the previous iteration too.
 
     <script>
     function supportsSVG() {

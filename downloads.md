@@ -18,7 +18,7 @@ layout: page
 	<div class="download-details">
 		<h2>bounceThis</h2>
 		<h4>Super slick and sharp bouncing headers, mimics CSS3 keyframes, a cross-browser jQuery plugin.</h4>
-		<a href="//toddmotto.com/labs/bouncethis/" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo bounceThis', 'bounceThis Demo']);" target="_blank">Demo</a>
+		<a href="//toddmotto.com/labs/bouncethis/" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo bounceThis', 'bounceThis Demo']);" >Demo</a>
 		<a href="//toddmotto.com/labs/bouncethis/bouncethis.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download bounceThis', 'bounceThis Download']);">Download</a>
 		<a href="//toddmotto.com/bouncethis-plugin-mimics-css3-keyframes-bouncing-header-animations">[article]</a>
 	</div>
@@ -37,68 +37,68 @@ layout: page
 	<img src="/img/downloads/conditionizr.jpg" alt="Conditionizr">
 	<div class="download-details">
 		<h2>Conditionizr</h2>
-		<h4>Super slick and sharp bouncing headers, mimics CSS3 keyframes, a cross-browser jQuery plugin.</h4>
-		<a href="//toddmotto.com/labs/bouncethis/" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo bounceThis', 'bounceThis Demo']);" target="_blank">Demo</a>
-		<a href="//toddmotto.com/labs/bouncethis/bouncethis.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download bounceThis', 'bounceThis Download']);">Download</a>
-		<a href="//toddmotto.com/bouncethis-plugin-mimics-css3-keyframes-bouncing-header-animations">[article]</a>
+		<h4>The conditional free legacy, retina, script and style loader. Enhance performance with dedicated loading, inspect element for Demo.</h4>
+		<a href="//conditionizr.com" onclick="_gaq.push(['_trackEvent', 'Click', 'conditionizr.com', 'conditionizr.com']);">Conditionizr</a>
+		<a href="//github.com/conditionizr/conditionizr/archive/master.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download Conditionizr', 'Conditionizr Download']);">Download</a>
+		<a href="//toddmotto.com/meet-conditionizr-the-conditional-free-legacy-retina-script-and-style-loader">[article]</a>
 	</div>
 </div>
 <div class="download-item">
 	<img src="/img/downloads/html5-contact.jpg" alt="HTML5 Contact Form">
 	<div class="download-details">
 		<h2>HTML5 Contact Form</h2>
-		<h4>Super slick and sharp bouncing headers, mimics CSS3 keyframes, a cross-browser jQuery plugin.</h4>
-		<a href="//toddmotto.com/labs/bouncethis/" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo bounceThis', 'bounceThis Demo']);" target="_blank">Demo</a>
-		<a href="//toddmotto.com/labs/bouncethis/bouncethis.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download bounceThis', 'bounceThis Download']);">Download</a>
-		<a href="//toddmotto.com/bouncethis-plugin-mimics-css3-keyframes-bouncing-header-animations">[article]</a>
+		<h4>HTML5 form boilerplate, javascript feature detection, data-* attributes, responsive-ready, semantics.</h4>
+		<a href="//toddmotto.com/labs/html5-contact-form" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo HTML5 Contact Form, 'HTML5 Contact Form Demo']);">Demo</a>
+		<a href="//toddmotto.com/labs/html5-contact-form/html5-contact-form.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download HTML5 Contact Form, 'HTML5 Contact Form Download']);">Download</a>
+		<a href="//toddmotto.com/creating-an-html5-responsive-ready-contact-form-with-custom-javascript-feature-detection">[article]</a>
 	</div>
 </div>
 <div class="download-item">
 	<img src="/img/downloads/jbar.jpg" alt="jBar">
 	<div class="download-details">
 		<h2>jBar</h2>
-		<h4>Super slick and sharp bouncing headers, mimics CSS3 keyframes, a cross-browser jQuery plugin.</h4>
-		<a href="//toddmotto.com/labs/bouncethis/" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo bounceThis', 'bounceThis Demo']);" target="_blank">Demo</a>
-		<a href="//toddmotto.com/labs/bouncethis/bouncethis.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download bounceThis', 'bounceThis Download']);">Download</a>
-		<a href="//toddmotto.com/bouncethis-plugin-mimics-css3-keyframes-bouncing-header-animations">[article]</a>
+		<h4>The popular jBar plugin, a simple and lightweight notification banner for jQuery, easy customisation. Toggle the ribbon to show/hide.</h4>
+		<a href="//toddmotto.com/labs/jbar/" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo bounceThis', 'bounceThis Demo']);" >Demo</a>
+		<a href="//toddmotto.com/labs/jbar/jbar.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download bounceThis', 'bounceThis Download']);">Download</a>
+		<a href="//toddmotto.com/jbar-plugin-the-jquery-call-to-action-bar">[article]</a>
 	</div>
 </div>
 <div class="download-item">
 	<img src="/img/downloads/imgshufflr.jpg" alt="imgShufflr">
 	<div class="download-details">
 		<h2>imgShufflr</h2>
-		<h4>Super slick and sharp bouncing headers, mimics CSS3 keyframes, a cross-browser jQuery plugin.</h4>
-		<a href="//toddmotto.com/labs/bouncethis/" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo bounceThis', 'bounceThis Demo']);" target="_blank">Demo</a>
-		<a href="//toddmotto.com/labs/bouncethis/bouncethis.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download bounceThis', 'bounceThis Download']);">Download</a>
-		<a href="//toddmotto.com/bouncethis-plugin-mimics-css3-keyframes-bouncing-header-animations">[article]</a>
+		<h4>Randomised inline <img> and CSS background images plugin. Uses JavaScript arrays to load random image.</h4>
+		<a href="//toddmotto.com/labs/imgshufflr/" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo imgShufflr', 'imgShufflr Demo']);" >Demo</a>
+		<a href="//toddmotto.com/labs/imgshufflr/imgshufflr.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download imgShufflr', 'imgShufflr Download']);">Download</a>
+		<a href="//toddmotto.com/imgshufflr-randomised-inline-and-css-background-images-plugin">[article]</a>
 	</div>
 </div>
 <div class="download-item">
 	<img src="/img/downloads/html5nav.jpg" alt="HTML5 jQuery Nav">
 	<div class="download-details">
 		<h2>HTML5 jQuery Nav</h2>
-		<h4>Super slick and sharp bouncing headers, mimics CSS3 keyframes, a cross-browser jQuery plugin.</h4>
-		<a href="//toddmotto.com/labs/bouncethis/" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo bounceThis', 'bounceThis Demo']);" target="_blank">Demo</a>
-		<a href="//toddmotto.com/labs/bouncethis/bouncethis.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download bounceThis', 'bounceThis Download']);">Download</a>
-		<a href="//toddmotto.com/bouncethis-plugin-mimics-css3-keyframes-bouncing-header-animations">[article]</a>
+		<h4>Bare-bones HTML5 semantics navigation, super simple jQuery drop down. Extremely light-weight solution.</h4>
+		<a href="//toddmotto.com/labs/html5-jquery-nav/" onclick="_gaq.push(['_trackEvent', 'Click', 'HTML5 jQuery Nav Demo', 'HTML5 jQuery Nav Demo Button']);">Demo</a>
+		<a href="//toddmotto.com/labs/html5-jquery-nav/html5-jquery-nav.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download HTML5 jQuery Nav', 'HTML5 jQuery Nav Download']);">Download</a>
+		<a href="//toddmotto.com/html5-and-jquery-super-simple-drop-down-nav">[article]</a>
 	</div>
 </div>
 <div class="download-item">
 	<img src="/img/downloads/html5blank.jpg" alt="HTML5 Blank">
 	<div class="download-details">
 		<h2>HTML5 Blank</h2>
-		<h4>Super slick and sharp bouncing headers, mimics CSS3 keyframes, a cross-browser jQuery plugin.</h4>
-		<a href="//toddmotto.com/labs/bouncethis/" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo bounceThis', 'bounceThis Demo']);" target="_blank">Demo</a>
-		<a href="//toddmotto.com/labs/bouncethis/bouncethis.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download bounceThis', 'bounceThis Download']);">Download</a>
-		<a href="//toddmotto.com/bouncethis-plugin-mimics-css3-keyframes-bouncing-header-animations">[article]</a>
+		<h4>A powerful shell for rapidly deploying your WordPress projects. Recognised by Smashing Magazine, Adobe and .NET Magazine.</h4>
+		<a href="//demo.html5blank.com" target="_blank">Demo</a>
+		<a href="//github.com/toddmotto/html5blank/archive/master.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'HTML5 Blank Theme Download', 'HTML5 Blank Download']);">Download</a>
+		<a href="//www.toddmotto.com/html5-blank-rapid-wordpress-theme-development">[article]</a>
 	</div>
 </div>
 <div class="download-item">
 	<img src="/img/downloads/hoverbox.jpg" alt="Hoverbox">
 	<div class="download-details">
 		<h2>jQuery Hover Box</h2>
-		<h4>Super slick and sharp bouncing headers, mimics CSS3 keyframes, a cross-browser jQuery plugin.</h4>
-		<a href="//toddmotto.com/labs/bouncethis/" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo bounceThis', 'bounceThis Demo']);" target="_blank">Demo</a>
+		<h4>Using jQuery to animate two images to create a simple but great blurred effect, for all sorts of projects.</h4>
+		<a href="//toddmotto.com/labs/bouncethis/" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo bounceThis', 'bounceThis Demo']);" >Demo</a>
 		<a href="//toddmotto.com/labs/bouncethis/bouncethis.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download bounceThis', 'bounceThis Download']);">Download</a>
 		<a href="//toddmotto.com/bouncethis-plugin-mimics-css3-keyframes-bouncing-header-animations">[article]</a>
 	</div>
@@ -107,8 +107,8 @@ layout: page
 	<img src="/img/downloads/select-nav-js.jpg" alt="Select Nav">
 	<div class="download-details">
 		<h2>Pure JavaScript select nav</h2>
-		<h4>Super slick and sharp bouncing headers, mimics CSS3 keyframes, a cross-browser jQuery plugin.</h4>
-		<a href="//toddmotto.com/labs/bouncethis/" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo bounceThis', 'bounceThis Demo']);" target="_blank">Demo</a>
+		<h4>Dynamically creates a select menu and populates it with menu items from an existing nav. jQuery free, hierarchy support, responsive-ready.</h4>
+		<a href="//toddmotto.com/labs/bouncethis/" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo bounceThis', 'bounceThis Demo']);" >Demo</a>
 		<a href="//toddmotto.com/labs/bouncethis/bouncethis.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download bounceThis', 'bounceThis Download']);">Download</a>
 		<a href="//toddmotto.com/bouncethis-plugin-mimics-css3-keyframes-bouncing-header-animations">[article]</a>
 	</div>
@@ -117,8 +117,8 @@ layout: page
 	<img src="/img/downloads/retina.jpg" alt="Retina Tool">
 	<div class="download-details">
 		<h2>Responsive Development Tool</h2>
-		<h4>Super slick and sharp bouncing headers, mimics CSS3 keyframes, a cross-browser jQuery plugin.</h4>
-		<a href="//toddmotto.com/labs/viewport-retina/" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo ViewPort Resizer', 'ViewPort Resizer Demo']);" target="_blank">Demo</a>
+		<h4>Responsive/retina development JavaScript widget, dynamically displays pixel dimensions, retina detection and pixel ratio.</h4>
+		<a href="//toddmotto.com/labs/viewport-retina/" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo ViewPort Resizer', 'ViewPort Resizer Demo']);" >Demo</a>
 		<a href="//toddmotto.com/labs/viewport-retina/viewport-retina.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download ViewPort Resizer', 'ViewPort Resizer Download']);">Download</a>
 		<a href="//toddmotto.com/viewport-dynamic-width-calculation-retina-and-pixel-ratio-javascript-widget">[article]</a>
 	</div>
@@ -127,8 +127,8 @@ layout: page
 	<img src="/img/downloads/jresize.jpg" alt="jResize">
 	<div class="download-details">
 		<h2>jResize</h2>
-		<h4>Super slick and sharp bouncing headers, mimics CSS3 keyframes, a cross-browser jQuery plugin.</h4>
-		<a href="//toddmotto.com/labs/bouncethis/" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo bounceThis', 'bounceThis Demo']);" target="_blank">Demo</a>
+		<h4>Dynamic viewport resizer plugin, built to assist responsive development and testing. Create your own widths to test.</h4>
+		<a href="//toddmotto.com/labs/bouncethis/" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo bounceThis', 'bounceThis Demo']);" >Demo</a>
 		<a href="//toddmotto.com/labs/bouncethis/bouncethis.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download bounceThis', 'bounceThis Download']);">Download</a>
 		<a href="//toddmotto.com/bouncethis-plugin-mimics-css3-keyframes-bouncing-header-animations">[article]</a>
 	</div>

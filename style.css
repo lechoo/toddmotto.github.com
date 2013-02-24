@@ -275,7 +275,32 @@ pre {
 \*------------------------------------*/
 
 @media only screen and (min-width: 320px) {
-
+	#nav .mobile {
+		display:block;
+		font-size:30px;
+		color:#FFF;
+		position:absolute;
+		top:45px;
+		right:0;
+		background:#444 url(img/nav.svg) no-repeat center center;
+		height:40px;
+		width:40px;
+		border-radius:5px;
+	}
+	#nav ul {
+		display:none;
+	}
+	#nav #mobile {
+		display:block;
+		position:absolute;
+		top:45px;
+		right:0;
+		height:40px;
+		width:40px;
+		opacity:0;
+		cursor:pointer;
+		z-index:1;
+	}
 }
 @media only screen and (min-width: 480px) {
 

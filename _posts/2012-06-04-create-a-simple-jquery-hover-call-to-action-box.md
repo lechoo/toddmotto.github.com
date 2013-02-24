@@ -3,19 +3,16 @@ title: Create a simple jQuery hover call-to-action box
 author: Todd Motto
 layout: post
 permalink: /create-a-simple-jquery-hover-call-to-action-box
-dsq_thread_id:
-  - 712967954
 ---
-# 
 
 Here’s a quick and easy tutorial on how to create a small call to action box using two images, some CSS and jQuery. Article includes a free download for implementation on your own website.
 
-[Demo][1][Download][2] 
+<div class="download-box">
+	<a href="//toddmotto.com/labs/hover-box" onclick="_gaq.push(['_trackEvent', 'Click', 'jQuery Hover Box Demo', 'jQuery Hover Demo Button']);">Demo</a>
+	<a href="//toddmotto.com/labs/hover-box/hover-box.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'jQuery Hover Box Download', 'jQuery Hover Box Download Button']);">Download</a>
+</div>
 
 ### How It Works
-
- [1]: //www.toddmotto.com/labs/hover-box/
- [2]: //www.toddmotto.com/zipball.php?file=hover-box
 
 In the markup, we specify two images with the same absolute positioning. This allows ‘Image 1′ to overlap ‘Image 2′ so that it is hidden underneath. ‘Image 1′ is the original image, whereas ‘Image 2′ is a replica of the first image, but with a Gaussian Blur and button applied. Using jQuery, ‘Image 1′ is hidden upon hover over, which shows the second image. Hovering off again does the exact opposite.
 
@@ -23,13 +20,12 @@ In the markup, we specify two images with the same absolute positioning. This al
 
 Using an outer ‘div’ to wrap our images, inside we include our hyperlink (to wherever your call to action goes to) and our two overlapping images. Note the first image has a class called ‘static’ and the second, a class called ‘blur’. This is so we know which image is which. Static image is the one we see upon page load, and the blur, is our blurred image. These were both created using Photoshop.
 
-    
-    	
-    	
-    	
-    	
-    
-    
+    <div id="blur">
+		<a href="#">
+		<img src="img/hover-box-1.jpg" class="static">
+		</a>
+		<img src="img/hover-box-2.jpg" class="blur">
+	</div>
 
 ### CSS
 
@@ -70,5 +66,7 @@ Using a simple jQuery hover function we set the top image (which we’ve specifi
     	});
     });
     
-
-[Demo][1][Download][2]
+<div class="download-box">
+	<a href="//toddmotto.com/labs/hover-box" onclick="_gaq.push(['_trackEvent', 'Click', 'jQuery Hover Box Demo', 'jQuery Hover Demo Button']);">Demo</a>
+	<a href="//toddmotto.com/labs/hover-box/hover-box.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'jQuery Hover Box Download', 'jQuery Hover Box Download Button']);">Download</a>
+</div>

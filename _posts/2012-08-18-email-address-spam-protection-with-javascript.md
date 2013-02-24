@@ -12,11 +12,10 @@ This is a simple code snippet to prevent any spambots crawling your Contact page
 
 Here’s what you’d need to add instead of typing out an email address. On page load, the document.write command writes our email variable and small function, and outputs our email address. Since I’ve been using it, I’ve had no spam, even across client websites too.
 
-    
-    	var emailAddress = ('name@'   'yourdomain.com')
-    	document.write(''   emailAddress   '')
-    
-    
+    <script>
+		var emailAddress = ('name@' + 'yourdomain.com')
+		document.write('<a href="mailto:' + emailAddress + '">' + emailAddress + '</a>')
+	</script>
 
 ### Disabled JavaScript
 
@@ -24,13 +23,11 @@ For users with JavaScript disabled in their browser, they won’t see an email a
 
 Type out the name without the @ symbol:
 
-    name[at]yourdomain.com
-    
+    <noscript>name[at]yourdomain.com</noscript>
 
 Use an image of your email address:
 
-    
-    
+    <noscript><img src="img/email-address.jpg" alt="My Email"></noscript>
 
 ### Integration
 

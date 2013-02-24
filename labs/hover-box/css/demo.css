@@ -1,0 +1,5 @@
+/* jQuery Hover Box by Todd Motto - @toddmotto - toddmotto.com */
+
+#blur {position:relative;}
+#blur img.static {position:absolute;left:0;top:0;z-index:1;}
+#blur img.blur {position:absolute;left:0;top:0;}

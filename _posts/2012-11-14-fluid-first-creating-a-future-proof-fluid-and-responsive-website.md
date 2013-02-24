@@ -4,7 +4,6 @@ author: Todd Motto
 layout: post
 permalink: /fluid-first-creating-a-future-proof-fluid-and-responsive-website
 ---
-# 
 
 Fluid-first is a way of thinking, then designing, then coding. It’s not media query heavy, it’s not thousands of lines of inherited and overwritten code. It’s a minimalistic approach to create scalable responsive websites with ease. Fluid-first I believe to be desktop-down building, which I much prefer over mobile-first. (Mobile-first is where you code your mobile styles first as a base layer). I want the full picture before I see the snapshot, so desktop down for me.
 
@@ -19,12 +18,6 @@ So here’s where fluid-first comes in. And trust me, this speeds up your core d
 ### 2. Designing
 
 You’ve got to think ahead for your website design, picture how everything should scale perfectly. Using a fluid-first approach, we’ll aim to create as much of our website as we can, using percentages and not fixed pixels, so our design needs to be adaptive, you need to be able to envision this while you’re creating your layout. Imagine you’ve got 5 items in your navigation, they should all share 20% of the navigation width. Of course, this will look horrible at 320px, but that’s where we add the finishing touches with media queries. But not yet.
-
-Here’s a basic look of how we can utilise percentages on a really basic level:
-
-![Fluid Layout][1]
-
- [1]: /wp-content/uploads/2012/11/fluid-layout.png
 
 ’100%’ identifies the screensize, no matter what it is. ’50%’ identifies our two aligned elements, both at 50% width. This would mean they would both fit exactly half the screen. Comparing screen sizes, the mobile width is a lot smaller (obviously not to scale), but our elements would still have to obey our percentage widths. Nothing actually changes between these devices, 50% and 50% is consistent. Getting the right design is imperative to how you’ll code using the fluid-first approach, don’t just design to the screen you’re working on.
 
@@ -68,7 +61,7 @@ Now we’ve created the perfect platform for starting the development, it’s up
 
 So what’s next? We’ve created a wrapper so it obeys our percentages, but to ensure it scales properly to any device, we need to add our viewport meta tag to our  section of the site:
 
-    
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 This ensures that our website scales as it’s meant to, and fit exactly to the screensize, if the code lets us. Initial scale and maximum scale are set the same here (1.0) which locks them the same scale, our 95% of the screen. The ‘user-scalable’ means (you guessed it) is whether we allow the user to scale the content after this by pinching/zooming on the content. I usually set this to 0 (meaning no) so that our design is locked to the scale we decide. You can change it to ‘user-scalable=1′ to allow for user touch scaling.
 
@@ -76,38 +69,37 @@ This ensures that our website scales as it’s meant to, and fit exactly to the 
 
 To show you how fluid-first works, we primarily rely on the elasticity of our percentages to give us brilliant effect. Scale your browser window whilst viewing the Demo below, and you’ll notice there’s a nice gap either side of the 50% columns so our content doesn’t touch the sides. Copy the source code for your project if you feel it’s any use.
 
-[Demo][2]
+<div class="download-box">
+	<a href="//demo.toddmotto.com/fluid-first/" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo FluidFirst', 'FluidFirst Demo']);" target="_blank">Demo</a>
+</div>
 
 Here’s our Demo markup, you’ll see how little we change the code using media queries. Of course this is only a very simple level, but imagine changing your column percentages once per media query, to fully optimise for fixed-width and beyond.
 
- [2]: //demo.toddmotto.com/fluid-first/
-
-    
-    
-    	
-    		
-    		Fluid-first Demo
-    		
-    		
-    		.wrapper {max-width:1280px;width:95%;margin:0 auto;}
-    		.column {width:50%;float:left;background:#F1F1F1;}
-    		@media only screen and (min-width: 320px) {.column {width:100%;}}
-    		@media only screen and (min-width: 786px) {.column {width:50%;}}
-    		
-    
-    	
-    	
-    		
-    			
-    				Fluid-first Demo
-    			
-    			
-    				Fluid-first Demo
-    			
-    		
-    	
-    
-    
+    <!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="UTF-8">
+			<title>Fluid-first Demo</title>
+			<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0;">
+			<style>
+			.wrapper {max-width:1280px;width:95%;margin:0 auto;}
+			.column {width:50%;float:left;background:#F1F1F1;}
+			@media only screen and (min-width: 320px) {.column {width:100%;}}
+			@media only screen and (min-width: 786px) {.column {width:50%;}}
+			</style>
+	
+		</head>
+		<body>
+			<div class="wrapper">
+				<div class="column">
+					<p>Fluid-first Demo</p>
+				</div>
+				<div class="column">
+					<p>Fluid-first Demo</p>
+				</div>
+			</div>
+		</body>
+	</html>
 
 ### Conclusion
 
@@ -121,11 +113,10 @@ Most importantly, take advice from the Demo, you can see how powerful a tiny med
 
 ### Finishing touches
 
-For browsers that don’t support media queries, it’s well worth implementing [css3-mediaqueries.js][3], a JavaScript polyfill by Wouter van der Graaf, to make IE5 become responsive. Here’s how to include it in your site:
-
- [3]: //code.google.com/p/css3-mediaqueries-js/
-
+For browsers that don’t support media queries, it’s well worth implementing [css3-mediaqueries.js][3], a JavaScript polyfill by Wouter van der Graaf, to make IE5 become responsive. Here’s how to include it in your site: 
     
+    [3]: //code.google.com/p/css3-mediaqueries-js/
+    <!--[if lte IE 8]><script src="js/mediaqueries.min.js"></script><![endif]-->
 
 Note: If you are using ‘min-device-width’ instead of ‘min-width’, or ‘max-device-width’ instead of ‘max-width’ you’ll need to use ‘if lte IE 10′ instead of IE 8, as IE9/10 do not support min/max-device-width.
 

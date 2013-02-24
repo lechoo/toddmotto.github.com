@@ -4,8 +4,7 @@ title: >
   toggleClass
 author: Todd Motto
 layout: post
-permalink: >
-  /creating-jquery-style-functions-in-javascript-hasclass-addclass-removeclass-toggleclass
+permalink: /creating-jquery-style-functions-in-javascript-hasclass-addclass-removeclass-toggleclass
 ---
 # 
 
@@ -42,8 +41,6 @@ So what does this tell us? We don’t want to write our own scripts (or know how
 > — Todd Motto (@toddmotto) [January 23, 2013][3]
 
  [3]: //twitter.com/toddmotto/status/294030356619870208
-
-
 
 ### Reasons to use jQuery
 

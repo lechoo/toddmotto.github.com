@@ -11,7 +11,7 @@ After much debate about a way forward past conditional statements, retina detect
 
 Conditionizr is a clever tool for front-end development that detects the end-users browser and pixel ratio, allowing you to serve specific conditional JavaScript and CSS files they need.
 
-<div class="">
+<div class="download-box">
 	<a href="//conditionizr.com" onclick="_gaq.push(['_trackEvent', 'Click', 'conditionizr.com', 'conditionizr.com']);">Conditionizr</a>
 	<a href="//github.com/conditionizr/conditionizr/archive/master.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download Conditionizr', 'Conditionizr Download']);">Download</a>
 	<a href="//github.com/conditionizr/conditionizr" onclick="_gaq.push(['_trackEvent', 'Click', 'Fork Conditionizr', 'Conditionizr Fork']);">Fork</a>
@@ -69,7 +69,7 @@ Conditional statements are ancient, and their place amongst the powers of HTML5 
 
 Conditionizr simplifies the process of making conditional statements work, through a clever dynamic script and style loader. Through our robust JavaScript code, we’ve created a powerful, optimised plugin that makes development faster, easier and cleaner. Conditionizr automatically detects the browser in use, and serves up content that the browser needs. For instance, if you need to target each version of Internet Explorer, currently your code is going to be extremely clotted. With Conditionizr, it’s invisible. The only extra piece of markup is the inclusion of Conditionizr in your page.
 
-<div class="">
+<div class="download-box">
 	<a href="//conditionizr.com" onclick="_gaq.push(['_trackEvent', 'Click', 'conditionizr.com', 'conditionizr.com']);">Conditionizr</a>
 	<a href="//github.com/conditionizr/conditionizr/archive/master.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download Conditionizr', 'Conditionizr Download']);">Download</a>
 	<a href="//github.com/conditionizr/conditionizr" onclick="_gaq.push(['_trackEvent', 'Click', 'Fork Conditionizr', 'Conditionizr Fork']);">Fork</a>

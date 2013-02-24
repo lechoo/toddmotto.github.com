@@ -302,12 +302,7 @@ pre {
 		z-index:1;
 	}
 	.post {
-		margin:0 340px 0 0;
-	}
-	.sidebar {
-		position:static;
-		width:100%;
-		text-align:center;
+		margin:0;
 	}
 @media only screen and (min-width: 768px) {
 	#nav ul {
@@ -318,13 +313,17 @@ pre {
 		display:none;
 	}
 	.post {
-		margin:0;
+		margin:0 340px 0 0;
 	}
-	.sidebar {
-		position:absolute;
-		right:0;
-		width:320px;
-	}
+}
+@media only screen and (min-width: 1024px) {
+
+}
+@media only screen and (min-width: 1140px) {
+
+}
+@media only screen and (min-width: 1280px) {
+
 }
 
 /*------------------------------------*\

@@ -310,7 +310,7 @@ pre {
 		display:block;
 	}
 	#nav #mobile,
-	nav .mobile {
+	#nav .mobile {
 		display:none;
 	}
 }

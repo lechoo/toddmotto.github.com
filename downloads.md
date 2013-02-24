@@ -6,7 +6,7 @@ layout: page
 <div class="download-box download-item">
 	<img src="/img/downloads/fluidvids.jpg" alt="FluidVids">
 	<h2>FluidVids</h2>
-	<h3>A raw JavaScript alternative to FitVids jQuery plugin, fluid-width video embeds for responsive design, works faster, more efficient.</h3>
+	<h4>A raw JavaScript alternative to FitVids jQuery plugin, fluid-width video embeds for responsive design, works faster, more efficient.</h4>
 	<a href="//toddmotto.com/labs/fluidvids" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo FluidVids, 'FluidVids Demo']);">Demo</a>
 	<a href="//toddmotto.com/labs/fluidvids/fluidvids.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download FluidVids, 'FluidVids Download']);">Download</a>
 	<a href="//toddmotto.com/fluid-and-responsive-youtube-and-vimeo-videos-with-fluidvids-js" class="article">[article]</a>

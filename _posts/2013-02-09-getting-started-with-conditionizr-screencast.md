@@ -9,3 +9,5 @@ Conditionizr is a fast and lightweight (4KB) javascript utility that detects bro
 Excuse the MacBook CPU fans kicking in a little, and the British accent ;-)
 
 I’d advise clicking the little ‘cog’ in the bottom right and changing the video quality to 720p HD.
+
+<iframe width="560" height="315" src="//www.youtube.com/embed/EkcyiEnDtCo" frameborder="0"></iframe>

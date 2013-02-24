@@ -198,8 +198,11 @@ iframe[src*="twitter"] {
 }
 #carbonads {
 	margin:0 0 20px;
+	background:#444;
+	text-align:center;
 }
 .carbonad {
+	display:inline-block;
 	border:0 !important;
 	width:320px !important;
 	background-color:#444 !important;

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Creating jQuery-style reusable JavaScript functions by @toddmotto | toddmotto.com</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="author" content="@toddmotto">
+	<style>
+	* {
+		margin:0;
+		padding:0;
+		box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		-webkit-font-smoothing:antialiased;
+		-moz-font-smoothing:antialiased;
+		-o-font-smoothing:antialiased;
+		font-smoothing:antialiased;
+		text-rendering:optimizeLegibility;
+	}
+	body {
+		font:400 12px/1.625 "Helvetica Neue", Helvetica, Arial, sans-serif;
+		background:#F4F4F4;
+		color:#444;
+	}
+	.wrapper {
+		max-width:500px;
+		width:95%;
+		margin:0 auto;
+		position:relative;
+		padding:0 0 20px;
+	}
+	#header {overflow:auto;background:#33363C;border-top:5px solid #2F3135;border-bottom:2px solid #04A4CC;}
+	#logo {float:left;margin:10px 0 5px 40px;}
+	#logo img {width:80px;height:36px;}
+	#view-tut {float:right;font-size:13px;font-weight:900;margin:10px 40px 5px 0;}
+	#view-tut ul {margin:0;}
+	#view-tut ul li {display:inline-block;*display:inline;zoom:1;margin:0 5px 0 0;}
+	#view-tut ul li a {display:block;padding:5px 10px;background:#04A4CC;color:#FFF;border-radius:20px;text-decoration:none;}
+	#view-tut ul li a:hover {background:#0097CD;}
+	h2 {
+		margin:0 0 20px 0;
+	}
+	h3 {
+		margin:20px 0;
+	}
+	h3 a {
+		color:#04A4CC;
+	}
+	h4 {
+		font-style:italic;
+		font-size:11px;
+	}
+	textarea {
+		width:100%;
+		max-width:500px;
+		height:80px;
+		border:0;
+		border-radius:5px;
+		box-shadow:inset 0 1px 4px rgba(0,0,0,0.5);
+		padding:10px;
+		background:#EEE;
+		color:#444;
+		font-size:13px;
+		-webkit-transition:all 0.3s ease-in-out;
+		-moz-transition:all 0.3s ease-in-out;
+		-o-transition:all 0.3s ease-in-out;
+		-ms-transition:all 0.3s ease-in-out;
+		transition:all 0.3s ease-in-out;
+	}
+	textarea:hover {
+		height:120px;
+	}
+	textarea:focus {
+		outline:0;
+	}
+	.code {
+		padding:20px;
+		background:#FFF;
+		box-shadow:0 1px 3px #BBB;
+		border-radius:5px;
+		margin:20px 0 0;
+	}
+	pre {
+		background:#EEE;
+		padding:5px 15px;
+		overflow-x:scroll;
+	}
+	</style>
+</head>
+
+<body>
+
+	<div id="header">
+		<div id="logo">
+			<a href="http://www.toddmotto.com">
+				<img src="img/logo.png" alt="Logo">
+			</a>
+		</div>
+		<div id="view-tut">
+			<ul>
+				<li><a href="http://www.toddmotto.com/creating-jquery-style-functions-in-javascript-hasclass-addclass-removeclass-toggleclass">Visit the Tutorial</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div class="wrapper">
+	
+			<!-- Code -->
+			<div class="code">
+			<h2>JavaScript 'hasClass'</h2>
+			<h4>To determine whether an element contains a specified class name.</h4>
+			<h3>Demo - <a href="//jsfiddle.net/toddmotto/3mffU/" target="_blank">//jsfiddle.net/toddmotto/3mffU/</a></h3>
+			<h3>Get Code</h3>
+<textarea id="test" onclick="this.select();">
+// hasClass
+function hasClass(elem, className) {
+	return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+}</textarea>
+			</div>
+			<!-- /Code -->
+			
+			<!-- Code -->
+			<div class="code">
+			<h2>JavaScript 'addClass'</h2>
+			<h4>To add a specific class name to an element.</h4>
+			<h3>Demo - <a href="//jsfiddle.net/toddmotto/V489X/" target="_blank">//jsfiddle.net/toddmotto/V489X/</a></h3>
+			<h3>Get Code</h3>
+<textarea id="test" onclick="this.select();">
+function addClass(elem, className) {
+    if (!hasClass(elem, className)) {
+    	elem.className += ' ' + className;
+    }
+}</textarea>
+			</div>
+			<!-- /Code -->
+			
+			<!-- Code -->
+			<div class="code">
+			<h2>JavaScript 'removeClass'</h2>
+			<h4>To remove a specific class name from an element.</h4>
+			<h3>Demo - <a href="//jsfiddle.net/toddmotto/6uQ58/" target="_blank">//jsfiddle.net/toddmotto/6uQ58/</a></h3>
+			<h3>Get Code</h3>
+<textarea id="test" onclick="this.select();">
+// removeClass
+function removeClass(elem, className) {
+	var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ') + ' ';
+	if (hasClass(elem, className)) {
+        while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
+            newClass = newClass.replace(' ' + className + ' ', ' ');
+        }
+        elem.className = newClass.replace(/^\s+|\s+$/g, '');
+    }
+}</textarea>
+			</div>
+			<!-- /Code -->
+			
+			<!-- Code -->
+			<div class="code">
+			<h2>JavaScript 'toggleClass'</h2>
+			<h4>Add/remove a specific class, toggle it.</h4>
+			<h3>Demo - <a href="//jsfiddle.net/toddmotto/6UwF3/" target="_blank">//jsfiddle.net/toddmotto/6UwF3/</a></h3>
+			<h3>Get Code</h3>
+<textarea id="test" onclick="this.select();">
+function toggleClass(elem, className) {
+	var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, " " ) + ' ';
+    if (hasClass(elem, className)) {
+        while (newClass.indexOf(" " + className + " ") >= 0 ) {
+            newClass = newClass.replace( " " + className + " " , " " );
+        }
+        elem.className = newClass.replace(/^\s+|\s+$/g, '');
+    } else {
+        elem.className += ' ' + className;
+    }
+}</textarea>
+			</div>
+			<!-- /Code -->
+			
+	</div>
+
+	<!-- Carbon Ads Script (Demo only) -->
+	<script src="http://www.toddmotto.com/ads/ads.js"></script>
+	
+</body>
+</html>

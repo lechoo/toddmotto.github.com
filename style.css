@@ -303,6 +303,8 @@ pre {
 	}
 	.sidebar {
 		position:static;
+		width:100%;
+		text-align:center;
 	}
 	.full-post,
 	.pagination,
@@ -324,6 +326,7 @@ pre {
 	}
 	.sidebar {
 		position:absolute;
+		text-align:left;
 	}
 	.full-post,
 	.pagination,

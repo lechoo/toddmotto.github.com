@@ -4,23 +4,22 @@ author: Todd Motto
 layout: post
 permalink: /bouncethis-plugin-mimics-css3-keyframes-bouncing-header-animations
 ---
-# 
 
 We all love those slick animated drop-down headers that gracefully drop into the page on-load. This is usually done via some CSS3 keyframes code, but here’s the jQuery version. Here I introduce bounceThis plugin, the cross-browser compatible, super slick and sharp bouncing headers CSS3 keyframes alternative. Who says your client using Internet Explorer can’t see their kick-ass new header?
 
-As much as I love CSS3 keyframes, I’m a big fan of creating things that work consistently for as many devices and platforms as possible, it’s also a great challenge to emulate some awesome CSS3 goodness and provide a cross-browser consistent plugin. No ‘iPhone’ or ‘Chrome’ only excuses for your clients. And breathe.
+As much as I love CSS3 keyframes, it's also cool to create things that work consistently for as many devices and platforms as possible, it’s a nice great challenge to emulate some awesome CSS3 goodness and provide a cross-browser consistent plugin. No ‘iPhone’ or ‘Chrome’ only excuses for your clients. And breathe.
 
 Not all projects require some fancy effects, but if yours does, try out the bounceThis plugin, it’s really simple to integrate, only 0.6KB in weight, and so easy to customise your bouncing headers.
 
 Tested in: Chrome, Safari, FireFox, Opera, IE7, IE8, IE9. Good to go.
 
-[Demo][1][Download][2][Fork][3] 
+<div class="download-box">
+	<a href="//www.toddmotto.com/labs/bouncethis" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo bounceThis', 'bounceThis Demo']);">Demo</a>
+	<a href="//www.toddmotto.com/labs/bouncethis/bouncethis.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download bounceThis', 'bounceThis Download']);">Download</a>
+	<a href="//github.com/toddmotto/bounceThis" onclick="_gaq.push(['_trackEvent', 'Click', 'Fork bounceThis', 'bounceThis Fork']);">Fork</a>
+</div>
 
 ### Markup and Usage
-
- [1]: //www.toddmotto.com/labs/bouncethis/
- [2]: //www.toddmotto.com/zipball.php?file=bouncethis
- [3]: //github.com/toddmotto/bounceThis
 
 Simply download the script, and call it in your DOM Ready function like so on your header element, you’ll need to ensure jQuery is thrown in there too. Now, let’s be sensible here – not all designs will be setup to make use of the plugin, so take note from the Demo on what style of header it would work best on. Right at the top, in or outside your wrapper container.
 

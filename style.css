@@ -304,6 +304,7 @@ pre {
 	.sidebar {
 		position:static;
 	}
+	.full-post,
 	.pagination,
 	.post {
 		margin:0;
@@ -324,6 +325,7 @@ pre {
 	.sidebar {
 		position:absolute;
 	}
+	.full-post,
 	.pagination,
 	.post {
 		margin:0 340px 0 0;

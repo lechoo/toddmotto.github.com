@@ -9,7 +9,7 @@ HTML5 Blank Theme is an industry leading WordPress shell, recognised by Adobe, S
 
 It’s feature list is extensive and impressive, ranging from HTML5 and CSS3 setups, to built-in WordPress functions, mobile/responsive ready, time-saving tools – all for use with WordPress beginners through to pro’s. View the full specification using the button below, or instantly download the theme and get developing.
 
-<div class="download-demo-box">
+<div class="download-box">
 	<a href="//demo.html5blank.com" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo HTML5 Blank', 'HTML5 Blank Demo']);">Demo</a>
 	<a href="//github.com/toddmotto/html5blank/archive/master.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download HTML5 Blank', 'HTML5 Blank Download']);">Download</a>
 	<a href="//github.com/toddmotto/html5blank" onclick="_gaq.push(['_trackEvent', 'Click', 'Fork HTML5 Blank', 'HTML5 Blank Fork']);">Fork</a>

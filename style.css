@@ -280,8 +280,8 @@ pre {
 		font-size:30px;
 		color:#FFF;
 		position:absolute;
-		top:45px;
-		right:0;
+		top:50px;
+		right:25px;
 		background:#444 url(img/nav.svg) no-repeat center center;
 		height:40px;
 		width:40px;
@@ -293,8 +293,8 @@ pre {
 	#nav #mobile {
 		display:block;
 		position:absolute;
-		top:45px;
-		right:0;
+		top:50px;
+		right:25px;
 		height:40px;
 		width:40px;
 		opacity:0;

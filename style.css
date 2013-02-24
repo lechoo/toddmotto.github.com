@@ -301,6 +301,10 @@ pre {
 		cursor:pointer;
 		z-index:1;
 	}
+	.sidebar {
+		position:static;
+	}
+	.pagination,
 	.post {
 		margin:0;
 	}
@@ -317,6 +321,10 @@ pre {
 	#nav .mobile {
 		display:none;
 	}
+	.sidebar {
+		position:absolute;
+	}
+	.pagination,
 	.post {
 		margin:0 340px 0 0;
 	}

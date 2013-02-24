@@ -17,11 +17,11 @@ Consider your options for SVG use, and then realise the full power of them; logo
 
 ### HTML5 and SVG
 
-There are a few ways to use SVG, as an , , ,  and last but not least, the  tag – my favourite.
+There are a few ways to use SVG, as an <object>, <embed>, <iframe>, <svg> and last but not least, the <img> tag – my favourite.
 
-HTML5 spec allows for the use of an SVG inside the  tag, which makes it super easy and fast to get started using SVG, and this is where we’ll go in this tutorial. Here’s what our source code could look like using SVG inside an  tag:
+HTML5 spec allows for the use of an SVG inside the <img> tag, which makes it super easy and fast to get started using SVG, and this is where we’ll go in this tutorial. Here’s what our source code could look like using SVG inside an <img> tag:
 
-    
+    <img src="logo.svg" alt="Logo">
 
 Pretty simple. And that’s it.
 
@@ -70,46 +70,46 @@ First targeting an  element, and using a special CSS selector (that searches for
 
 ### Final Markup
 
-    
-    
-    
-    
-    if(!Modernizr.svg) {
-        $('img[src*="svg"]').attr('src', function() {
-            return $(this).attr('src').replace('.svg', '.png');
-        });
-    }
-    
+    <script src="jquery.js"></script>
+	<script src="modernizr.js"></script>
+	
+	<script>
+	if(!Modernizr.svg) {
+	    $('img[src*="svg"]').attr('src', function() {
+	        return $(this).attr('src').replace('.svg', '.png');
+	    });
+	}
+	</script>
 
 ### Without jQuery
 
 If you’re not running jQuery, you can use this as a raw JavaScript alternative:
 
     if (!Modernizr.svg) {
-        var imgs = document.getElementsByTagName('img');
-        var endsWithDotSvg = /.*.svg$/
-        var i = 0;
-        var l = imgs.length;
-        for(; i != l;   i) {
-            if(imgs[i].src.match(endsWithDotSvg)) {
-                imgs[i].src = imgs[i].src.slice(0, -3)   "png";
-            }
-        }
-    }
+	    var imgs = document.getElementsByTagName('img');
+	    var endsWithDotSvg = /.*\.svg$/
+	    var i = 0;
+	    var l = imgs.length;
+	    for(; i != l; ++i) {
+	        if(imgs[i].src.match(endsWithDotSvg)) {
+	            imgs[i].src = imgs[i].src.slice(0, -3) + 'png';
+	        }
+	    }
+	}
 
 ### CSS: SVG as Background
 
 As far as I know, it’s impossible to detect and swap out an SVG as a background image, thankfully Modernizr has an alternative to running a script. When Modernizr loads, it adds all the browser supporting classes to the  tag. You’ll end up with something like this:
 
-    
+    <html class="js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
 
 You’ll notice in there is ‘svg’. I’m using Chrome. If the browser didn’t support SVG, it would add the class ‘no-svg’ This allows us to create a CSS declaration for each, to provide a background fallback like so:
 
-    
-    .background-class {} /* Shared properties for detected features */
-    .svg .background-class {background:url(img/graphic.svg);} /* SVG feature property */
-    .no-svg .background-class {background:url(img/graphic.png);} /* PNG feature property */
-    
+    <style>
+	.background-class {} /* Shared properties for detected features */
+	.svg .background-class {background:url(img/graphic.svg);} /* SVG feature property */
+	.no-svg .background-class {background:url(img/graphic.png);} /* PNG feature property */
+	</style>
 
 ### Displaying broken images?
 
@@ -121,33 +121,37 @@ AddEncoding gzip svgz`
 
 Here’s my SVG feature detection script, which creates an SVG from a NameSpace URI (w3.org/200/svg) and the qualifiedName. It’s entirely Modernizr and jQuery independent, so you can use it without either library. If the browser supports SVG, it adds an ‘svg’ class to the  tag. If SVG isn’t supported, you’ll get a ‘no-svg’ class complete with the fallback script to rip all the (.svg) extensions to (.png). I’ve optimised the JavaScript from the previous iteration too.
 
+    <script>
     function supportsSVG() {
-    	return !! document.createElementNS &#038;&#038; !! document.createElementNS('http://www.w3.org/2000/svg','svg').createSVGRect;	
-    }
-    if (supportsSVG()) {
-    	document.documentElement.className  = ' svg';
-    } else {
-    	document.documentElement.className  = ' no-svg';
-    	var imgs = document.getElementsByTagName('img'),
-    		dotSVG = /.*.svg$/;
-    	for (var i = 0; i != imgs.length;   i) {
-    		if(imgs[i].src.match(dotSVG)) {
-    			imgs[i].src = imgs[i].src.slice(0, -3)   "png";
-    		}
-    	}
-    }
+		return !! document.createElementNS && !! document.createElementNS('http://www.w3.org/2000/svg','svg').createSVGRect;	
+	}
+	if (supportsSVG()) {
+		document.documentElement.className += ' svg';
+	} else {
+		document.documentElement.className += ' no-svg';
+		var imgs = document.getElementsByTagName('img');
+		var dotSVG = /.*\.svg$/;
+		for (var i = 0; i != imgs.length; ++i) {
+			if(imgs[i].src.match(dotSVG)) {
+				imgs[i].src = imgs[i].src.slice(0, -3) + 'png';
+			}
+		}
+	}
+	</script>
 
 If you’re not fussed about the additional classnames, use this script, which inverts the expression (!) to run if the browser doesn’t support SVG.
 
+    <script>
     function supportsSVG() {
-    	return !! document.createElementNS &#038;&#038; !! document.createElementNS('http://www.w3.org/2000/svg','svg').createSVGRect;	
-    }
-    if (!supportsSVG()) {
-    	var imgs = document.getElementsByTagName('img'),
-    		dotSVG = /.*.svg$/;
-    	for (var i = 0; i != imgs.length;   i) {
-    		if(imgs[i].src.match(dotSVG)) {
-    			imgs[i].src = imgs[i].src.slice(0, -3)   "png";
-    		}
-    	}
-    }
+		return !! document.createElementNS && !! document.createElementNS('http://www.w3.org/2000/svg','svg').createSVGRect;	
+	}
+	if (!supportsSVG()) {
+		var imgs = document.getElementsByTagName('img');
+		var dotSVG = /.*\.svg$/;
+		for (var i = 0; i != imgs.length; ++i) {
+			if(imgs[i].src.match(dotSVG)) {
+				imgs[i].src = imgs[i].src.slice(0, -3) + 'png';
+			}
+		}
+	}
+	</script>

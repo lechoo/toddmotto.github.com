@@ -3,7 +3,7 @@ title: Downloads
 layout: page
 ---
 
-<div class="download-box download-item">
+<div class="download-item">
 	<img src="/img/downloads/fluidvids.jpg" alt="FluidVids">
 	<h2>FluidVids</h2>
 	<h4>A raw JavaScript alternative to FitVids jQuery plugin, fluid-width video embeds for responsive design, works faster, more efficient.</h4>

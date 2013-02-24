@@ -215,6 +215,13 @@ pre {
 	padding:0 0 0 275px;
 	position:relative;
 }
+.download-item a {
+	display:inline-block;
+	padding:5px 15px;
+	color:#FFF;
+	background:#444;
+	margin:5px 5px 25px 0;
+}
 .download-item img {
 	position:absolute;
 	top:0;

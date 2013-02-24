@@ -4,7 +4,6 @@ author: Todd Motto
 layout: post
 permalink: /flawless-clickable-drop-down-navigation
 ---
-# 
 
 In this tutorial I’ll show you how to create a superb clickable drop-down navigation, using jQuery and of course complete with CSS fallbacks. These types of drop-downs are great for Web Apps, websites and backends which you don’t want to implement a hover-only system.
 
@@ -12,31 +11,30 @@ It’s all about the user experience and journey around the site. Here I’ll sh
 
 Full browser support, Chrome, FireFox, Safari, Opera, IE7, IE8, IE9. The function executes perfectly in IE6 too.
 
-[Demo][1][Download][2] 
+<div class="download-box">
+	<a href="//toddmotto.com/labs/clickable-dropdown" onclick="_gaq.push(['_trackEvent', 'Click', 'Clickable Dropdown Demo', 'Clickable Dropdown Demo Button']);">Demo</a>
+	<a href="//toddmotto.com/labs/clickable-dropdown/clickable-dropdown.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Clickable Dropdown Download', 'Clickable Dropdown Download Button']);">Download</a>
+</div>
 
 We’ll be using a markup similar to the way a drop-down menu navigation works, an unordered list, with a list inside, with an unordered list containing our items inside the drop-down.
 
- [1]: http://www.toddmotto.com/labs/clickable-dropdown/
- [2]: //www.toddmotto.com/zipball.php?file=clickable-dropdown
-
 Here’s the markup:
 
-    
-    	
-    		
-    			Profile
-    			
-    				Dashboard
-    				Settings
-    				Privacy
-    				Help
-    				Sign out
-    			
-    		
-    	
-    
-    
-
+    <div class="click-nav">
+		<ul class="no-js">
+			<li>
+				<a href="#" class="clicker"><img src="img/i-1.png" alt="Icon">Profile</a>
+				<ul>
+					<li><a href="#"><img src="img/i-2.png" alt="Icon">Dashboard</a></li>
+					<li><a href="#"><img src="img/i-3.png" alt="Icon">Settings</a></li>
+					<li><a href="#"><img src="img/i-4.png" alt="Icon">Privacy</a></li>
+					<li><a href="#"><img src="img/i-5.png" alt="Icon">Help</a></li>
+					<li><a href="#"><img src="img/i-6.png" alt="Icon">Sign out</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
 Let’s go through the structure.
 
 ### HTML
@@ -53,6 +51,7 @@ The CSS is minimal here, a great foundation for customising. No messy background
 
 You’ll also see the fallbacks underneath, using a simple CSS hover to display our navigation. Accessibility is key.
 
+    <style>
     .click-nav {margin:100px auto;width:200px;}
     .click-nav ul {position:relative;font-weight:900;}
     .click-nav ul li {position:relative;list-style:none;cursor:pointer;}
@@ -67,29 +66,29 @@ You’ll also see the fallbacks underneath, using a simple CSS hover to display 
     /* Fallbacks */
     .click-nav .no-js ul {display:none;}
     .click-nav .no-js:hover ul {display:block;}
-    
+    </style>
 
 ### jQuery
 
 Here’s where we get started with our clickable script.
 
-    
-    $(function () {
-    	$('.click-nav > ul').toggleClass('no-js js');
-    	$('.click-nav .js ul').hide();
-    	$('.click-nav .js').click(function(e) {
-    		$('.click-nav .js ul').slideToggle(200);
-    		$('.clicker').toggleClass('active');
-    		e.stopPropagation();
-    	});
-    	$(document).click(function() {
-    		if ($('.click-nav .js ul').is(':visible')) {
-    			$('.click-nav .js ul', this).slideUp();
-    			$('.clicker').removeClass('active');
-    		}
-    	});
-    });
-    
+    <script>
+	$(function () {
+		$('.click-nav > ul').toggleClass('no-js js');
+		$('.click-nav .js ul').hide();
+		$('.click-nav .js').click(function(e) {
+			$('.click-nav .js ul').slideToggle(200);
+			$('.clicker').toggleClass('active');
+			e.stopPropagation();
+		});
+		$(document).click(function() {
+			if ($('.click-nav .js ul').is(':visible')) {
+				$('.click-nav .js ul', this).slideUp();
+				$('.clicker').removeClass('active');
+			}
+		});
+	});
+	</script>
 
 To begin, we target our ‘no-js’ element (the ‘ul’) inside click-nav, using a special CSS selector to only target the first child, not the other unordered list as well. We then toggle the classes no-js js, this removes the no-js class (as it’s present in the DOM already), and adds js. Now we know the user is running JavaScript. (If they’re not, no jQuery will run and CSS fallbacks kick in.)
 
@@ -101,4 +100,7 @@ There are two ways to ‘close’ the drop-down. Simply click the button again t
 
 Once the document is clicked, it’s best to run a small test. Using a JavaScript if statement, we check that if the .js ul (our drop-down) is :visible (a jQuery selector), we can then execute the function if it’s visible. We slideUp our drop-down to remove it from view, and remove the active class as it’s no longer in use.
 
-[Demo][1][Download][2]
+<div class="download-box">
+	<a href="//toddmotto.com/labs/clickable-dropdown" onclick="_gaq.push(['_trackEvent', 'Click', 'Clickable Dropdown Demo', 'Clickable Dropdown Demo Button']);">Demo</a>
+	<a href="//toddmotto.com/labs/clickable-dropdown/clickable-dropdown.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Clickable Dropdown Download', 'Clickable Dropdown Download Button']);">Download</a>
+</div>

@@ -208,6 +208,9 @@ iframe[src*="twitter"] {
 	width:320px !important;
 	background-color:#444 !important;
 }
+#fb-root {
+	display:none;
+}
 pre {
 	background:#444;
 	color:#FFF;

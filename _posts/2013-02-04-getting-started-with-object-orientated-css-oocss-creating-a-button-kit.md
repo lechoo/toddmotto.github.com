@@ -15,7 +15,7 @@ By writing this post, I do not promote the use of OOCSS for every project, or co
 ### Why OOCSS has it’s place now
 
  [1]: //toddmotto.com/labs/oocss-buttons
- [2]: //toddmotto.com/zipball.php?file=oocss-buttons
+ [2]: //toddmotto.com/labs/oocss-buttons/oocss-buttons.zip
 
 Prior to CSS3 gradients, box-shadows, border-radius and other fancy features, we used to make buttons from a simple image. Now, however, the tables have turned quite drastically, and a simple button’s markup has turned into a vendor prefix battle for clean code and white space. CSS looks messy with vendor prefixes, and I think OOCSS is the key to minimising it’s load, by splitting and sharing properties.
 

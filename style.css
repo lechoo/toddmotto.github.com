@@ -301,9 +301,8 @@ pre {
 		cursor:pointer;
 		z-index:1;
 	}
-	.pagination,
 	.post {
-		margin:0;
+		margin:0 340px 0 0;
 	}
 	.sidebar {
 		position:static;
@@ -318,9 +317,8 @@ pre {
 	#nav .mobile {
 		display:none;
 	}
-	.pagination,
 	.post {
-		margin:0 340px 0 0;
+		margin:0;
 	}
 	.sidebar {
 		position:absolute;

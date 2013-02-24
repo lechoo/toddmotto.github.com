@@ -223,9 +223,12 @@ pre {
 	margin:5px 5px 25px 0;
 }
 .download-details {
+	padding:0 0 0 20px;
+	width:70%;
 	float:left;
 }
 .download-item img {
+	width:30%;
 	float:left;
 }
 .download-box a {

@@ -22,29 +22,41 @@ I rarely use the dynamic Menu system provided by WordPress, it feels too clunky,
 
 Here’s what a basic HTML navigation would look like.
 
-    
-    	
-    		Home
-    		About
-    		Portfolio
-    		Testimonials
-    		Contact
-    	
-    
-    
+    <nav>
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Portfolio</a></li>
+			<li><a href="#">Testimonials</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+	</nav>
 
 ### PHP Conditionals
 
 Here’s where we inject some conditionals to add the ‘current’ class to our current page. PHP is quite easy to read in this sense:
 
-    
+    <?php if (is_front_page()) { echo " class=\"current\""; }?>
 
 This says, if we are on the front/home page, echo (output) the class of ‘current’, and if we aren’t on that page, it ignores it entirely.
 
 Here’s how we’d add it to our navigation, with all other pages in consideration.
 
-    
-    	
-    		>About
-    		>Testimonials
-    		
+    <nav>
+		<ul>
+			<li<?php if (is_front_page()) { echo " class=\"current\""; }?>><a href="#">Home</a></li>
+			<li<?php if (is_page('About')) { echo " class=\"current\""; }?>><a href="#">About</a></li>
+			<li<?php if (is_page('Portfolio')) { echo " class=\"current\""; }?>><a href="#">Portfolio</a></li>
+			<li<?php if (is_page('Testimonials')) { echo " class=\"current\""; }?>><a href="#">Testimonials</a></li>
+			<li<?php if (is_page('Contact')) { echo " class=\"current\""; }?>><a href="#">Contact</a></li>
+		</ul>
+	</nav>
+	
+You can see the ‘is_page’ is a little different from the homepage function, but it allows you to specify the page name. You can also use the page URL to specify inside the ‘is_page()’ function. Now we need to add the CSS class for ‘current’.
+
+### CSS
+
+Here’s a really basic way of how we can style the current class, let’s assume all other menu items don’t have a black background, we’ll use black to make sure they stand right out (#000):
+
+    nav ul li a {background:#F60;} // Bright orange
+    nav ul li.current a {background:#000;} // Black for current

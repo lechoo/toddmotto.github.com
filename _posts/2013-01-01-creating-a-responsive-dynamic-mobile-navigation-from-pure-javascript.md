@@ -16,52 +16,52 @@ So here’s how to create a JavaScript navigation that doesn’t rely on jQuery 
 Tip: The demo has no CSS styling on the navigation to show it’s structure.
 
 <div class="download-box">
-	<a href="//toddmotto.com/labs/selectnav" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo selectnav, 'selectnav Demo']);">Demo</a>
-	<a href="//toddmotto.com/labs/selectnav/selectnav.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download selectnav, 'selectnav Download']);">Download</a>
-	<a href="//github.com/toddmotto/selectnav" onclick="_gaq.push(['_trackEvent', 'Click', 'Fork selectnav, 'selectnav Fork']);">Fork</a>
+	<a href="//www.toddmotto.com/labs/selectnav/" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo Select Nav', 'Select Nav Demo']);">Demo</a>
+	<a href="//www.toddmotto.com/labs/selectnav/selectnav.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download Select Nav', 'Select Nav Download']);">Download</a>
+	<a href="//github.com/toddmotto/selectnav" onclick="_gaq.push(['_trackEvent', 'Click', 'Fork Select Nav', 'Select Nav Fork']);">Fork</a>
 </div>
 
 ### Navigation Markup
 
 Let’s look at the current, demo, navigation structure, which you’ll see has three levels of hierarchy, Top Level, Sub Item, Sub-sub Item. I’ve merely named them as these for the demo. The task for our script is to then take these levels of hierarchy, and dynamically append each item to a new  inside a  element.
 
-    
-    	
-    		
-    			Top Level Item 1
-    			
-    				Sub Item 1
-    				Sub Item 2
-    				Sub Item 3
-    				Sub Item 4
-    				Sub Item 5
-    			
-    		
-    		
-    			Top Level Item 2
-    		
-    		
-    			Top Level Item 3
-    		
-    		
-    			Top Level Item 4
-    			
-    				Sub Item 1
-    				Sub Item 2
-    				Sub Item 3
-    				Sub Item 4
-    				
-    					Sub Item 5
-    					
-    						Sub-sub Item 1
-    						Sub-sub Item 2
-    						Sub-sub Item 3
-    					
-    				
-    			
-    		
-    	
-    
+    <nav id="nav">
+		<ul>
+			<li>
+				<a href="?=item-1">Top Level Item 1</a>
+				<ul>
+					<li><a href="?=sub-1">Sub Item 1</a></li>
+					<li><a href="?=sub-2">Sub Item 2</a></li>
+					<li><a href="?=sub-3">Sub Item 3</a></li>
+					<li><a href="?=sub-4">Sub Item 4</a></li>
+					<li><a href="?=sub-5">Sub Item 5</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="?=item-2">Top Level Item 2</a>
+			</li>
+			<li>
+				<a href="?=item-3">Top Level Item 3</a>
+			</li>
+			<li>
+				<a href="?=item-4">Top Level Item 4</a>
+				<ul>
+					<li><a href="?=sub-1">Sub Item 1</a></li>
+					<li><a href="?=sub-2">Sub Item 2</a></li>
+					<li><a href="?=sub-3">Sub Item 3</a></li>
+					<li><a href="?=sub-4">Sub Item 4</a></li>
+					<li>
+						<a href="?=sub-5">Sub Item 5</a>
+						<ul>
+							<li><a href="?=sub-sub-1">Sub-sub Item 1</a></li>
+							<li><a href="?=sub-sub-2">Sub-sub Item 2</a></li>
+							<li><a href="?=sub-sub-3">Sub-sub Item 3</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
 
 You’ll see the HTML5 element  is being used here, but to make it easier and not markup reliant, we’ll use an ID attribute for our project. I’ve given this element the ID of ‘nav’, for hooking into the JavaScript later on. We’ll then create a script to append the finalised  element inside it, so it sits alongside our markup.
 
@@ -78,7 +78,7 @@ We then need to give our new element an ID of ‘mobile’, so we know it’s th
 
 This would dynamically give us this markup:
 
-    
+    <select id="mobile">
 
 ### ‘Navigation’ first option
 
@@ -247,18 +247,18 @@ This adds our newly created  menu inside our  element. This keeps them inside th
 
 Include the script inside your  tag, and call the function just before the closing  tag. For performance purposes you could include the script at the bottom of the page, and you wouldn't need to call the function. We merely call the function because it needs to be executed after the DOM elements have loaded.
 
-    
-    
-    
-    	
-    
-    
-    
-    	
-    		selectnav();
-    	
-    
-    
+    <!DOCTYPE html>
+	<html>
+		<head>
+			<script src="js/selectnav.js"></script>
+		</head>
+		
+		<body>
+			<script>
+				selectnav();
+			</script>
+		</body>
+	</html>
 
 If you are using a DOM ready function handler, then you can of course remove the script entirely from it's function wrap, and add it inside your DOM ready function:
 
@@ -322,7 +322,7 @@ If you are using a DOM ready function handler, then you can of course remove the
 I've tested this in IE6, IE7, IE8, IE9, Chrome, iOS Safari & Chrome, Safari, FireFox, Opera. If you do run into any browser compatibility issues, drop a comment or pull/issue request on GitHub.
 
 <div class="download-box">
-	<a href="//toddmotto.com/labs/selectnav" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo selectnav, 'selectnav Demo']);">Demo</a>
-	<a href="//toddmotto.com/labs/selectnav/selectnav.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download selectnav, 'selectnav Download']);">Download</a>
-	<a href="//github.com/toddmotto/selectnav" onclick="_gaq.push(['_trackEvent', 'Click', 'Fork selectnav, 'selectnav Fork']);">Fork</a>
+	<a href="//www.toddmotto.com/labs/selectnav/" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo Select Nav', 'Select Nav Demo']);">Demo</a>
+	<a href="//www.toddmotto.com/labs/selectnav/selectnav.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download Select Nav', 'Select Nav Download']);">Download</a>
+	<a href="//github.com/toddmotto/selectnav" onclick="_gaq.push(['_trackEvent', 'Click', 'Fork Select Nav', 'Select Nav Fork']);">Fork</a>
 </div>

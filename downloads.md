@@ -118,9 +118,9 @@ layout: page
 	<div class="download-details">
 		<h2>Responsive Development Tool</h2>
 		<h4>Super slick and sharp bouncing headers, mimics CSS3 keyframes, a cross-browser jQuery plugin.</h4>
-		<a href="//toddmotto.com/labs/bouncethis/" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo bounceThis', 'bounceThis Demo']);" target="_blank">Demo</a>
-		<a href="//toddmotto.com/labs/bouncethis/bouncethis.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download bounceThis', 'bounceThis Download']);">Download</a>
-		<a href="//toddmotto.com/bouncethis-plugin-mimics-css3-keyframes-bouncing-header-animations">[article]</a>
+		<a href="//toddmotto.com/labs/viewport-retina/" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo ViewPort Resizer', 'ViewPort Resizer Demo']);" target="_blank">Demo</a>
+		<a href="//toddmotto.com/labs/viewport-retina/viewport-retina.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download ViewPort Resizer', 'ViewPort Resizer Download']);">Download</a>
+		<a href="//toddmotto.com/viewport-dynamic-width-calculation-retina-and-pixel-ratio-javascript-widget">[article]</a>
 	</div>
 </div>
 <div class="download-item">

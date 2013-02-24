@@ -3,21 +3,21 @@ title: jResize Plugin, for one window responsive development
 author: Todd Motto
 layout: post
 permalink: /jresize-plugin-for-one-window-responsive-development
----
-# 
+--- 
 
 jResize is a responsive web development tool, built in jQuery to assist the workflow of developers on responsive projects. There are various tools for responsive development, iframes at different widths embedded in the page, and the tedious resizing of the browser. So here’s a different approach which grabs all your HTML, and resizes it inside the browser when you click the width you want. It’s dead simple.
 
 #### Updated! Use jResize in the browser too, without installation: [Browser Development][1]
 
-[Demo][2][Download][3][Fork][4] 
+<div class="download-box">
+	<a href="//www.toddmotto.com/labs/jresize" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo jResize', 'jResize Demo']);">Demo</a>
+	<a href="//www.github.com/toddmotto/jResize/archive/master.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download jResize', 'jResize Download']);">Download</a>
+	<a href="//github.com/toddmotto/jResize" onclick="_gaq.push(['_trackEvent', 'Click', 'Fork jResize', 'jResize Fork']);">Fork</a>
+</div>
 
 Let’s talk you through the plugin.
 
  [1]: http://www.toddmotto.com/labs/responsive/
- [2]: //www.toddmotto.com/labs/jresize/
- [3]: //www.toddmotto.com/zipball.php?file=jresize
- [4]: //github.com/toddmotto/jResize
 
 ### jQuery Options
 
@@ -38,7 +38,7 @@ Here we define some variables for background color, font color and an array for 
 
 ‘var resizer’ is our first variable, which as you can see we create an HTML structure from, with some inline styles, so we need nothing more than just pure jQuery and no stylesheets. In here, we create a div which contains an empty unordered list.
 
-    var resizer = ""   "";
+    var resizer = "<div class="viewports" style="position:fixed;top:0;left:0;right:0;overflow:auto;z-index:9999;background:#" + options.backgroundColor + ";color:#" + options.fontColor + ";box-shadow:0 0 3px #222;"><ul class="viewlist">" + "</ul><div style="clear:both;"></div></div>";
     
 
 These are our viewport widths (hence the name), which get pulled in from the Plugin’s options. Any width sizes you specify will end up here.
@@ -57,7 +57,7 @@ To be able to resize the webpage inside the browser, we need to wrap all your HT
 
 Using jQuery’s ‘wrapInner’ and targeting the body tag, this allows us to wrap absolutely everything inside our div tag with an ID of ‘resizer’. Now we’ve got hold of all the HTML inside our newly created tag, this sets us up perfectly.
 
-    $('body').wrapInner('');
+    $('body').wrapInner('<div id="resizer" />');
     
 
 ### Prepending the Plugin
@@ -96,8 +96,7 @@ We declare a height variable, which gets the outerHeight value from our viewlist
 
 Also included is a reset button, which drops all widths you’ve manipulated with jResize. We prepend a separate list element for this as it’s not part of our array. This also has a custom class of ‘reset’.
 
-    $('.viewlist').prepend('Reset');
-    
+    $('.viewlist').prepend('<li class="reset" style="' + viewPortList + '">Reset</li>');
 
 Using the custom class of ‘reset’, we can then ensure that when the user clicks, it drops all pixel width styling to our resizer. We can’t really remove our width specifically from an inline style, so here we’ll just declare the content to flow to ‘auto’ which drops all styling – allowing or content to go back to normal without refreshing the page.
 
@@ -112,20 +111,23 @@ Using the custom class of ‘reset’, we can then ensure that when the user cli
 
 Simply include jresize.js in your page (in the download) and call it like so:
 
-    
-    
-    $(function() {
-    	$.jResize({
-    		viewPortSizes   : ['320px', '480px', '540px', '600px', '768px', '960px', '1024px', '1280px'], // ViewPort Widths
-    		backgroundColor : '444', // HEX Code
-    		fontColor       : 'FFF' // HEX Code
-    	});
-    });
-    
-    
+    <script src="js/jresize.js"></script>
+	<script>
+	$(function() {
+		$.jResize({
+			viewPortSizes   : ['320px', '480px', '540px', '600px', '768px', '960px', '1024px', '1280px'], // ViewPort Widths
+			backgroundColor : '444', // HEX Code
+			fontColor       : 'FFF' // HEX Code
+		});
+	});
+	</script>
 
 ### Scrollbars
 
 Nothing major, just thinking in terms of scrollbars. Mac OS X (which I use) tends not to have scrollbars that are visible or take up content space, so if you’re using a browser such as FireFox, or a Windows machine where scrollbars are standard, you might wish to widen each width accordingly (probably best to inspect element and get an exact width of the pixels, but usually around 15-20px extra to cater for scrolling).
 
-[Demo][2][Download][3][Fork][4]
+<div class="download-box">
+	<a href="//www.toddmotto.com/labs/jresize" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo jResize', 'jResize Demo']);">Demo</a>
+	<a href="//www.github.com/toddmotto/jResize/archive/master.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download jResize', 'jResize Download']);">Download</a>
+	<a href="//github.com/toddmotto/jResize" onclick="_gaq.push(['_trackEvent', 'Click', 'Fork jResize', 'jResize Fork']);">Fork</a>
+</div>

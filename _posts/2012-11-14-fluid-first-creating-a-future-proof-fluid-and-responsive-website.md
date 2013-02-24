@@ -105,7 +105,7 @@ You can see how powerful a tiny media query tweak could be to a percentage, and 
 
 ### Finishing touches
 
-For browsers that don’t support media queries, it’s well worth implementing [css3-mediaqueries.js][3], a JavaScript polyfill by Wouter van der Graaf, to make IE5 become responsive. Here’s how to include it in your site: 
+For browsers that don’t support media queries, it’s well worth implementing [css3-mediaqueries.js][3], a JavaScript polyfill by Wouter van der Graaf, to make IE5/6/7/8 become responsive. Here’s how to include it in your site: 
 [3]: //code.google.com/p/css3-mediaqueries-js/
     <!--[if lte IE 8]><script src="js/mediaqueries.min.js"></script><![endif]-->
 

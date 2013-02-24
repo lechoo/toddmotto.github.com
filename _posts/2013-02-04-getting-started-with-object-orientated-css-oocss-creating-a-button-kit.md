@@ -4,18 +4,17 @@ author: Todd Motto
 layout: post
 permalink: /getting-started-with-object-orientated-css-oocss-creating-a-button-kit
 ---
-# 
 
 Object-Orientated CSS, or OOCSS to the masses, is a method of structuring your CSS and HTML classes in a specific way. The purpose of OOCSS is to make code more easily usable, and more importantly – reusable. It can help trim down your stylesheets and you start to think about the object you’re creating and not just the  elements inside. This theory (done right) makes your stylesheet more efficient.
 
 By writing this post, I do not promote the use of OOCSS for every project, or completely side with it’s lack of HTML class semantics, though one thing’s for sure, it’s awesome.
 
-[Demo][1][Download][2]
+<div class="download-box">
+	<a href="//toddmotto.com/labs/oocss-buttons" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo OOCSS Buttons, 'OOCSS Buttons Demo']);">Demo</a>
+	<a href="//toddmotto.com/labs/oocss-buttons/oocss-buttons.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download OOCSS Buttons, 'OOCSS Buttons Download']);">Download</a>
+</div>
 
 ### Why OOCSS has it’s place now
-
- [1]: //toddmotto.com/labs/oocss-buttons
- [2]: //toddmotto.com/labs/oocss-buttons/oocss-buttons.zip
 
 Prior to CSS3 gradients, box-shadows, border-radius and other fancy features, we used to make buttons from a simple image. Now, however, the tables have turned quite drastically, and a simple button’s markup has turned into a vendor prefix battle for clean code and white space. CSS looks messy with vendor prefixes, and I think OOCSS is the key to minimising it’s load, by splitting and sharing properties.
 
@@ -244,7 +243,10 @@ You’ll notice in the demo that the only :hover pseudo class I’ve used is on 
     }
     </style>
 
-[Demo][1][Download][2]
+<div class="download-box">
+	<a href="//toddmotto.com/labs/oocss-buttons" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo OOCSS Buttons, 'OOCSS Buttons Demo']);">Demo</a>
+	<a href="//toddmotto.com/labs/oocss-buttons/oocss-buttons.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download OOCSS Buttons, 'OOCSS Buttons Download']);">Download</a>
+</div>
 
 ### Workflow
 

@@ -8,45 +8,42 @@ permalink: /html5-and-jquery-super-simple-drop-down-nav
 
 How hard is it to find a decent and lightweight navigation that actually works and is easy to implement? The web presents us thousands of options, but often the most simple are the best. It can take time to create your own, especially under deadlines, or alternatively you could chance a plugin.
 
-Here’s a bare-bones, efficient way to create a super simple HTML5 navigation with jQuery drop down. The navigation supports fallbacks as well for users with JavaScript disabled, which is something that a lot of people disregard/forget about when building a navigation. Be [progressive][1], build a solution for all systems and add advanced functionality for those that enable/support it, don’t drop functionality for legacy browsers.
+Here’s a bare-bones, efficient way to create a super simple HTML5 navigation with jQuery drop down. The navigation supports fallbacks as well for users with JavaScript disabled, which is something that a lot of people disregard/forget about when building a navigation. Be progressive, build a solution for all systems and add advanced functionality for those that enable/support it, don’t drop functionality for legacy browsers.
 
- [1]: /progressive-enhancement-feature-detection-with-modernizr
-
-[Demo][2][Download][3] 
+<div class="download-box">
+	<a href="//toddmotto.com/labs/html5-jquery-nav" onclick="_gaq.push(['_trackEvent', 'Click', 'HTML5 jQuery Nav Demo', 'HTML5 jQuery Nav Demo Button']);">Demo</a>
+	<a href="//toddmotto.com/labs/html5-jquery-nav/html5-jquery-nav.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'HTML5 jQuery Nav Download', 'HTML5 jQuery Nav Download Button']);">Download</a>
+</div>
 
 ### HTML
 
- [2]: //www.toddmotto.com/labs/html5-jquery-nav/
- [3]: //www.toddmotto.com/zipball.php?file=html5-jquery-nav
-
 The markup follows a really simple HTML5 setup using the  tag, and unordered lists for the menu items and nested menu items.
 
-    
-    	
-    		Link 1
-    		
-    			Link 2
-    			
-    				Sub-Link 1
-    				Sub-Link 2
-    				Sub-Link 3
-    			
-    		
-    		
-    			Link 3
-    			
-    				Sub-Link 1
-    				Sub-Link 2
-    				Sub-Link 3
-    				Sub-Link 4
-    			
-    		
-    		Link 4
-    		Link 5
-    		Link 6
-    	
-    
-    
+    <nav>
+		<ul>
+			<li><a href="#">Link 1</a></li>
+			<li>
+				<a href="#">Link 2</a>
+				<ul class="fallback">
+					<li><a href="#">Sub-Link 1</a></li>
+					<li><a href="#">Sub-Link 2</a></li>
+					<li><a href="#">Sub-Link 3</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Link 3</a>
+				<ul class="fallback">
+					<li><a href="#">Sub-Link 1</a></li>
+					<li><a href="#">Sub-Link 2</a></li>
+					<li><a href="#">Sub-Link 3</a></li>
+					<li><a href="#">Sub-Link 4</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Link 4</a></li>
+			<li><a href="#">Link 5</a></li>
+			<li><a href="#">Link 6</a></li>
+		</ul>
+	</nav>
 
 ### CSS
 
@@ -99,6 +96,7 @@ To simply change the speed of the dropdown, edit the number at the end of the �
 
 Works perfectly as far as I’ve tested. I’ve even tested IE7, IE8, IE9. IE6 support isn’t included, but the navigation surprisingly works.
 
-[Demo][4][Download][3]
-
- [4]: http://www.toddmotto.com/labs/html5-jquery-nav/
+<div class="download-box">
+	<a href="//toddmotto.com/labs/html5-jquery-nav" onclick="_gaq.push(['_trackEvent', 'Click', 'HTML5 jQuery Nav Demo', 'HTML5 jQuery Nav Demo Button']);">Demo</a>
+	<a href="//toddmotto.com/labs/html5-jquery-nav/html5-jquery-nav.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'HTML5 jQuery Nav Download', 'HTML5 jQuery Nav Download Button']);">Download</a>
+</div>

@@ -1,0 +1,17 @@
+/* HTML5 and jQuery Super Simple Nav by Todd Motto @toddmotto - toddmotto.com */
+
+/* =============================================================================
+   Navigation Core Styles
+   ========================================================================== */
+   
+nav {background:#FFF;float:left;}
+nav ul {text-align:center;}
+nav ul li {float:left;display:inline;}
+nav ul li:hover {background:#E6E6E6;}
+nav ul li a {display:block;padding:15px 25px;color:#444;}
+nav ul li ul {position:absolute;width:110px;background:#FFF;}
+nav ul li ul li {margin:0;padding:0;width:110px;}
+nav ul li ul li a {display:block;padding:15px 10px;color:#444;}
+nav ul li ul li:hover a {background:#F7F7F7;}
+nav ul li ul.fallback {display:none;}
+nav ul li:hover ul.fallback {display:block;}

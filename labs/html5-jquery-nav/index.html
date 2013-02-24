@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>HTML5 and jQuery Super Simple Nav by @toddmotto | toddmotto.com</title>
+	<meta name="author" content="@toddmotto">
+	<link rel="stylesheet" href="css/demo.css">
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script>
+	$(function () {
+		$('nav li ul').hide().removeClass('fallback');
+		$('nav li').hover(function () {
+			$('ul', this).stop().slideToggle(200);
+		});
+	});
+	</script>
+</head>
+
+<body>
+	<div id="header">
+		<div id="logo">
+			<a href="http://www.toddmotto.com">
+				<img src="img/logo.png" alt="Logo">
+			</a>
+		</div>
+		<div id="view-tut">
+			<ul>
+				<li><a href="http://www.toddmotto.com/html5-and-jquery-super-simple-drop-down-nav">Visit the Tutorial</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div class="wrapper">
+		<div id="main">
+			<nav>
+				<ul>
+					<li>
+						<a href="#">Link 1</a>
+						<ul class="fallback">
+							<li><a href="#">Sub-Link 1</a></li>
+							<li><a href="#">Sub-Link 2</a></li>
+							<li><a href="#">Sub-Link 3</a></li>
+							<li><a href="#">Sub-Link 4</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Link 2</a>
+						<ul class="fallback">
+							<li><a href="#">Sub-Link 1</a></li>
+							<li><a href="#">Sub-Link 2</a></li>
+							<li><a href="#">Sub-Link 3</a></li>
+							<li><a href="#">Sub-Link 4</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Link 3</a>
+						<ul class="fallback">
+							<li><a href="#">Sub-Link 1</a></li>
+							<li><a href="#">Sub-Link 2</a></li>
+							<li><a href="#">Sub-Link 3</a></li>
+							<li><a href="#">Sub-Link 4</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Link 4</a>
+						<ul class="fallback">
+							<li><a href="#">Sub-Link 1</a></li>
+							<li><a href="#">Sub-Link 2</a></li>
+							<li><a href="#">Sub-Link 3</a></li>
+							<li><a href="#">Sub-Link 4</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Link 5</a>
+						<ul class="fallback">
+							<li><a href="#">Sub-Link 1</a></li>
+							<li><a href="#">Sub-Link 2</a></li>
+							<li><a href="#">Sub-Link 3</a></li>
+							<li><a href="#">Sub-Link 4</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Link 6</a>
+						<ul class="fallback">
+							<li><a href="#">Sub-Link 1</a></li>
+							<li><a href="#">Sub-Link 2</a></li>
+							<li><a href="#">Sub-Link 3</a></li>
+							<li><a href="#">Sub-Link 4</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	
+	<!-- Styles (Demo only) -->
+	<style>
+		* {margin:0;padding:0;}
+		a img {border:none;}
+		a {text-decoration:none;}
+		body {font:400 12px/1.625 "Helvetica Neue", Helvetica, Arial, sans-serif;-webkit-font-smoothing:antialiased;-moz-font-smoothing:antialiased;
+		-o-font-smoothing:antialiased;font-smoothing:antialiased;text-rendering:optimizeLegibility;color:#444;background:#F0F0ED;}
+		.wrapper {max-width:1000px;width:95%;margin:0 auto;position:relative;}
+		#header {overflow:auto;background:#33363C;border-top:5px solid #2F3135;border-bottom:2px solid #04A4CC;}
+		#logo {float:left;margin:10px 50px 5px;}
+		#logo img {width:80px;height:36px;}
+		#view-tut {float:right;font-size:13px;font-weight:900;margin:10px 50px 5px;}
+		#view-tut ul {margin:0;}
+		#view-tut ul li {display:inline-block;*display:inline;zoom:1;margin:0 5px 0 0;}
+		#view-tut ul li a {display:block;padding:5px 10px;background:#04A4CC;color:#FFF;border-radius:20px;}
+		#view-tut ul li a:hover {background:#0097CD;}
+		#main p {padding:0;margin:10px 0 0;}
+		#footer {clear:both;}
+		
+		/* Demo navigation positioning */
+		nav {position:absolute;top:100px;}
+	</style>
+	
+	<!-- Analytics (Demo only) -->
+	<script>
+		var _gaq=[['_setAccount','UA-20440416-10'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+	</script>
+	
+	<!-- Carbon Ads Script (Demo only) -->
+	<script src="http://www.toddmotto.com/ads/ads.js"></script>
+	
+</body>
+</html>

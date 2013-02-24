@@ -63,23 +63,15 @@ So what’s next? We’ve created a wrapper so it obeys our percentages, but to 
 
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-This ensures that our website scales as it’s meant to, and fit exactly to the screensize, if the code lets us. Initial scale and maximum scale are set the same here (1.0) which locks them the same scale, our 95% of the screen. The ‘user-scalable’ means (you guessed it) is whether we allow the user to scale the content after this by pinching/zooming on the content. I usually set this to 0 (meaning no) so that our design is locked to the scale we decide. You can change it to ‘user-scalable=1′ to allow for user touch scaling.
+This ensures that our website scales as it’s meant to, and fit exactly to the screensize, if the code lets us. Initial scale and maximum scale are set the same here (1.0) which locks them the same scale, our 95% of the screen. The ‘user-scalable’ means (you guessed it) is whether we allow the user to scale the content after this by pinching/zooming on the content.
 
-### Well, show us a Demo
-
-To show you how fluid-first works, we primarily rely on the elasticity of our percentages to give us brilliant effect. Scale your browser window whilst viewing the Demo below, and you’ll notice there’s a nice gap either side of the 50% columns so our content doesn’t touch the sides. Copy the source code for your project if you feel it’s any use.
-
-<div class="download-box">
-	<a href="//demo.toddmotto.com/fluid-first/" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo FluidFirst', 'FluidFirst Demo']);" target="_blank">Demo</a>
-</div>
-
-Here’s our Demo markup, you’ll see how little we change the code using media queries. Of course this is only a very simple level, but imagine changing your column percentages once per media query, to fully optimise for fixed-width and beyond.
+Here’s an example markup, you’ll see how little we change the code using media queries. Of course this is only a very simple level, but imagine changing your column percentages once per media query, to fully optimise for fixed-width and beyond.
 
     <!DOCTYPE html>
 	<html>
 		<head>
 			<meta charset="UTF-8">
-			<title>Fluid-first Demo</title>
+			<title>Fluid-first</title>
 			<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0;">
 			<style>
 			.wrapper {max-width:1280px;width:95%;margin:0 auto;}
@@ -92,10 +84,10 @@ Here’s our Demo markup, you’ll see how little we change the code using media
 		<body>
 			<div class="wrapper">
 				<div class="column">
-					<p>Fluid-first Demo</p>
+					<p>Fluid-first</p>
 				</div>
 				<div class="column">
-					<p>Fluid-first Demo</p>
+					<p>Fluid-first</p>
 				</div>
 			</div>
 		</body>
@@ -109,13 +101,12 @@ Remember: having fluid code isn’t a fluid-first approach, it’s a lot to do w
 
 Start with your percentages, build your core site structure, and then make the slight tweaks with media queries to finalise. Change those column widths to 100% so they stack nicely, build as you wish. It requires very little media query manipulation and kicks ass on all devices. Initially, this is the first step into creating your fluid-first website, the rest is up to you.
 
-Most importantly, take advice from the Demo, you can see how powerful a tiny media query tweak could be to a percentage, and I feel the less we use media queries and the more we can rely on percentages – the easier our development lives will be. Percentages aren’t limited to pixels, so let your designs expand.
+You can see how powerful a tiny media query tweak could be to a percentage, and I feel the less we use media queries and the more we can rely on percentages – the easier our development lives will be. Percentages aren’t limited to pixels, so let your designs expand.
 
 ### Finishing touches
 
 For browsers that don’t support media queries, it’s well worth implementing [css3-mediaqueries.js][3], a JavaScript polyfill by Wouter van der Graaf, to make IE5 become responsive. Here’s how to include it in your site: 
-    
-    [3]: //code.google.com/p/css3-mediaqueries-js/
+[3]: //code.google.com/p/css3-mediaqueries-js/
     <!--[if lte IE 8]><script src="js/mediaqueries.min.js"></script><![endif]-->
 
 Note: If you are using ‘min-device-width’ instead of ‘min-width’, or ‘max-device-width’ instead of ‘max-width’ you’ll need to use ‘if lte IE 10′ instead of IE 8, as IE9/10 do not support min/max-device-width.

@@ -211,14 +211,14 @@ pre {
 	-moz-border-radius:5px;
 	overflow-x:scroll;
 }
-.download a {
+.download-box a {
 	display:inline-block;
 	padding:10px 25px;
 	color:#FFF;
 	background:#444;
 	margin:5px 15px 25px 0;
 }
-.download a:hover {
+.download-box a:hover {
 	color:#2BA6CB;
     background:#333;
 }

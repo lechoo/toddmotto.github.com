@@ -214,7 +214,7 @@ pre {
 .download-item {
 	padding:0 0 0 275px;
 	margin:0 0 25px;
-	position:relative;
+	overflow:hidden;
 }
 .download-item a {
 	display:inline-block;
@@ -223,10 +223,11 @@ pre {
 	background:#444;
 	margin:5px 5px 25px 0;
 }
+.download-details {
+	float:left;
+}
 .download-item img {
-	position:absolute;
-	top:0;
-	left:0;
+	float:left;
 }
 .download-box a {
 	display:inline-block;

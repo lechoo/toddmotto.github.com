@@ -306,7 +306,13 @@ pre {
 
 }
 @media only screen and (min-width: 768px) {
-
+	#nav ul {
+		display:block;
+	}
+	#nav #mobile,
+	nav .mobile {
+		display:none;
+	}
 }
 @media only screen and (min-width: 1024px) {
 

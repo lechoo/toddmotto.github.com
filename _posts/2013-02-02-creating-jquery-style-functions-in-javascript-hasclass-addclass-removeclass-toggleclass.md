@@ -57,27 +57,33 @@ We’ll start with hasClass, typically in jQuery this looks like so:
 
 With it’s usage potentially something like this:
 
+	{% highlight javascript %}
     if ($('html').hasClass('ie6')) {
           // Do something crazy
     } else {
           // Phew
     }
+    {% endhighlight %}
 
 So we want to create our own hasClass now. We don’t want to know it ‘just works’. Here’s my stab at creating a nice hasClass function, that is reusable throughout any raw JavaScript project:
 
+	{% highlight javascript %}
     function hasClass(elem, className) {
     	return new RegExp(' '   className   ' ').test(' '   elem.className   ' ');
     }
+    {% endhighlight %}
 
 This uses a simple RegEx test, to ‘scan’ for our class name. Don’t know what RegEx is? It stands for RegularExpression, look it up – task 1!
 
 Put into some practical use, we can then put it into practice, without duplicating the RegEx return each time:
 
+	{% highlight javascript %}
     if (hasClass(document.documentElement, 'ie6')) {
     	// Do something crazy
     } else {
     	// Phew
     }
+    {% endhighlight %}
 
 You can see how it’s super simple. Things might look a little backwards here, specifying the element inside the function as opposed to hooking off the selector, but don’t worry – it’s totally cool. document.documentElement refers to the root element of the document, i.e. the  tag. Voila, we did it, it wasn’t *so* hard. You can then reuse this function throughout your code wherever you like to test if something has a class. This also comes in handy now in our addClass function, as we’ll be using it again!
 
@@ -85,29 +91,37 @@ You can see how it’s super simple. Things might look a little backwards here, 
 
 Probably one of the most popular things to do with jQuery, and it’s so underrated as to how easy it really is with raw JavaScript. In jQuery, we’re used to this:
 
+	{% highlight javascript %}
     $(element).addClass(className);
+    {% endhighlight %}
 
 Potential usage again:
 
+	{% highlight javascript %}
     $('.button').click(function() {
     	$(this).addClass('ie6rules');
     });
+    {% endhighlight %}
 
 Again, here’s my stab at creating a nice addClass function, which passes the className directly onto the element’s className attribute:
 
+	{% highlight javascript %}
     function addClass(elem, className) {
     	if (!hasClass(elem, className)) {
     		elem.className  = ' '   className;
     	}
     }
+    {% endhighlight %}
 
 You’ll notice we use our hasClass function again! It checks to see if the element has the class, but it reverts the expression meaning it will run if the element doesn’t have a class. The ‘ ‘ is in-fact adding a space before the class so it doesn’t join another class.
 
 Using a bang (!) you can invert it’s meaning, so technically this means ‘if the element *doesn’t* have the class’. You could then use it like so on a JavaScript click handler:
 
+	{% highlight javascript %}
     document.getElementById('myButton').onclick = function() {
     	addClass(document.documentElement, 'some-class');
     }
+    {% endhighlight %}
 
 Again I used the document.documentElement, as you know this one now.
 
@@ -115,16 +129,21 @@ Again I used the document.documentElement, as you know this one now.
 
 Another useful jQuery gizmo, usually seen doing this:
 
+	{% highlight javascript %}
     $(element).removeClass(className);
+    {% endhighlight %}
 
 With some potential use like this:
 
+	{% highlight javascript %}
     if ($('html').hasClass('ie7')) {
     	$('body').removeClass('sanity');
     }
+    {% endhighlight %}
 
 Now we can create a removeClass function, which is a little more complicated, using RegEx again and our earlier hasClass:
 
+	{% highlight javascript %}
     function removeClass(elem, className) {
     	var newClass = ' '   elem.className.replace( /[trn]/g, ' ')   ' ';
     	if (hasClass(elem, className)) {
@@ -134,27 +153,35 @@ Now we can create a removeClass function, which is a little more complicated, us
             elem.className = newClass.replace(/^s |s $/g, '');
         }
     }
+    {% endhighlight %}
 
 We can then use it like so:
 
+	{% highlight javascript %}
     document.getElementById('myButton').onclick = function() {
     	removeClass(document.documentElement, 'some-class');
     }
+    {% endhighlight %}
 
 ### Adding/removing (toggling) the class with ‘toggleClass’
 
 The toggle functions tend to be my favourites, allowing you to simply add/remove things as you please. With jQuery, this looks like so:
 
+	{% highlight javascript %}
     $(element).toggleClass(className);
+    {% endhighlight %}
 
 A usage example could be as follows:
 
+	{% highlight javascript %}
     $('.button').click(function(){
     	$(this).toggleClass('active');
     });
+    {% endhighlight %}
 
 Which would toggle the class ‘active’ for one click, and toggle it back for the second click. We can then begin to take this and create our own little function that does this for us:
 
+	{% highlight javascript %}
     function toggleClass(elem, className) {
     	var newClass = ' '   elem.className.replace( /[trn]/g, " " )   ' ';
         if (hasClass(elem, className)) {
@@ -166,6 +193,7 @@ Which would toggle the class ‘active’ for one click, and toggle it back for 
             elem.className  = ' '   className;
         }
     }
+    {% endhighlight %}
 
 Using some more RegEx and our hasClass function again, we can reuse most of the removeClass function and simply provide an else, to then add the class back on if it doesn’t exist! JavaScript is easy when you think about it logically, don’t get lost in the definitions/names of things.
 

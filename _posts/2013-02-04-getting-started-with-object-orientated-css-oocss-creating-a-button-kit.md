@@ -73,23 +73,24 @@ OOCSS focuses on the ‘object’, which means it steers away from semantic mark
 
 Keeping CSS selectors as short as possible, for two reasons, CSS maintenance and not overloading the DOM with long class names. Here’s what our structure could look like:
 
-    <style>
-    .btn {
-    	display:inline-block;
-    	zoom:1;
-    	vertical-align:bottom;
-    	text-align:center;
-    	margin:10px 5px;
-    	border-radius:3px;
-    	text-decoration:none;
-    	font-weight:900;
-    	font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
-    	text-shadow:0 1px 1px rgba(0,0,0,0.5);
-    	box-shadow:0 1px 3px rgba(0,0,0,0.3),inset 0 1px 0 rgba(250,250,250,0.4);
-    	-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.3),inset 0 1px 0 rgba(250,250,250,0.4);
-    	-moz-box-shadow:0 1px 3px rgba(0,0,0,0.3),inset 0 1px 0 rgba(250,250,250,0.4);
-    }
-    </style>
+{% highlight css %}
+.btn {
+	display:inline-block;
+	zoom:1;
+	vertical-align:bottom;
+	text-align:center;
+	margin:10px 5px;
+	border-radius:3px;
+	text-decoration:none;
+	font-weight:900;
+	font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+	text-shadow:0 1px 1px rgba(0,0,0,0.5);
+	box-shadow:0 1px 3px rgba(0,0,0,0.3),inset 0 1px 0 rgba(250,250,250,0.4);
+	-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.3),inset 0 1px 0 rgba(250,250,250,0.4);
+	-moz-box-shadow:0 1px 3px rgba(0,0,0,0.3),inset 0 1px 0 rgba(250,250,250,0.4);
+}
+{% endhighlight %}
+
 
 Let’s talk through this line-by-line:  
 1) display:inline-block; allowing them to sit next to eachother  
@@ -110,13 +111,12 @@ A pretty good foundation for our button starting point.
 
 Now we’re onto the sizing, we’ll want to create a few different sizes of buttons, so we’ll name our button sizes, let’s call this one our small button:
 
-    <style>
-    .btn-small {
-    	font-size:13px;
-    	padding:5px 20px;
-    }
-    </style>
-    
+{% highlight css %}
+.btn-small {
+	font-size:13px;
+	padding:5px 20px;
+}
+{% endhighlight %}
 
 Nice and easy. You could use em for your unit sizes, though it depends on your project.
 
@@ -126,48 +126,54 @@ This now gives us an easy grounding to then add ‘medium’ and ‘large’ but
 
 Let’s give our button the lick of paint it needs, here I’ve ripped out the font colour, the background, and border colour:
 
-    <style>
-    .btn-blue {
-    	color:#FFF;
-    	border:1px solid #0082BE;
-    	background:#00A4EF;
-    	background-image:linear-gradient(bottom, rgb(0,163,239) 1%, rgb(0,177,241) 51%);
-    	background-image:-o-linear-gradient(bottom, rgb(0,163,239) 1%, rgb(0,177,241) 51%);
-    	background-image:-moz-linear-gradient(bottom, rgb(0,163,239) 1%, rgb(0,177,241) 51%);
-    	background-image:-webkit-linear-gradient(bottom, rgb(0,163,239) 1%, rgb(0,177,241) 51%);
-    	background-image:-ms-linear-gradient(bottom, rgb(0,163,239) 1%, rgb(0,177,241) 51%);
-    }
-    </style>
+{% highlight css %}
+.btn-blue {
+	color:#FFF;
+	border:1px solid #0082BE;
+	background:#00A4EF;
+	background-image:linear-gradient(bottom, rgb(0,163,239) 1%, rgb(0,177,241) 51%);
+	background-image:-o-linear-gradient(bottom, rgb(0,163,239) 1%, rgb(0,177,241) 51%);
+	background-image:-moz-linear-gradient(bottom, rgb(0,163,239) 1%, rgb(0,177,241) 51%);
+	background-image:-webkit-linear-gradient(bottom, rgb(0,163,239) 1%, rgb(0,177,241) 51%);
+	background-image:-ms-linear-gradient(bottom, rgb(0,163,239) 1%, rgb(0,177,241) 51%);
+}
+{% endhighlight %}
 
 ### What have we created?
 
 Looking at our CSS now, we can see we’ve created the following:
 
-    <style>
-    .btn {} // Button structure
-    .btn-small {} // Button sizing
-    .btn-blue {} // Button colour
-    </style>
+{% highlight css %}
+.btn {} // Button structure
+.btn-small {} // Button sizing
+.btn-blue {} // Button colour
+{% endhighlight %}
 
 Our HTML would then look like this:
 
-    <a href="#" class="btn btn-small btn-blue">Click me!</a>
+{% highlight html %}
+<a href="#" class="btn btn-small btn-blue">Click me!</a>
+{% endhighlight %}
 
 I think this is perfectly acceptable class usage, very neat and tidy. You might argue the button isn’t semantic as it’s not telling us anything about it’s role, but the benefits to using OOCSS in this instance far outweigh a ‘non-semantic’ button.
 
 What you want to avoid here, is mixing your HTML classes:
 
-    <a href="#" class="btn btn-small btn-blue">Click me!</a>
-    
-    <a href="#" class="btn-blue btn-small btn">Click me!</a>
-    
-    <a href="#" class="btn btn-blue btn-small">Click me!</a>
+{% highlight html %}
+<a href="#" class="btn btn-small btn-blue">Click me!</a>
+
+<a href="#" class="btn-blue btn-small btn">Click me!</a>
+
+<a href="#" class="btn btn-blue btn-small">Click me!</a>
+{% endhighlight %}
 
 The above would be a bad pattern to follow, so follow the Structure, Sizing, Style and management will become easy.
 
 We also want to avoid overloading the DOM and making life miserable:
 
-    <a href="#" class="btn border box-shadow btn-small btn-blue nice krispykreme">Click me!</a>
+{% highlight html %}
+<a href="#" class="btn border box-shadow btn-small btn-blue nice krispykreme">Click me!</a>
+{% endhighlight %}
 
 ### Putting it into practice
 
@@ -175,47 +181,47 @@ Taking the principles we’ve learned from this tutorial, we can begin to create
 
 Structure:
 
-    <style>
-    .btn {
-    	display:inline-block;
-    	zoom:1;
-    	vertical-align:bottom;
-    	text-align:center;
-    	margin:10px 5px;
-    	border-radius:3px;
-    	text-decoration:none;
-    	font-weight:900;
-    	font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
-    	text-shadow:0 1px 1px rgba(0,0,0,0.5);
-    	box-shadow:0 1px 3px rgba(0,0,0,0.3),inset 0 1px 0 rgba(250,250,250,0.4);
-    	-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.3),inset 0 1px 0 rgba(250,250,250,0.4);
-    	-moz-box-shadow:0 1px 3px rgba(0,0,0,0.3),inset 0 1px 0 rgba(250,250,250,0.4);
-    }
-    </style>
+{% highlight css %}
+.btn {
+	display:inline-block;
+	zoom:1;
+	vertical-align:bottom;
+	text-align:center;
+	margin:10px 5px;
+	border-radius:3px;
+	text-decoration:none;
+	font-weight:900;
+	font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+	text-shadow:0 1px 1px rgba(0,0,0,0.5);
+	box-shadow:0 1px 3px rgba(0,0,0,0.3),inset 0 1px 0 rgba(250,250,250,0.4);
+	-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.3),inset 0 1px 0 rgba(250,250,250,0.4);
+	-moz-box-shadow:0 1px 3px rgba(0,0,0,0.3),inset 0 1px 0 rgba(250,250,250,0.4);
+}
+{% endhighlight %}
 
 Sizing:
 
-    <style>
-    .btn-small {}
-    .btn-medium {}
-    .btn-large {}
-    </style>
+{% highlight css %}
+.btn-small {}
+.btn-medium {}
+.btn-large {}
+{% endhighlight %}
     
 
 Styles:
 
-    <style>
-    .btn-blue {}
-    .btn-dark-blue {}
-    .btn-dark-grey {}
-    .btn-salmon {}
-    .btn-orange {}
-    .btn-mint {}
-    .btn-pink {}
-    .btn-purple {}
-    .btn-yellow {}
-    .btn-white {}
-    </style>
+{% highlight css %}
+.btn-blue {}
+.btn-dark-blue {}
+.btn-dark-grey {}
+.btn-salmon {}
+.btn-orange {}
+.btn-mint {}
+.btn-pink {}
+.btn-purple {}
+.btn-yellow {}
+.btn-white {}
+{% endhighlight %}
 
 ### HTML output
 
@@ -223,15 +229,21 @@ After defining some styles for each of the above classes, we can put together ou
 
 Let’s create a button, small size, that’s salmon colour:
 
-    <a href="#" class="btn btn-small btn-salmon">Click me!</a>
+{% highlight html %}
+<a href="#" class="btn btn-small btn-salmon">Click me!</a>
+{% endhighlight %}
 
 Let’s create a button, medium size, that’s mint colour:
 
-    <a href="#" class="btn btn-medium btn-mint">Click me!</a>
+{% highlight html %}
+<a href="#" class="btn btn-medium btn-mint">Click me!</a>
+{% endhighlight %}
 
 Let’s create a button, large size, that’s purple:
 
-    <a href="#" class="btn btn-large btn-purple">Click me!</a>
+{% highlight html %}
+<a href="#" class="btn btn-large btn-purple">Click me!</a>
+{% endhighlight %}
 
 You get the point. You can see how scalable OOCSS is, and the power it has when working with somewhat complex objects.
 
@@ -239,11 +251,11 @@ You get the point. You can see how scalable OOCSS is, and the power it has when 
 
 You’ll notice in the demo that the only :hover pseudo class I’ve used is on the .btn class! I’ve applied an opacity to the class, so that on hover we do actually see a different in hover state, without defining any further styles. I don’t want to triple the code with hover and active styles for each button colour as we want it to perform well and be manageable. Here’s the neat trick I’ve used:
 
-    <style>
-    .btn:hover {
-    	opacity:0.7;
-    }
-    </style>
+{% highlight css %}
+.btn:hover {
+	opacity:0.7;
+}
+{% endhighlight %}
 
 <div class="download-box">
 	<a href="//toddmotto.com/labs/oocss-buttons" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo OOCSS Buttons, 'OOCSS Buttons Demo']);">Demo</a>

@@ -22,8 +22,6 @@ jBar was created to provide a lightweight plugin to replace the restrictions pro
 
 ![Ribbon][5]
 
- [5]: /wp-content/uploads/2012/08/jbar-ribbon.png
-
 ### Features
 
 The jBar sits at the top of your website, and is fully customisable.

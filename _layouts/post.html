@@ -16,6 +16,7 @@ layout: default
 			{%else %}
 				var disqus_url = "http://toddmotto.com{{ page.url }}";
 			{% endif %}
+			var disqus_title = {{ page.title }};
 			var disqus_shortname = 'toddmotto';
 			(function() {
 				var dsq = document.createElement('script');

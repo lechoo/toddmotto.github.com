@@ -51,9 +51,9 @@ This is where this post comes in, and I hope to inspire some people to start cre
 
 We’ll start with hasClass, typically in jQuery this looks like so:
 
-    {% highlight javascript %}
-    $(element).hasClass(className);
-    {% endhighlight %}
+{% highlight javascript %}
+$(element).hasClass(className);
+{% endhighlight %}
 
 With it’s usage potentially something like this:
 

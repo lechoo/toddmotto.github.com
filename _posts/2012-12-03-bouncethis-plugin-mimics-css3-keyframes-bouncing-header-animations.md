@@ -132,7 +132,7 @@ First we start off by creating the plugin, using a semi-colon as a safety net fo
 		});
 	};
 })(jQuery);
-{% endhighlight %} 
+{% endhighlight %}
 
 Most of the code is commented, but I feel the main parts here to talk about are the outerHeight(true) property, which is passed to include the margins on the selected element as well.
 

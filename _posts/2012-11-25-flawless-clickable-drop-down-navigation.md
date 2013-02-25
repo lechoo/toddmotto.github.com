@@ -21,20 +21,22 @@ We’ll be using a markup similar to the way a drop-down menu navigation works, 
 
 Here’s the markup:
 
-    <div class="click-nav">
-		<ul class="no-js">
-			<li>
-				<a href="#" class="clicker"><img src="img/i-1.png" alt="Icon">Profile</a>
-				<ul>
-					<li><a href="#"><img src="img/i-2.png" alt="Icon">Dashboard</a></li>
-					<li><a href="#"><img src="img/i-3.png" alt="Icon">Settings</a></li>
-					<li><a href="#"><img src="img/i-4.png" alt="Icon">Privacy</a></li>
-					<li><a href="#"><img src="img/i-5.png" alt="Icon">Help</a></li>
-					<li><a href="#"><img src="img/i-6.png" alt="Icon">Sign out</a></li>
-				</ul>
-			</li>
-		</ul>
-	</div>
+{% highlight html %}
+<div class="click-nav">
+	<ul class="no-js">
+		<li>
+			<a href="#" class="clicker"><img src="img/i-1.png" alt="Icon">Profile</a>
+			<ul>
+				<li><a href="#"><img src="img/i-2.png" alt="Icon">Dashboard</a></li>
+				<li><a href="#"><img src="img/i-3.png" alt="Icon">Settings</a></li>
+				<li><a href="#"><img src="img/i-4.png" alt="Icon">Privacy</a></li>
+				<li><a href="#"><img src="img/i-5.png" alt="Icon">Help</a></li>
+				<li><a href="#"><img src="img/i-6.png" alt="Icon">Sign out</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+{% endhighlight %}
 	
 Let’s go through the structure.
 
@@ -52,44 +54,44 @@ The CSS is minimal here, a great foundation for customising. No messy background
 
 You’ll also see the fallbacks underneath, using a simple CSS hover to display our navigation. Accessibility is key.
 
-    <style>
-    .click-nav {margin:100px auto;width:200px;}
-    .click-nav ul {position:relative;font-weight:900;}
-    .click-nav ul li {position:relative;list-style:none;cursor:pointer;}
-    .click-nav ul li ul {position:absolute;left:0;right:0;}
-    .click-nav ul .clicker {position:relative;background:#2284B5;color:#FFF;}
-    .click-nav ul .clicker:hover,.click-nav ul .active {background:#196F9A;}
-    .click-nav img {position:absolute;top:9px;left:12px;}
-    .click-nav ul li a {transition:background-color 0.2s ease-in-out;-webkit-transition:background-color 0.2s ease-in-out;
-    -moz-transition:background-color 0.2s ease-in-out;display:block;padding:8px 10px 8px 40px;background:#FFF;color:#333;text-decoration:none;}
-    .click-nav ul li a:hover {background:#F2F2F2;}
-    
-    /* Fallbacks */
-    .click-nav .no-js ul {display:none;}
-    .click-nav .no-js:hover ul {display:block;}
-    </style>
+{% highlight css %}
+.click-nav {margin:100px auto;width:200px;}
+.click-nav ul {position:relative;font-weight:900;}
+.click-nav ul li {position:relative;list-style:none;cursor:pointer;}
+.click-nav ul li ul {position:absolute;left:0;right:0;}
+.click-nav ul .clicker {position:relative;background:#2284B5;color:#FFF;}
+.click-nav ul .clicker:hover,.click-nav ul .active {background:#196F9A;}
+.click-nav img {position:absolute;top:9px;left:12px;}
+.click-nav ul li a {transition:background-color 0.2s ease-in-out;-webkit-transition:background-color 0.2s ease-in-out;
+-moz-transition:background-color 0.2s ease-in-out;display:block;padding:8px 10px 8px 40px;background:#FFF;color:#333;text-decoration:none;}
+.click-nav ul li a:hover {background:#F2F2F2;}
+
+/* Fallbacks */
+.click-nav .no-js ul {display:none;}
+.click-nav .no-js:hover ul {display:block;}
+{% endhighlight %}
 
 ### jQuery
 
 Here’s where we get started with our clickable script.
 
-    <script>
-	$(function () {
-		$('.click-nav > ul').toggleClass('no-js js');
-		$('.click-nav .js ul').hide();
-		$('.click-nav .js').click(function(e) {
-			$('.click-nav .js ul').slideToggle(200);
-			$('.clicker').toggleClass('active');
-			e.stopPropagation();
-		});
-		$(document).click(function() {
-			if ($('.click-nav .js ul').is(':visible')) {
-				$('.click-nav .js ul', this).slideUp();
-				$('.clicker').removeClass('active');
-			}
-		});
+{% highlight html %}
+$(function () {
+	$('.click-nav > ul').toggleClass('no-js js');
+	$('.click-nav .js ul').hide();
+	$('.click-nav .js').click(function(e) {
+		$('.click-nav .js ul').slideToggle(200);
+		$('.clicker').toggleClass('active');
+		e.stopPropagation();
 	});
-	</script>
+	$(document).click(function() {
+		if ($('.click-nav .js ul').is(':visible')) {
+			$('.click-nav .js ul', this).slideUp();
+			$('.clicker').removeClass('active');
+		}
+	});
+});
+{% endhighlight %}
 
 To begin, we target our ‘no-js’ element (the ‘ul’) inside click-nav, using a special CSS selector to only target the first child, not the other unordered list as well. We then toggle the classes no-js js, this removes the no-js class (as it’s present in the DOM already), and adds js. Now we know the user is running JavaScript. (If they’re not, no jQuery will run and CSS fallbacks kick in.)
 

@@ -22,7 +22,9 @@ There are a few ways to use SVG, as an &lt;object&gt;, &lt;embed&gt;, &lt;iframe
 
 HTML5 spec allows for the use of an SVG inside the &lt;img&gt; tag, which makes it super easy and fast to get started using SVG, and this is where we’ll go in this tutorial. Here’s what our source code could look like using SVG inside an &lt;img&gt; tag:
 
-    <img src="logo.svg" alt="Logo">
+{% highlight html %}
+<img src="logo.svg" alt="Logo">
+{% endhighlight %}
 
 Pretty simple. And that’s it.
 
@@ -37,12 +39,13 @@ Usual story – IE9 does support SVG, but IE6/7/8 do not, and all modern browser
 First we need to know whether the browser can support SVG, and for this we’ll be using feature detection with [Modernizr][2]. We could test the features of a browser by doing the following:
 
  [2]: /progressive-enhancement-feature-detection-with-modernizr
-
-    if (Modernizr.svg) {
-        // Supports SVG
-    } else {
-        // Doesn't support SVG (Fallback)
-    }
+{% highlight javascript %}
+if (Modernizr.svg) {
+    // Supports SVG
+} else {
+    // Doesn't support SVG (Fallback)
+}
+{% endhighlight %}
 
 We declare SVG in our markup (logo.svg), so we don’t want to execute any functions if the browser does support SVG – it’s native. The only time we want to execute something is if it doesn’t support SVG.
 
@@ -50,9 +53,11 @@ We declare SVG in our markup (logo.svg), so we don’t want to execute any funct
 
 There’s no point including an if or else function to provide a fallback for SVG, as we only want to execute a function if the browser doesn’t support, which is really the else part. Instead of declaring else, we can simply add an ‘!’ to invert the expression, and end up with:
 
-    if (!Modernizr.svg) {
-        // Doesn't support SVG (Fallback)
-    }
+{% highlight javascript %}
+if (!Modernizr.svg) {
+    // Doesn't support SVG (Fallback)
+}
+{% endhighlight %}
 
 This now essentially means, if the browser doesn’t support SVG, execute this.
 
@@ -60,99 +65,109 @@ This now essentially means, if the browser doesn’t support SVG, execute this.
 
 Now we’ve setup our Modernizr to provide a fallback method, we need to replace the ‘.svg’ with ‘.png’ to provide an actual fallback solution.
 
-I’ve put together a superb little jQuery script to do exactly that, and will swap all ‘.svg’ on the page with ‘.png’:
+I’ve put together a neat little jQuery script to do exactly that, and will swap all ‘.svg’ on the page with ‘.png’:
 
-    $('img[src*="svg"]').attr('src', function() {
-        return $(this).attr('src').replace('.svg', '.png');
-    });
-    
+{% highlight javascript %}
+$('img[src*="svg"]').attr('src', function() {
+    return $(this).attr('src').replace('.svg', '.png');
+});
+{% endhighlight %}
 
 First targeting an &lt;img&gt; element, and using a special CSS selector (that searches for any images that contain a source that includes ‘svg’). If so, we then run another function on the source attribute. We use jQuery’s .replace(); function to replace the ‘.svg’ in the filename with ‘.png’. And that’s the job done. All it means is that for any SVG you use, you’ll need to add a PNG fallback. It takes an extra minute at most per image.
 
 ### Final Markup
 
-    <script src="jquery.js"></script>
-	<script src="modernizr.js"></script>
-	
-	<script>
-	if(!Modernizr.svg) {
-	    $('img[src*="svg"]').attr('src', function() {
-	        return $(this).attr('src').replace('.svg', '.png');
-	    });
-	}
-	</script>
+{% highlight html %}
+<script src="jquery.js"></script>
+<script src="modernizr.js"></script>
+
+<script>
+if(!Modernizr.svg) {
+    $('img[src*="svg"]').attr('src', function() {
+        return $(this).attr('src').replace('.svg', '.png');
+    });
+}
+</script>
+{% endhighlight %}
 
 ### Without jQuery
 
 If you’re not running jQuery, you can use this as a raw JavaScript alternative:
 
-    if (!Modernizr.svg) {
-	    var imgs = document.getElementsByTagName('img');
-	    var endsWithDotSvg = /.*\.svg$/
-	    var i = 0;
-	    var l = imgs.length;
-	    for(; i != l; ++i) {
-	        if(imgs[i].src.match(endsWithDotSvg)) {
-	            imgs[i].src = imgs[i].src.slice(0, -3) + 'png';
-	        }
-	    }
-	}
+{% highlight javascript %}
+if (!Modernizr.svg) {
+    var imgs = document.getElementsByTagName('img');
+    var endsWithDotSvg = /.*\.svg$/
+    var i = 0;
+    var l = imgs.length;
+    for(; i != l; ++i) {
+        if(imgs[i].src.match(endsWithDotSvg)) {
+            imgs[i].src = imgs[i].src.slice(0, -3) + 'png';
+        }
+    }
+}
+{% endhighlight %}
 
 ### CSS: SVG as Background
 
 As far as I know, it’s impossible to detect and swap out an SVG as a background image, thankfully Modernizr has an alternative to running a script. When Modernizr loads, it adds all the browser supporting classes to the &lt;html&gt; tag. You’ll end up with something like this:
 
-    <html class="js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
+{% highlight html %}
+<html class="js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
+{% endhighlight %}
 
 You’ll notice in there is ‘svg’. I’m using Chrome. If the browser didn’t support SVG, it would add the class ‘no-svg’ This allows us to create a CSS declaration for each, to provide a background fallback like so:
 
-    <style>
-	.background-class {} /* Shared properties for detected features */
-	.svg .background-class {background:url(img/graphic.svg);} /* SVG feature property */
-	.no-svg .background-class {background:url(img/graphic.png);} /* PNG feature property */
-	</style>
+{% highlight css %}
+.background-class {} /* Shared properties for detected features */
+.svg .background-class {background:url(img/graphic.svg);} /* SVG feature property */
+.no-svg .background-class {background:url(img/graphic.png);} /* PNG feature property */
+{% endhighlight %}
 
 ### Displaying broken images?
 
 Some server setups support SVGs by default, if yours doesn’t, add this to your .htaccess file:  
+
+{% highlight html %}
 `AddType image/svg xml svg svgz
 AddEncoding gzip svgz`
+{% endhighlight %}
 
 <h3 id="update">UPDATE: Custom SVG Feature Detection, Without Modernizr and jQuery</h3>
 
 Here’s my SVG feature detection script, which creates an SVG from a NameSpace URI (w3.org/200/svg) and the qualifiedName. It’s entirely Modernizr and jQuery independent, so you can use it without either library. If the browser supports SVG, it adds an ‘svg’ class to the &lt;html&gt; tag. If SVG isn’t supported, you’ll get a ‘no-svg’ class complete with the fallback script to rip all the (.svg) extensions to (.png). I’ve optimised the JavaScript from the previous iteration too.
 
-    <script>
+{% highlight javascript %}
     function supportsSVG() {
-		return !! document.createElementNS && !! document.createElementNS('http://www.w3.org/2000/svg','svg').createSVGRect;	
-	}
-	if (supportsSVG()) {
-		document.documentElement.className += ' svg';
-	} else {
-		document.documentElement.className += ' no-svg';
-		var imgs = document.getElementsByTagName('img');
-		var dotSVG = /.*\.svg$/;
-		for (var i = 0; i != imgs.length; ++i) {
-			if(imgs[i].src.match(dotSVG)) {
-				imgs[i].src = imgs[i].src.slice(0, -3) + 'png';
-			}
+	return !! document.createElementNS && !! document.createElementNS('http://www.w3.org/2000/svg','svg').createSVGRect;	
+}
+if (supportsSVG()) {
+	document.documentElement.className += ' svg';
+} else {
+	document.documentElement.className += ' no-svg';
+	var imgs = document.getElementsByTagName('img');
+	var dotSVG = /.*\.svg$/;
+	for (var i = 0; i != imgs.length; ++i) {
+		if(imgs[i].src.match(dotSVG)) {
+			imgs[i].src = imgs[i].src.slice(0, -3) + 'png';
 		}
 	}
-	</script>
+}
+{% endhighlight %}
 
 If you’re not fussed about the additional classnames, use this script, which inverts the expression (!) to run if the browser doesn’t support SVG.
 
-    <script>
-    function supportsSVG() {
-		return !! document.createElementNS && !! document.createElementNS('http://www.w3.org/2000/svg','svg').createSVGRect;	
-	}
-	if (!supportsSVG()) {
-		var imgs = document.getElementsByTagName('img');
-		var dotSVG = /.*\.svg$/;
-		for (var i = 0; i != imgs.length; ++i) {
-			if(imgs[i].src.match(dotSVG)) {
-				imgs[i].src = imgs[i].src.slice(0, -3) + 'png';
-			}
+{% highlight javascript %}
+function supportsSVG() {
+	return !! document.createElementNS && !! document.createElementNS('http://www.w3.org/2000/svg','svg').createSVGRect;	
+}
+if (!supportsSVG()) {
+	var imgs = document.getElementsByTagName('img');
+	var dotSVG = /.*\.svg$/;
+	for (var i = 0; i != imgs.length; ++i) {
+		if(imgs[i].src.match(dotSVG)) {
+			imgs[i].src = imgs[i].src.slice(0, -3) + 'png';
 		}
 	}
-	</script>
+}
+{% endhighlight %}

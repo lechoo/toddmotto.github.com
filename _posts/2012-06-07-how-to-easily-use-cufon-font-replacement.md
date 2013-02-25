@@ -40,11 +40,13 @@ Visit [Cufón’s website][3] again and scroll down a touch. You’ll notice the
 
 Taking Cufon.js (Step 1) and our custom font (Step 2) we need to reference the scripts in our HTML file.
 
-    <!-- Include Cufon.js -->
-	<script src="assets/js/cufon.js"></script>
-	
-	<!-- Include Chunkfive Custom Font -->
-	<script src="assets/js/ChunkFive_400.font.js"></script>
+{% highlight html %}
+<!-- Include Cufon.js -->
+<script src="assets/js/cufon.js"></script>
+
+<!-- Include Chunkfive Custom Font -->
+<script src="assets/js/ChunkFive_400.font.js"></script>
+{% endhighlight %}
 
 ### 4. Use jQuery to load Cufon
 
@@ -52,12 +54,13 @@ Seeing as you’re more than likely to be using jQuery on your website, we may a
 
  [5]: http://www.jquery.com "Latest version of jQuery!"
 
-    <!-- Load jQuery from Google CDN -->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	
-	<script>
-		Cufon.replace('Replace this stuff!');
-	</script>    
+{% highlight html %}
+<!-- Load jQuery from Google CDN -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+	Cufon.replace('Replace this stuff!');
+</script>
+{% endhighlight %}
 
 ### 5. Choosing what to Cufon
 
@@ -65,40 +68,44 @@ Now we’ve got our code setup to call the Cufón, we need to tell it what to re
 
 Option 1: If you are going to want all your website headings to be Cufónized, then we need to add something a little like the below. This tells Cufón to replace all our h1,h2,h3,h4,h5 tags. Which means we don’t have to worry about manually selecting which headings (with CSS classes/id’s) we’d like to Cufónized.
 
-    <script>
-		$(function(){
-			Cufon.replace('h1,h2,h3,h4,h5');
-		});
-	</script>
+{% highlight javascript %}
+$(function(){
+	Cufon.replace('h1,h2,h3,h4,h5');
+});
+{% endhighlight %}
 
 Option 2: Create a custom class (for example .cufon) that we can add to HTML elements that need a touch of Cufónism. This may look like so:
 
-    <script>
-		$(function(){
-			Cufon.replace('.cufon');
-		});
-	</script>
+{% highlight javascript %}
+$(function(){
+	Cufon.replace('.cufon');
+});
+{% endhighlight %}
 	
-	<h1 class="cufon">Awesome Cufón Heading</h1>
-	<h1>Not-so Awesome Heading</h1>
+{% highlight html %}
+<h1 class="cufon">Awesome Cufón Heading</h1>
+<h1>Not-so Awesome Heading</h1>
+{% endhighlight %}
 
 ### Final Look
 
 Putting all that together (and in the correct load order) you’ll end up with this as a finished product. Demo is free for download below.
 
-    <!-- Load jQuery from Google CDN -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	
-	<!-- Include Cufon.js -->
-	<script src="assets/js/cufon.js"></script>
-	
-	<!-- Include Chunkfive Custom Font -->
-	<script src="assets/js/ChunkFive_400.font.js"></script>
-	
-	<script>
-		$(function(){
-			Cufon.replace('h1,h2,h3,h4,h5');
-		});
-	</script>
+{% highlight javascript %}
+<!-- Load jQuery from Google CDN -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<!-- Include Cufon.js -->
+<script src="assets/js/cufon.js"></script>
+
+<!-- Include Chunkfive Custom Font -->
+<script src="assets/js/ChunkFive_400.font.js"></script>
+
+<script>
+	$(function(){
+		Cufon.replace('h1,h2,h3,h4,h5');
+	});
+</script>
+{% endhighlight %}
 
 Check out the EULAs of all fonts you use to ensure they allow for Web Embedding.

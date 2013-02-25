@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Putting HTML5 localStorage to use by @toddmotto | toddmotto.com</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="author" content="@toddmotto">
+	<style>
+	* {
+		margin:0;
+		padding:0;
+		-webkit-font-smoothing:antialiased;
+		-moz-font-smoothing:antialiased;
+		-o-font-smoothing:antialiased;
+		font-smoothing:antialiased;
+		text-rendering:optimizeLegibility;
+	}
+	body {font:400 12px/1.625 'Helvetica Neue', Helvetica, Arial, sans-serif;background:#F4F4F4 url(img/bg.jpg);color:#444;}
+	.wrapper {margin:0 auto;position:relative;}
+	#header {overflow:auto;background:#33363C;border-top:5px solid #2F3135;border-bottom:2px solid #04A4CC;}
+	#logo {float:left;margin:10px 0 5px 40px;}
+	#logo img {width:80px;height:36px;}
+	#view-tut {float:right;font-size:13px;font-weight:900;margin:10px 40px 5px 0;}
+	#view-tut ul {margin:0;}
+	#view-tut ul li {display:inline-block;*display:inline;zoom:1;margin:0 5px 0 0;}
+	#view-tut ul li a {display:block;padding:5px 10px;background:#04A4CC;color:#FFF;border-radius:20px;text-decoration:none;}
+	#view-tut ul li a:hover {background:#0097CD;}
+	html, body {height:100%;}
+	#google_canvas {height:100%;}
+	#google_canvas h1 {font-size:16px;}
+	#google_canvas h2 {font-size:14px;font-weight:300;}
+	</style>
+</head>
+
+<body>
+
+	<div id="header">
+		<div id="logo">
+			<a href="http://www.toddmotto.com">
+				<img src="img/logo.png" alt="Logo">
+			</a>
+		</div>
+		<div id="view-tut">
+			<ul>
+				<li><a href="#">Visit the Tutorial</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div id="google_canvas"></div>
+	
+	<script src="//maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
+
+    <script>
+    (function() {
+    
+    	if(!!navigator.geolocation) {
+    	
+    		var map;
+    	
+	    	var mapOptions = {
+	    		zoom: 15,
+	    		mapTypeId: google.maps.MapTypeId.ROADMAP
+	    	};
+	    	
+	    	map = new google.maps.Map(document.getElementById('google_canvas'), mapOptions);
+    	
+    		navigator.geolocation.getCurrentPosition(function(position) {
+    		
+	    		var geolocate = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+	    		
+	    		var infowindow = new google.maps.InfoWindow({
+	    			map: map,
+	    			position: geolocate,
+	    			content:
+	    				'<h1>Location pinned from HTML5 Geolocation!</h1>' +
+	    				'<h2>Latitude: ' + position.coords.latitude + '</h2>' +
+	    				'<h2>Longitude: ' + position.coords.longitude + '</h2>'
+	    		});
+	    		
+	    		map.setCenter(geolocate);
+	    		
+    		});
+    		
+    	} else {
+    		document.getElementById('google_canvas').innerHTML = 'No Geolocation Support.';
+    	}
+    	
+    })();
+    </script>
+
+	<!-- Carbon Ads Script (Demo only) -->
+	<script src="http://www.toddmotto.com/ads/ads.js"></script>
+	
+</body>
+</html>

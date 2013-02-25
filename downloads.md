@@ -129,7 +129,7 @@ layout: page
 		<h2>jResize</h2>
 		<h4>Dynamic viewport resizer plugin, built to assist responsive development and testing. Create your own widths to test.</h4>
 		<a href="//toddmotto.com/labs/jresize/" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo jResize', 'jResize Demo']);">Demo</a>
-		<a href="//gthub.com/toddmotto/jResize/archive/master.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download jResize', 'jResize Download']);">Download</a>
+		<a href="//github.com/toddmotto/jResize/archive/master.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download jResize', 'jResize Download']);">Download</a>
 		<a href="//toddmotto.com/jresize-plugin-for-one-window-responsive-development">[article]</a>
 	</div>
 </div>

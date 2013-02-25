@@ -26,20 +26,24 @@ Now, this is where things look the same, but they really aren’t. Take my logo 
 
 CSS3 is amazing, but we want mass compatibility with this (no background-size hacks). Any decent mobile devices do support CSS3, but that’s not why we’re using CSS2.
 
-This is the CSS for my logo:
+This is (was, now updated to SVG) the CSS for my logo:
 
-    #logo img {width:140px;}
+{% highlight css %}
+#logo img {width:140px;}
+{% endhighlight %}
 
 This tells any images inside my logo ‘id’ to have a width of 140px (the image used inside the logo id is my logo). I used to use a background image for the logo, but this method is necessary for achieving the desired effect. The real image dimensions for my logo are 500px by 230px.
 
 This is the HTML we use:
-
-    <h1 id="logo"><a href="/"><img src="logo.png"></a></h1>
+{% highlight html %}
+<h1 id="logo"><a href="/"><img src="logo.png"></a></h1>
+{% endhighlight %}
 
 Using ‘img src’ allows us to have much more control over the manipulation of our image. There is a CSS3 get around if you really want to use background images:
 
-    background-size:--px;
-    
+{% highlight css %}
+background-size:--px;
+{% endhighlight %}  
 
 Just specify the size you need. If you’ve got a fluid responsive website, you can use background-size:contain; instead.
 
@@ -47,6 +51,12 @@ Just specify the size you need. If you’ve got a fluid responsive website, you 
 
 By shrinking our oversized images into the necessary space, we can zoom in a few times which caters for our above problem nicely. It’s also a lot easier to control HTML images as opposed to background images when creating responsive layouts. We can use CSS to specify a max-width in our responsive designs. Which means when we are scaling them up and down, the quality won’t deteriorate.
 
-**Update:** If you’re seeing poorly downscaled images in Internet Explorer, this is due to the way they handle images upon rendering. To set IE straight, add this to your CSS document: img {-ms-interpolation-mode:bicubic;}. This tells the browser to always use high-quality bicubic interpolation mode, as this isn’t the default.
+If you’re seeing poorly downscaled images in Internet Explorer, this is due to the way they handle images upon rendering. To set IE straight, add this to your CSS document:
+
+{% highlight css %}
+img {-ms-interpolation-mode:bicubic;}
+{% endhighlight %}
+
+This tells the browser to always use high-quality bicubic interpolation mode, as this isn’t the default.
 
 I think it’s really important to utilise high resolution graphics, and shrink them – to progressively get ahead and ensure your website looks stunning on all devices. There is of course a slight downside to this, which is increased load times to load the larger graphics – but it’s worth it.

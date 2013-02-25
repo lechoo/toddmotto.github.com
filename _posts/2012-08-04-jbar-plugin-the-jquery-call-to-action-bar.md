@@ -50,29 +50,29 @@ buttonText: ‘Download it!’ – The text to go inside the button, add anythin
 
 buttonLink: ‘http://www.toddmotto.com’ – The hyperlink of your button. Send it anywhere.
 
-### Useage
-
+### Usage
 Simply include the plugin file, jQuery (jbar.js) in your page, and customise the options set out below:
 
-    <script src="jquery.js"></script>
-	<script src="jbar.min.js"></script>
-	<script>
-		$(function() {
-		    $.jBar({
-		        type: 'fixed', // fixed/static (lowercase)
-		        delay: '1000', // In milliseconds
-		        backgroundColor: '#DB5903', // Background Color
-		        borderColor: '#FFF', // Background Color
-		        buttonTextColor: '#FFF', // Button Text
-		        buttonColor: '#333', // Button Color
-		        buttonColorHover: '#222', // Button Color Hover
-		        calltoAction: 'jBar Plugin! A simple and lightweight notification banner.', // Call to action text
-		        buttonText: 'Download it!', // Button Text
-		        buttonLink: 'http://www.toddmotto.com' // Hyperlink from button
-		    });
-		});
-	</script>
-
+{% highlight html %}
+<script src="jquery.js"></script>
+<script src="jbar.min.js"></script>
+<script>
+	$(function() {
+	    $.jBar({
+	        type: 'fixed', // fixed/static (lowercase)
+	        delay: '1000', // In milliseconds
+	        backgroundColor: '#DB5903', // Background Color
+	        borderColor: '#FFF', // Background Color
+	        buttonTextColor: '#FFF', // Button Text
+	        buttonColor: '#333', // Button Color
+	        buttonColorHover: '#222', // Button Color Hover
+	        calltoAction: 'jBar Plugin! A simple and lightweight notification banner.', // Call to action text
+	        buttonText: 'Download it!', // Button Text
+	        buttonLink: 'http://www.toddmotto.com' // Hyperlink from button
+	    });
+	});
+</script>
+{% endhighlight %}
 ### Support
 
 All you need to do is download the source code, and hook up the scripts with your website. If you need some support, feel free to comment and I’ll provide some help.

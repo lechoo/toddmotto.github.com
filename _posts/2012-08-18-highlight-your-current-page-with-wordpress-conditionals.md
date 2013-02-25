@@ -64,6 +64,6 @@ You can see the ‘is_page’ is a little different from the homepage function, 
 Here’s a really basic way of how we can style the current class, let’s assume all other menu items don’t have a black background, we’ll use black to make sure they stand right out (#000):
 
 {% highlight css %}
-nav ul li a {background:#F60;} // Bright orange
-nav ul li.current a {background:#000;} // Black for current
+nav ul li a {background:#F60;} /* Bright orange */
+nav ul li.current a {background:#000;} /* Black for current */
 {% endhighlight %}

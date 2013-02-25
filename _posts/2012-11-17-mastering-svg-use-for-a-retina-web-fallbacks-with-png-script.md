@@ -129,8 +129,8 @@ You’ll notice in there is ‘svg’. I’m using Chrome. If the browser didn�
 Some server setups support SVGs by default, if yours doesn’t, add this to your .htaccess file:  
 
 {% highlight html %}
-`AddType image/svg xml svg svgz
-AddEncoding gzip svgz`
+AddType image/svg xml svg svgz
+AddEncoding gzip svgz
 {% endhighlight %}
 
 <h3 id="update">UPDATE: Custom SVG Feature Detection, Without Modernizr and jQuery</h3>

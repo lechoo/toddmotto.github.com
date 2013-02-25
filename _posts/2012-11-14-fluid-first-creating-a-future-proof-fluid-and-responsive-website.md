@@ -28,27 +28,33 @@ In the realm of progressive and responsive development, fluid-first is the answe
 
 When starting a web project, we usually start developing our HTML and CSS, and one of the first CSS declarations we make is our content wrapper. This is the key to nailing our fluid-first setup. You might be used to seeing something like this:
 
-    .wrapper {width:1000px;}
+{% highlight css %}
+.wrapper {width:1000px;}
+{% endhighlight %}
 
 But it’s not the 90′s anymore, our screens are bigger. A lot bigger, and also a lot smaller – so let’s make the use of them.
 
 When using our media queries, you might be using/seeing something like this to adjust the wrapper to the viewport we want:
 
-    @media only screen and (min-width: 320px) {
-    	.wrapper {width:320px}
-    }
-    
-    @media only screen and (min-width: 480px) {
-    	.wrapper {width:480px}
-    }
+{% highlight css %}
+@media only screen and (min-width: 320px) {
+	.wrapper {width:320px}
+}
+
+@media only screen and (min-width: 480px) {
+	.wrapper {width:480px}
+}
+{% endhighlight %}
 
 None of the above uses a fluid-first approach. We should never manipulate our wrapper inside a media query, or make several declarations of the wrapper. Here’s the best way (I’ve found) to create a brilliantly fluid layout, with one declaration of wrapper. It’s a one-size-fits-all type gem.
 
-    .wrapper {
-    	max-width:1280px;
-    	width:95%;
-    	margin:0 auto;	
-    }
+{% highlight css %}
+.wrapper {
+	max-width:1280px;
+	width:95%;
+	margin:0 auto;	
+}
+{% endhighlight %}
 
 max-width:1280px; – our max-width declaration means that our wrapper will stop expanding somewhen, which is at 1280px wide. Anything inside 1280px will simply obey to the width of the viewport size, when scaled below 1280px. This means if we were to have two floating elements at 50%, they would compress themselves if your screen size is smaller than 1280px. Our wrapper is what changes the content inside. And inside our wrapper contains more percentage based elements, and inside that, perhaps even a few more percentage based. The depth of percentages within percentages is up to you.
 
@@ -62,37 +68,41 @@ Now we’ve created the perfect platform for starting the development, it’s up
 
 So what’s next? We’ve created a wrapper so it obeys our percentages, but to ensure it scales properly to any device, we need to add our viewport meta tag to our  section of the site:
 
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+{% highlight html %}
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+{% endhighlight %}
 
 This ensures that our website scales as it’s meant to, and fit exactly to the screensize, if the code lets us. Initial scale and maximum scale are set the same here (1.0) which locks them the same scale, our 95% of the screen. The ‘user-scalable’ means (you guessed it) is whether we allow the user to scale the content after this by pinching/zooming on the content.
 
 Here’s an example markup, you’ll see how little we change the code using media queries. Of course this is only a very simple level, but imagine changing your column percentages once per media query, to fully optimise for fixed-width and beyond.
 
-    <!DOCTYPE html>
-	<html>
-		<head>
-			<meta charset="UTF-8">
-			<title>Fluid-first</title>
-			<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0;">
-			<style>
-			.wrapper {max-width:1280px;width:95%;margin:0 auto;}
-			.column {width:50%;float:left;background:#F1F1F1;}
-			@media only screen and (min-width: 320px) {.column {width:100%;}}
-			@media only screen and (min-width: 786px) {.column {width:50%;}}
-			</style>
-	
-		</head>
-		<body>
-			<div class="wrapper">
-				<div class="column">
-					<p>Fluid-first</p>
-				</div>
-				<div class="column">
-					<p>Fluid-first</p>
-				</div>
+{% highlight html %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Fluid-first</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0;">
+		<style>
+		.wrapper {max-width:1280px;width:95%;margin:0 auto;}
+		.column {width:50%;float:left;background:#F1F1F1;}
+		@media only screen and (min-width: 320px) {.column {width:100%;}}
+		@media only screen and (min-width: 786px) {.column {width:50%;}}
+		</style>
+
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="column">
+				<p>Fluid-first</p>
 			</div>
-		</body>
-	</html>
+			<div class="column">
+				<p>Fluid-first</p>
+			</div>
+		</div>
+	</body>
+</html>
+{% endhighlight %}
 
 ### Conclusion
 
@@ -108,7 +118,10 @@ You can see how powerful a tiny media query tweak could be to a percentage, and 
 
 For browsers that don’t support media queries, it’s well worth implementing [css3-mediaqueries.js][3], a JavaScript polyfill by Wouter van der Graaf, to make IE5/6/7/8 become responsive. Here’s how to include it in your site: 
 [3]: //code.google.com/p/css3-mediaqueries-js/
-    <!--[if lte IE 8]><script src="js/mediaqueries.min.js"></script><![endif]-->
+
+{% highlight html %}
+<!--[if lte IE 8]><script src="js/mediaqueries.min.js"></script><![endif]-->
+{% endhighlight %}
 
 Note: If you are using ‘min-device-width’ instead of ‘min-width’, or ‘max-device-width’ instead of ‘max-width’ you’ll need to use ‘if lte IE 10′ instead of IE 8, as IE9/10 do not support min/max-device-width.
 

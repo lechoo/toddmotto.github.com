@@ -10,9 +10,8 @@ layout: default
 			</div>
 		</article>
 		
-		{%if page.disqus %}var disqus_url = "{{ page.disqus }}";{% endif %}
-		
 		<script>
+			{%if page.disqus %}var disqus_url = "{{ page.disqus }}";{% endif %}
 			var disqus_shortname = 'toddmotto';
 			(function() {
 				var dsq = document.createElement('script');

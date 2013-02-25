@@ -26,7 +26,9 @@ The demo includes both a YouTube and Vimeo iframe embed, both at different aspec
 
 Before attacking our iframe and ripping the attributes off it, let’s have a think of what we can use. Let’s look at our YouTube iframe:
 
-    <iframe width="560" height="315" src="//www.youtube.com/embed/JMl8cQjBfqk" frameborder="0" allowfullscreen></iframe>
+{% highlight html %}
+<iframe width="560" height="315" src="//www.youtube.com/embed/JMl8cQjBfqk" frameborder="0" allowfullscreen></iframe>
+{% endhighlight %}
 
 A width and height attribute already exist, I see no reason to ‘remove’ these like other plugins, let’s simply overwrite them with our future code. The inline width and height attributes may be oldschool, but they’re here for a reason this time – so let’s keep them. It saves extra lines of markup removing the attributes and adding new inline styles.
 
@@ -34,24 +36,30 @@ A width and height attribute already exist, I see no reason to ‘remove’ thes
 
 Let’s grab the iframe in the page:
 
-    var iframes = document.getElementsByTagName('iframe');
+{% highlight javascript %}
+var iframes = document.getElementsByTagName('iframe');
+{% endhighlight %}
 
 ### For Loop
 
 Next we need to setup a for loop, and loop through each of our iframes:
 
-    for (var i = 0; i < iframes.length;   i) {
-         // Do stuff
-    }
+{% highlight javascript %}
+for (var i = 0; i < iframes.length;   i) {
+     // Do stuff
+}
+{% endhighlight %}
 
 ### Searching for YouTube and Vimeo
 
 The next step we want to take is to identify our players when scanning through our iframes. We then run a quick if statement to test whether the iframe source contains youtube, or vimeo.
 
-    var players = /www.youtube.com|player.vimeo.com/;
-    if(iframe.src.search(players) !== -1) {
-         // YouTube and Vimeo videos!
-    }
+{% highlight javascript %}
+var players = /www.youtube.com|player.vimeo.com/;
+if(iframe.src.search(players) !== -1) {
+     // YouTube and Vimeo videos!
+}
+{% endhighlight %}
 
 From here, we can then get started with some magic.
 
@@ -59,38 +67,48 @@ From here, we can then get started with some magic.
 
 This is the clever part, and is why we need JavaScript over CSS. We set a variable to work out the iframe's width and height, which it will do very easily based on the inline dimension attributes. We then divide the height by the width, to obtain the aspect ratio. We then multiple it by 100 to be able to use it for CSS purposes for our fluid video.
 
-    var videoRatio = (iframe.height / iframe.width) * 100;
+{% highlight javascript %}
+var videoRatio = (iframe.height / iframe.width) * 100;
+{% endhighlight %}
 
 ### Adding attributes to the iFrame
 
 First let's create a variable for our iterated iframe:
 
-    var iframe = iframes[i];
+{% highlight javascript %}
+var iframe = iframes[i];
+{% endhighlight %}
 
 This allows us to simply make one declaration of iframe inside our loop.
 
-    iframe.style.position = 'absolute';
-    iframe.style.top = '0';
-    iframe.style.left = '0';
-    iframe.width = '100%';
-    iframe.height = '100%';
+{% highlight javascript %}
+iframe.style.position = 'absolute';
+iframe.style.top = '0';
+iframe.style.left = '0';
+iframe.width = '100%';
+iframe.height = '100%';
+{% endhighlight %}
 
 You'll notice I've used the style attribute here in the JavaScript, and width and height don't include the 'style' prefix. This is because it will over-ride the attribute width="" and height="". I see no performance or practical benefits to doing this (replaces width and height attributes with style="height:x;width:x;"):
 
-    iframe.removeAttribute('height');
-    iframe.removeAttribute('width');
-    iframe.style.height = '';
-    iframe.style.width = '';
+{% highlight javascript %}
+iframe.removeAttribute('height');
+iframe.removeAttribute('width');
+iframe.style.height = '';
+iframe.style.width = '';
+{% endhighlight %}
 
 ### Fluid div wrap
 
 Now we've added some styles to our iframes, they're all ready to go. But now we need to wrap them in a  with fluid properties.
 
-    var div = document.createElement('div');
-    div.className = 'video-wrap';
-    div.style.width = '100%';
-    div.style.position = 'relative';
-    div.style.paddingTop = videoRatio   '%';
+{% highlight javascript %}
+var div = document.createElement('div');
+div.className = 'video-wrap';
+div.style.width = '100%';
+div.style.position = 'relative';
+div.style.paddingTop = videoRatio   '%';
+{% endhighlight %}
 
 The trick I've used here is to apply the styles inline, using style="", instead of injecting styles into the  - saving additional script. What I have done though is include a class, which is appended to the div, for extra styling purposes should you need it. You'll notice at the end, we bring back our videoRatio (which we multiplied by 100 to use as a percentage). Then we add this figure to a percentage sign, which uses padding-top to 'emulate' the video aspect ratio. It's merely a clever hack-trick, but a brilliant one (used in FitVids but taken from A List Apart).
 
@@ -98,9 +116,11 @@ The trick I've used here is to apply the styles inline, using style="", instead 
 
 Our script is almost complete, we just need to wrap our iframe in our newly created div. This is similar to jQuery's $.wrap(); function.
 
-    var parentNode = iframe.parentNode;
-    parentNode.insertBefore(div, iframe);
-    div.appendChild(iframe);
+{% highlight javascript %}
+var parentNode = iframe.parentNode;
+parentNode.insertBefore(div, iframe);
+div.appendChild(iframe);
+{% endhighlight %}
 
 ### Putting it all together
 
@@ -110,35 +130,35 @@ Here's what our finished script looks like. The things we've been able to achiev
 - Minimal scripting  
 - Enhanced performance
 
-    <script>
-    (function() {
-    	var iframes = document.getElementsByTagName('iframe');
-    	
-    	for (var i = 0; i < iframes.length;   i) {
-    		var iframe = iframes[i];
-    		var players = /www.youtube.com|player.vimeo.com/;
-    		if(iframe.src.search(players) !== -1) {
-    			var videoRatio = (iframe.height / iframe.width) * 100;
-    			
-    			iframe.style.position = 'absolute';
-    			iframe.style.top = '0';
-    			iframe.style.left = '0';
-    			iframe.width = '100%';
-    			iframe.height = '100%';
-    			
-    			var div = document.createElement('div');
-    			div.className = 'video-wrap';
-    			div.style.width = '100%';
-    			div.style.position = 'relative';
-    			div.style.paddingTop = videoRatio   '%';
-    			
-    			var parentNode = iframe.parentNode;
-    			parentNode.insertBefore(div, iframe);
-    			div.appendChild(iframe);
-    		}
-    	}
-    })();
-    </script>
+{% highlight javascript %}
+(function() {
+	var iframes = document.getElementsByTagName('iframe');
+	
+	for (var i = 0; i < iframes.length;   i) {
+		var iframe = iframes[i];
+		var players = /www.youtube.com|player.vimeo.com/;
+		if(iframe.src.search(players) !== -1) {
+			var videoRatio = (iframe.height / iframe.width) * 100;
+			
+			iframe.style.position = 'absolute';
+			iframe.style.top = '0';
+			iframe.style.left = '0';
+			iframe.width = '100%';
+			iframe.height = '100%';
+			
+			var div = document.createElement('div');
+			div.className = 'video-wrap';
+			div.style.width = '100%';
+			div.style.position = 'relative';
+			div.style.paddingTop = videoRatio   '%';
+			
+			var parentNode = iframe.parentNode;
+			parentNode.insertBefore(div, iframe);
+			div.appendChild(iframe);
+		}
+	}
+})();
+{% endhighlight %}
 
 ### Usage
 

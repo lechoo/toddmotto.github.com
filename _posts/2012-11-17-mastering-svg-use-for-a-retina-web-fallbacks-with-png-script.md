@@ -138,7 +138,7 @@ AddEncoding gzip svgz
 Here’s my SVG feature detection script, which creates an SVG from a NameSpace URI (w3.org/200/svg) and the qualifiedName. It’s entirely Modernizr and jQuery independent, so you can use it without either library. If the browser supports SVG, it adds an ‘svg’ class to the &lt;html&gt; tag. If SVG isn’t supported, you’ll get a ‘no-svg’ class complete with the fallback script to rip all the (.svg) extensions to (.png). I’ve optimised the JavaScript from the previous iteration too.
 
 {% highlight javascript %}
-    function supportsSVG() {
+function supportsSVG() {
 	return !! document.createElementNS && !! document.createElementNS('http://www.w3.org/2000/svg','svg').createSVGRect;	
 }
 if (supportsSVG()) {

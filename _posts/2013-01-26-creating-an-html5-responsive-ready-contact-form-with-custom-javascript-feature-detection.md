@@ -3,6 +3,7 @@ title: Contact forms; the HTML5 way. Semantics, inputs, data attributes, javascr
 author: Todd Motto
 layout: post
 permalink: /creating-an-html5-responsive-ready-contact-form-with-custom-javascript-feature-detection
+disqus: http://www.toddmotto.com/creating-an-html5-responsive-ready-contact-form-with-custom-javascript-feature-detection
 ---
 
 Forms are often one of the last quick-finishes to a website, so here’s a great boilerplate to get you kick-started on a standards-compliant, HTML5, CSS3, responsive-ready form with custom JavaScript feature detections.

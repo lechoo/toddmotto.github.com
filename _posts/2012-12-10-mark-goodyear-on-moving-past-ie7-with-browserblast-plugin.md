@@ -3,8 +3,8 @@ title: Mark Goodyear on moving past IE7, with BrowserBlast Plugin
 author: Todd Motto
 layout: post
 permalink: /mark-goodyear-on-moving-past-ie7-with-browserblast-plugin
+disqus: http://www.toddmotto.com/mark-goodyear-on-moving-past-ie7-with-browserblast-plugin
 ---
-# 
 
 I’m Mark Goodyear, a front-end developer and designer from Middlesbrough, UK. I also run a creative agency Big Bite Creative.  
 IE has always caused headaches for every developer, and as the web is moving forward with the likes of CSS3 and HTML5, it’s time to fully drop support for IE7.

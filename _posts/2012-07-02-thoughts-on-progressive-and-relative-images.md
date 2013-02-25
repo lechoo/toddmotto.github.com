@@ -3,10 +3,8 @@ title: Thoughts on progressive and relative images
 author: Todd Motto
 layout: post
 permalink: /thoughts-on-progressive-and-relative-images
-dsq_thread_id:
-  - 754085990
+disqus: http://www.toddmotto.com/thoughts-on-progressive-and-relative-images
 ---
-# 
 
 Image quality and size have been high on my thinking list recently, with responsive media queries (CSS3) coming into popularity and the introduction of the new high resolution viewing devices. This post outlines my thoughts on moving forward with relative images – into a higher resolution web. 
 

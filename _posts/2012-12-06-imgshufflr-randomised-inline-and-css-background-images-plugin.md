@@ -3,6 +3,7 @@ title: imgShufflr, randomised inline and CSS background images plugin
 author: Todd Motto
 layout: post
 permalink: /imgshufflr-randomised-inline-and-css-background-images-plugin
+disqus: http://www.toddmotto.com/imgshufflr-randomised-inline-and-css-background-images-plugin
 ---
 
 imgShufflr is quick and lightweight plugin for generating a random image upon page load. Simply load your images onto the server, and include the plugin on your page with a quick call, and you’ll be randomly generating their order with ease.

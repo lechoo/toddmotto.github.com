@@ -3,6 +3,7 @@ title: Browser-based responsive development tool, viewport resizing, custom widt
 author: Todd Motto
 layout: post
 permalink: /browser-based-responsive-development-tool-viewport-resizing-custom-widths
+disqus: http://www.toddmotto.com/browser-based-responsive-development-tool-viewport-resizing-custom-widths
 ---
 
 Designing in the browser is increasingly popular, especially with responsive websites. Having a reliable and simple viewport resizer is key to any responsive developer’s workflow. From the popularity of my [jResize plugin][1], I’ve created an enhanced, browser-based version that requires no downloading or installations.

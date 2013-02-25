@@ -3,6 +3,7 @@ title: HTML5 Blank, Rapid WordPress Theme Development
 author: Todd Motto
 layout: post
 permalink: /html5-blank-rapid-wordpress-theme-development
+disqus: http://www.toddmotto.com/html5-blank-rapid-wordpress-theme-development
 ---
 
 HTML5 Blank Theme is an industry leading WordPress shell, recognised by Adobe, Smashing Magazine, .NET and more, for deploying your next WordPress project on. It’s not just a clean slate to develop with, it’s a lean foundation that includes various tools, functions and setups to get any WordPress theme developer deployed and coding within minutes.

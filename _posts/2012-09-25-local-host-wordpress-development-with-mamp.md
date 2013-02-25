@@ -3,6 +3,7 @@ title: Local host WordPress development with MAMP
 author: Todd Motto
 layout: post
 permalink: /local-host-wordpress-development-with-mamp
+disqus: http://www.toddmotto.com/local-host-wordpress-development-with-mamp
 ---
 
 Speed up your WordPress development by deploying new projects to your localhost environment by using MAMP. Nice and easy from the comfort of your own PHP files on your desktop, it’s a winner for speeding up your project, and following best practice for developing with local files.

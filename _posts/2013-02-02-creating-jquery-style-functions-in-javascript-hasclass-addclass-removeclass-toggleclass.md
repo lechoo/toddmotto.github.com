@@ -3,6 +3,7 @@ title: Creating jQuery-style functions in JavaScript, hasClass, addClass, remove
 author: Todd Motto
 layout: post
 permalink: /creating-jquery-style-functions-in-javascript-hasclass-addclass-removeclass-toggleclass
+disqus: http://www.toddmotto.com/creating-jquery-style-functions-in-javascript-hasclass-addclass-removeclass-toggleclass
 ---
 
 jQuery is a pretty cool framework, it has it’s uses, it’s pretty reliable, but remember: it’s written with JavaScript. It’s not a language by itself, it’s not a magical tool, nor the answer to our prayers. It doesn’t make front-end animation/AJAX/DOM maniuplating easy, it makes you think less and miss out on vital knowledgable. What happened before jQuery?

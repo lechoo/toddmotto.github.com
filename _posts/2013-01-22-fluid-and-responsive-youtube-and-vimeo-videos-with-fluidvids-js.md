@@ -3,6 +3,7 @@ title: Fluid and responsive YouTube and Vimeo videos with fluidvids.js
 author: Todd Motto
 layout: post
 permalink: /fluid-and-responsive-youtube-and-vimeo-videos-with-fluidvids-js
+disqus: http://www.toddmotto.com/fluid-and-responsive-youtube-and-vimeo-videos-with-fluidvids-js
 ---
 
 One of the major drawbacks to responsive design is managing external plugins/resources, such as YouTube and Vimeo videos – which we can embed into our sites using an iframe. This is where we lose control. Working with iframes is sometimes tricky, especially with video and maintaining aspect ratios. There are some CSS hacks we can do to attempt making iframe videos responsive, but to no success.

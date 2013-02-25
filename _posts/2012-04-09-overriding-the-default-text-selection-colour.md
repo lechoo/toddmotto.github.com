@@ -3,6 +3,7 @@ title: Overriding the Default Text Selection Colour
 author: Todd Motto
 layout: post
 permalink: /overriding-the-default-text-selection-colour
+disqus: http://www.toddmotto.com/overriding-the-default-text-selection-colour
 ---
 
 Add something different to your website by overriding the default text selection colour (boring blue and no text styling) when highlighting words/images on your website. Check out the demo below by highlighting the paragraphs, and add the code to your own website. 

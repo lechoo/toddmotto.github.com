@@ -3,6 +3,7 @@ title: Creating a responsive, dynamic mobile select navigation from pure javascr
 author: Todd Motto
 layout: post
 permalink: /creating-a-responsive-dynamic-mobile-navigation-from-pure-javascript
+disqus: http://www.toddmotto.com/creating-a-responsive-dynamic-mobile-navigation-from-pure-javascript
 ---
 
 Here’s how to create a select menu from an existing menu using JavaScript. The select menu will be comprised of an existing menu, which dynamically creates a select menu and populates it with menu items.

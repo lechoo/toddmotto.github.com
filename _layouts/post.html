@@ -5,6 +5,12 @@ layout: default
 		<article class="full-post">
 			<h1 class="full-title">{{ page.title }}</h1>
 			{{ content }}
+			<div class="social">
+				<div class="addthis_toolbox addthis_default_style">
+					<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+					<a class="addthis_button_tweet"></a>
+				</div>
+			</div>
 			<div class="disqus">
 				<div id="disqus_thread"></div>
 			</div>
@@ -24,3 +30,5 @@ layout: default
 				document.getElementsByTagName('head')[0].appendChild(dsq);
 			})();
 		</script>
+		
+		<script src="//s7.addthis.com/js/250/addthis_widget.js"></script>

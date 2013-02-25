@@ -16,18 +16,22 @@ First thing you’ll need is a PHP web page. If your server handles PHP, then us
 
 This literally just pulls in the current date using server technology, and is really easy to implement instead of manually typing the year (and forgetting about it).
 
-    &copy; <?php echo date("Y"); ?> Copyright.
+{% highlight html %}
+&copy; <?php echo date("Y"); ?> Copyright.
+{% endhighlight %}
 
-Gives you: © 2012 Copyright.
+Gives you: © 2013 Copyright.
 
 ### Website Start and Current Year
 
 Little longer PHP snippet – in which you set the date your website was launched, and let the PHP automatically keep the current year up to date. See below and example for details.
 
-    &copy; <?php 
-	$copyYear = 2008; // Set your website start date
-	$curYear = date('Y'); // Keeps the second year updated
-	echo $copyYear . (($copyYear != $curYear) ? '-' . $curYear : '');
-	?> Copyright.
+{% highlight html %}
+&copy; <?php
+$copyYear = 2008; // Set your website start date
+$curYear = date('Y'); // Keeps the second year updated
+echo $copyYear . (($copyYear != $curYear) ? '-' . $curYear : '');
+?> Copyright.
+{% endhighlight %}
 
-Gives you: © 2008-2012 Copyright.
+Gives you: © 2008-2013 Copyright.

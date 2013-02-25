@@ -65,7 +65,7 @@ Here’s the main script, for those wishing to see how it works.
 		} else {
 			// If the input doesn't contain http:// - add it!
 			if(inputValue.substr(0,7) != 'http://'){
-				iframe.src = 'http://'   inputValue;
+				iframe.src = '//' + inputValue;
 			} else {
 				iframe.src = inputValue;
 			}
@@ -89,12 +89,12 @@ Here’s the main script, for those wishing to see how it works.
 			// Check if any letters are in the value
 			// Append li attributes with custom width
 			if(isNaN(inputValue)) {
-				alert('Numbers only please, don't add the 'px'');
+				alert('Numbers only please, don\'t add the \'px\'');
 			} else {
 				var li = document.createElement('li');
 				li.setAttribute('data-width', inputValue);
 				li.className = 'custom-width';
-				li.innerHTML = inputValue   'px';
+				li.innerHTML = inputValue + 'px';
 				document.getElementById('viewports').appendChild(li);
 			}
 			return false;
@@ -122,7 +122,7 @@ Here’s the main script, for those wishing to see how it works.
 			$(iframe).css({'display': 'block'}).animate({width: docWidth}, 'slow');
 		} else {
 			var dataWidth = this.getAttribute('data-width');
-			var fullWidth =  dataWidth    scrollbarWidth;
+			var fullWidth = +dataWidth + +scrollbarWidth;
 			$(iframe).css({'display': 'block'}).animate({width: fullWidth}, 'slow');
 		}
 	});

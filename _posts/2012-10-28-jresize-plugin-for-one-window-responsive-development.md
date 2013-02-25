@@ -48,7 +48,7 @@ These are our viewport widths (hence the name), which get pulled in from the Plu
 
 {% highlight javascript %}
 var viewPortWidths = options.viewPortSizes;
-  {% endhighlight %}  
+{% endhighlight %}  
 
 This just defines some inline styles for our list elements which we’ll call later.
 

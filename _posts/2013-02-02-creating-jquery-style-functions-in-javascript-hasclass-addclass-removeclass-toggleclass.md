@@ -69,7 +69,7 @@ So we want to create our own hasClass now. We don’t want to know it ‘just wo
 
 {% highlight javascript %}
 function hasClass(elem, className) {
-	return new RegExp(' '   className   ' ').test(' '   elem.className   ' ');
+	return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
 }
 {% endhighlight %}
 
@@ -107,9 +107,9 @@ Again, here’s my stab at creating a nice addClass function, which passes the c
 
 {% highlight javascript %}
 function addClass(elem, className) {
-	if (!hasClass(elem, className)) {
-		elem.className  = ' '   className;
-	}
+    if (!hasClass(elem, className)) {
+    	elem.className += ' ' + className;
+    }
 }
 {% endhighlight %}
 
@@ -145,13 +145,14 @@ Now we can create a removeClass function, which is a little more complicated, us
 
 {% highlight javascript %}
 function removeClass(elem, className) {
-	var newClass = ' '   elem.className.replace( /[trn]/g, ' ')   ' ';
+	var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ') + ' ';
 	if (hasClass(elem, className)) {
-        while (newClass.indexOf(' '   className   ' ') >= 0 ) {
-            newClass = newClass.replace(' '   className   ' ', ' ');
+        while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
+            newClass = newClass.replace(' ' + className + ' ', ' ');
         }
-        elem.className = newClass.replace(/^s |s $/g, '');
+        elem.className = newClass.replace(/^\s+|\s+$/g, '');
     }
+} }
 }
 {% endhighlight %}
 
@@ -183,14 +184,14 @@ Which would toggle the class ‘active’ for one click, and toggle it back for 
 
 {% highlight javascript %}
 function toggleClass(elem, className) {
-	var newClass = ' '   elem.className.replace( /[trn]/g, " " )   ' ';
+	var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ' ) + ' ';
     if (hasClass(elem, className)) {
-        while (newClass.indexOf(" "   className   " ") >= 0 ) {
-            newClass = newClass.replace( " "   className   " " , " " );
+        while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
+            newClass = newClass.replace( ' ' + className + ' ' , ' ' );
         }
-        elem.className = newClass.replace(/^s |s $/g, '');
+        elem.className = newClass.replace(/^\s+|\s+$/g, '');
     } else {
-        elem.className  = ' '   className;
+        elem.className += ' ' + className;
     }
 }
 {% endhighlight %}

@@ -24,21 +24,21 @@ Tested in: Chrome, Safari, FireFox, Opera, IE7, IE8, IE9. Good to go.
 
 Simply download the script, and call it in your DOM Ready function like so on your header element, you’ll need to ensure jQuery is thrown in there too. Now, let’s be sensible here – not all designs will be setup to make use of the plugin, so take note from the Demo on what style of header it would work best on. Right at the top, in or outside your wrapper container.
 
-    $('#header').bounceThis();
+{% highlight javascript %}
+$('#header').bounceThis();
+{% endhighlight %}
 
-Let’s look at the options included and the full markup:
+Let’s look at the options included and the setup:
 
-    
-    
-    
-    $(function() {
-    	$('#header').bounceThis({
-    		bounceHeight  : '20px',
-    		dropDownSpeed : 300,
-    		delay         : 400
-    	});
-    });
-    
+{% highlight javascript %}
+$(function() {
+	$('#header').bounceThis({
+		bounceHeight  : '20px',
+		dropDownSpeed : 300,
+		delay         : 400
+	});
+});
+{% endhighlight %}
 
 The fully commented version is around 2KB, and minified is around 0.6KB only. Now here are the options explained.
 
@@ -58,79 +58,81 @@ The clockwork behind the plugin, if you’re interested. It’s fully commented 
 
 First we start off by creating the plugin, using a semi-colon as a safety net for any unclosed JavaScript elsewhere or other conflictions.
 
-    ;(function($) {
-    		
-    	$.fn.bounceThis = function (options) {
-    		
-    		// Create our default settings
-    		var settings = {
-    			bounceHeight: '20px',
-    			dropDownSpeed: 300,
-    			delay: 400
-    		};
-    		
-    		// Load our settings
-    		if(options) {
-    			$.extend(settings, options);
-    		}
+{% highlight javascript %}
+;(function($) {
+		
+	$.fn.bounceThis = function (options) {
+		
+		// Create our default settings
+		var settings = {
+			bounceHeight: '20px',
+			dropDownSpeed: 300,
+			delay: 400
+		};
+		
+		// Load our settings
+		if(options) {
+			$.extend(settings, options);
+		}
+		
+		// Run it, run it
+		return this.each(function () {
+		
+			// Create a variable for $(this)
+			var $this = $(this),
+			
+				// Grab our item's height, passing 'true' on outerHeight includes margins
+				itemheight = $this.outerHeight(true);
+				
+			// Wrap the targeted element in a <div>
+			// This allows us to use absolute positioning
+			// On the child without losing the element's natural height
+			$this.wrap('<div class="bounceThis" />');
+			
+			// Target our newly created element, give it the exact height as the targeted element
+			// We do this to mimic it's physical space when animating
+			// Position it relative, to setup more relative positioning on the child element
+			$('.bounceThis').css({
+				height: itemheight,
+				position: 'relative'
+			});
+			
+			// Hide the element
+			$this.hide();
+			
+			// Remove from view whilst hidden, equivalent to element height
+			$this.animate({
+				top: "-" + itemheight
+			},
+				// After negative animation on the invisible element, add position relative
+				// Show the element to make it visible again, but offscreen still
+				function () {
+					$(this).css({
+						position: 'relative'
+					}).show();
+				}
+			);
+			
+			// Delay by user settings
+			// Animate at the declared bounceHeight
+			$this.delay(settings.delay).animate({
+				top: settings.bounceHeight
+			},
+			
+			// Animate it at our declared dropDownSpeed
+			// This speed applies to both animations
+			settings.dropDownSpeed,
 
-Here we wrap it in an anonymous function, with the aforementioned semi-colon. Define the function name and define some basic options. Followed by a quick if statement with our extensions call to ‘settings’.
-
-    // Run it, run it
-    return this.each(function () {
-    
-    	// Create a variable for $(this)
-    	var $this = $(this),
-    	
-    		// Grab our item's height, passing 'true' on outerHeight includes margins
-    		itemheight = $this.outerHeight(true);
-    				
-    	// Wrap the targeted element in a 
-    	// This allows us to use absolute positioning
-    	// On the child without losing the element's natural height
-    	$this.wrap('');
-    	
-    	// Target our newly created element, give it the exact height as the targeted element
-    	// We do this to mimic it's physical space when animating
-    	// Position it relative, to setup more relative positioning on the child element
-    	$('.bounceThis').css({
-    		height: itemheight,
-    		position: 'relative'
-    	});
-    		
-    	// Hide the element
-    	$this.hide();
-    	
-    	// Remove from view whilst hidden, equivalent to element height
-    	$this.animate({
-    		top: "-"   itemheight
-    	},
-    		// After negative animation on the invisible element, add position relative
-    		// Show the element to make it visible again, but offscreen still
-    		function () {
-    			$(this).css({
-    				position: 'relative'
-    			}).show();
-    		}
-    	);
-    		
-    	// Delay by user settings
-    	// Animate at the declared bounceHeight
-    	$this.delay(settings.delay).animate({
-    		top: settings.bounceHeight
-    	},
-    		
-    	// Animate it at our declared dropDownSpeed
-    	// This speed applies to both animations
-    	settings.dropDownSpeed,
-    
-    	// Run the last animation to bring it to the top again
-    	function () {
-    		$this.animate({
-    			top: 0
-    		});
-    	});
-    });
+			// Run the last animation to bring it to the top again
+			function () {
+				$this.animate({
+					top: 0
+				});
+			});
+		});
+	};
+})(jQuery);
+{% endhighlight %} 
 
 Most of the code is commented, but I feel the main parts here to talk about are the outerHeight(true) property, which is passed to include the margins on the selected element as well.
 

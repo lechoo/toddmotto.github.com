@@ -20,8 +20,6 @@ jBar was created to provide a lightweight plugin to replace the restrictions pro
 
  [4]: //www.hellobar.com
 
-![Ribbon][5]
-
 ### Features
 
 The jBar sits at the top of your website, and is fully customisable.

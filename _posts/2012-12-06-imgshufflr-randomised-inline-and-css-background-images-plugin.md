@@ -20,28 +20,34 @@ imgShufflr started as purely an inline image randomiser, using the  tag, but inc
 
 Include the file in your page, the minified or full version. You’ll need to call the imgShufflr in your page like so:
 
-    $('#imgShufflr').imgShufflr();
+{% highlight javascript %}
+$('#imgShufflr').imgShufflr();
+{% endhighlight %}
 
 You’ll also need an HTML element with your chosen ID:
 
-    <div id="imgShufflr"></div>
+{% highlight html %}
+<div id="imgShufflr"></div>
+{% endhighlight %}
 
 Let’s look at the options included and the full markup:
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script src="js/imgshufflr.min.js"></script>
-	<script>
-	$(function() {
-		$('#imgShufflr').imgShufflr({
-			imgType  : 'inline', // inline or background
-			imgs     : ["image-1.jpg","image-2.jpg","image-3.jpg","image-4.jpg"], // Image array
-			imgPath  : 'img/shuffle/', // Image directory
-			imgAlt   : 'Random Image', // Alternate text on images
-			imgTitle : 'Title', // Title text on images
-			imgClass : 'shuffled' // Class name for the images
-		});
+{% highlight html %}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/imgshufflr.min.js"></script>
+<script>
+$(function() {
+	$('#imgShufflr').imgShufflr({
+		imgType  : 'inline', // inline or background
+		imgs     : ["image-1.jpg","image-2.jpg","image-3.jpg","image-4.jpg"], // Image array
+		imgPath  : 'img/shuffle/', // Image directory
+		imgAlt   : 'Random Image', // Alternate text on images
+		imgTitle : 'Title', // Title text on images
+		imgClass : 'shuffled' // Class name for the images
 	});
-	</script>
+});
+</script>
+{% endhighlight %}
 
 Options explained:  
 imgType – inline or background. Choosing ‘inline’ will produce an  tag with your options and attributes inside, whereas choosing background will use background-image as CSS instead. It’s as simple as that.
@@ -60,61 +66,63 @@ imgClass – HTML class attribute for CSS purposes if needed, default ‘shuffle
 
 The workings behind imgShufflr explained.
 
-    ;(function($) {
-    		
-    	$.fn.imgShufflr = function(options) {
-    		
-    		// imgShufflr settings
-    		var settings = {
-    			imgType  : 'inline', // inline or background
-    			imgs     : ["image-1.jpg","image-2.jpg","image-3.jpg","image-4.jpg"], // Image array
-    			imgPath  : 'img/shuffle/', // Image directory
-    			imgAlt   : 'Random Image', // Alternate text on images
-    			imgTitle : 'Title', // Title text on images
-    			imgClass : 'shuffled' // Class name for the images
-    		};
-    		
-    		// Load our settings
-    		if (options) {
-    			$.extend(settings, options);
-    		}
-    		
-    		// Shuffle, shuffle
-    		return this.each(function() {
-    		
-    			// Define our variables
-    			var $this = $(this),
-    				imgs  = settings.imgs,
-    				img   = imgs[Math.floor(Math.random() * imgs.length)];
-    			
-    			// If the settings are inline 
-    			if (settings.imgType === 'inline') {
-    			
-    				// Prepend the inline  with the following attributes
-    				$this.prepend(
-    					$('')
-    						.attr({
-    							src   : settings.imgPath   img,
-    							alt   : settings.imgAlt,
-    							title : settings.imgTitle,
-    							class : settings.imgClass
-    						})
-    				);
-    			
-    			}
-    			
-    			// If the settings are background image
-    			if (settings.imgType === 'background') {
-    			
-    				// Load the image into the CSS as a background image
-    				$this.css({
-    					'background-image':'url('   settings.imgPath   img   ')'
-    				});
-    			}
-    			
-    		});
-    	};
-    })(jQuery);
+{% highlight javascript %}
+;(function($) {
+		
+	$.fn.imgShufflr = function(options) {
+		
+		// imgShufflr settings
+		var settings = {
+			imgType  : 'inline', // inline or background
+			imgs     : ["image-1.jpg","image-2.jpg","image-3.jpg","image-4.jpg"], // Image array
+			imgPath  : 'img/shuffle/', // Image directory
+			imgAlt   : 'Random Image', // Alternate text on images
+			imgTitle : 'Title', // Title text on images
+			imgClass : 'shuffled' // Class name for the images
+		};
+		
+		// Load our settings
+		if (options) {
+			$.extend(settings, options);
+		}
+		
+		// Shuffle, shuffle
+		return this.each(function() {
+		
+			// Define our variables
+			var $this = $(this),
+				imgs  = settings.imgs,
+				img   = imgs[Math.floor(Math.random() * imgs.length)];
+			
+			// If the settings are inline 
+			if (settings.imgType === 'inline') {
+			
+				// Prepend the inline  with the following attributes
+				$this.prepend(
+					$('')
+						.attr({
+							src   : settings.imgPath   img,
+							alt   : settings.imgAlt,
+							title : settings.imgTitle,
+							class : settings.imgClass
+						})
+				);
+			
+			}
+			
+			// If the settings are background image
+			if (settings.imgType === 'background') {
+			
+				// Load the image into the CSS as a background image
+				$this.css({
+					'background-image':'url('   settings.imgPath   img   ')'
+				});
+			}
+			
+		});
+	};
+})(jQuery);
+{% endhighlight %}
 
 The main workings behind the plugin markup are pretty standard, it’s mainly inside our return this.each(function() that things get to work.
 

@@ -26,43 +26,45 @@ Tip: The demo has no CSS styling on the navigation to show it’s structure.
 
 Let’s look at the current, demo, navigation structure, which you’ll see has three levels of hierarchy, Top Level, Sub Item, Sub-sub Item. I’ve merely named them as these for the demo. The task for our script is to then take these levels of hierarchy, and dynamically append each item to a new  inside a  element.
 
-    <nav id="nav">
-		<ul>
-			<li>
-				<a href="?=item-1">Top Level Item 1</a>
-				<ul>
-					<li><a href="?=sub-1">Sub Item 1</a></li>
-					<li><a href="?=sub-2">Sub Item 2</a></li>
-					<li><a href="?=sub-3">Sub Item 3</a></li>
-					<li><a href="?=sub-4">Sub Item 4</a></li>
-					<li><a href="?=sub-5">Sub Item 5</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="?=item-2">Top Level Item 2</a>
-			</li>
-			<li>
-				<a href="?=item-3">Top Level Item 3</a>
-			</li>
-			<li>
-				<a href="?=item-4">Top Level Item 4</a>
-				<ul>
-					<li><a href="?=sub-1">Sub Item 1</a></li>
-					<li><a href="?=sub-2">Sub Item 2</a></li>
-					<li><a href="?=sub-3">Sub Item 3</a></li>
-					<li><a href="?=sub-4">Sub Item 4</a></li>
-					<li>
-						<a href="?=sub-5">Sub Item 5</a>
-						<ul>
-							<li><a href="?=sub-sub-1">Sub-sub Item 1</a></li>
-							<li><a href="?=sub-sub-2">Sub-sub Item 2</a></li>
-							<li><a href="?=sub-sub-3">Sub-sub Item 3</a></li>
-						</ul>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</nav>
+{% highlight html %}
+<nav id="nav">
+	<ul>
+		<li>
+			<a href="?=item-1">Top Level Item 1</a>
+			<ul>
+				<li><a href="?=sub-1">Sub Item 1</a></li>
+				<li><a href="?=sub-2">Sub Item 2</a></li>
+				<li><a href="?=sub-3">Sub Item 3</a></li>
+				<li><a href="?=sub-4">Sub Item 4</a></li>
+				<li><a href="?=sub-5">Sub Item 5</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="?=item-2">Top Level Item 2</a>
+		</li>
+		<li>
+			<a href="?=item-3">Top Level Item 3</a>
+		</li>
+		<li>
+			<a href="?=item-4">Top Level Item 4</a>
+			<ul>
+				<li><a href="?=sub-1">Sub Item 1</a></li>
+				<li><a href="?=sub-2">Sub Item 2</a></li>
+				<li><a href="?=sub-3">Sub Item 3</a></li>
+				<li><a href="?=sub-4">Sub Item 4</a></li>
+				<li>
+					<a href="?=sub-5">Sub Item 5</a>
+					<ul>
+						<li><a href="?=sub-sub-1">Sub-sub Item 1</a></li>
+						<li><a href="?=sub-sub-2">Sub-sub Item 2</a></li>
+						<li><a href="?=sub-sub-3">Sub-sub Item 3</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</nav>
+{% endhighlight %}
 
 You’ll see the HTML5 element  is being used here, but to make it easier and not markup reliant, we’ll use an ID attribute for our project. I’ve given this element the ID of ‘nav’, for hooking into the JavaScript later on. We’ll then create a script to append the finalised  element inside it, so it sits alongside our markup.
 
@@ -70,16 +72,22 @@ You’ll see the HTML5 element  is being used here, but to make it easier and no
 
 We need to create a  element, which will later be appended to our existing navigation. Doing this with JavaScript looks like so:
 
-    document.createElement('select');
+{% highlight javascript %}
+document.createElement('select');
+{% endhighlight %}
 
 We then need to give our new element an ID of ‘mobile’, so we know it’s the mobile navigation, and for later CSS styling purposes. We’ll need to create a variable to add the ID attribute, let’s call our variable ‘select’ and set the mobile ID attribute.
 
-    var select = document.createElement('select');
-    select.setAttribute('id', 'mobile');
+{% highlight javascript %}
+var select = document.createElement('select');
+select.setAttribute('id', 'mobile');
+{% endhighlight %}
 
 This would dynamically give us this markup:
 
-    <select id="mobile">
+{% highlight html %}
+<select id="mobile">
+{% endhighlight %}
 
 ### ‘Navigation’ first option
 
@@ -87,55 +95,62 @@ The first option in our  menu will be called ‘Navigation’. You can of course
 
 Now we’ll create the first  item:
 
-    var first = document.createElement('option');
-    first.innerHTML = 'Navigation';
+{% highlight javascript %}
+var first = document.createElement('option');
+first.innerHTML = 'Navigation';
+{% endhighlight %}
 
 We’ll now need to add our first item to the select menu:
 
-    select.appendChild(first);
+{% highlight javascript %}
+select.appendChild(first);
+{% endhighlight %}
 
 The full script for this portion looks as follows:
 
-    var select = document.createElement('select');
-    var first = document.createElement('option');
-    
-    first.innerHTML = 'Navigation';
-    first.setAttribute('selected', 'selected');
-    select.setAttribute('id', 'mobile');
-    select.appendChild(first);
-    
+{% highlight javascript %}
+var select = document.createElement('select');
+var first = document.createElement('option');
+
+first.innerHTML = 'Navigation';
+first.setAttribute('selected', 'selected');
+select.setAttribute('id', 'mobile');
+select.appendChild(first);
+{% endhighlight %}    
 
 ### Dynamically creating the options
 
 Let’s target the existing markup, and create an option element for each item. We create a nav variable which targets our element by ID, which is  in our earlier markup. Using a recursive function, we then use a for loop to loop through the child elements of our nav ID.
 
-    var nav = document.getElementById('nav');
-    var loadLinks = function(element, hyphen, level) {
-    
-    	var e = element;
-    	var children = e.children;
-    
-    	for(var i = 0; i < e.children.length;   i) {
-    
-    		var currentLink = children[i];
-    
-    		switch(currentLink.nodeName) {
-    			case 'A':
-    				var option = document.createElement('option');
-    				option.innerHTML = (level   < 1 ? '' : hyphen)   currentLink.innerHTML;
-    				option.value = currentLink.href;
-    				select.appendChild(option);
-    				break;
-    			default:
-    				if(currentLink.nodeName === 'UL') {
-    					(level < 2) || (hyphen  = hyphen);
-    				}
-    				loadLinks(currentLink, hyphen, level);
-    				break;
-    		}
-    	}
-    }
-    loadLinks(nav, '- ', 0);
+{% highlight javascript %}
+var nav = document.getElementById('nav');
+var loadLinks = function(element, hyphen, level) {
+
+	var e = element;
+	var children = e.children;
+
+	for(var i = 0; i < e.children.length; ++i) {
+
+		var currentLink = children[i];
+
+		switch(currentLink.nodeName) {
+			case 'A':
+				var option = document.createElement('option');
+				option.innerHTML = (level++ < 1 ? '' : hyphen) + currentLink.innerHTML;
+				option.value = currentLink.href;
+				select.appendChild(option);
+				break;
+			default:
+				if(currentLink.nodeName === 'UL') {
+					(level < 2) || (hyphen += hyphen);
+				}
+				loadLinks(currentLink, hyphen, level);
+				break;
+		}
+	}
+}
+loadLinks(nav, '- ', 0);
+{% endhighlight %}  
 
 Inside the loop, we've got two different sections, one that creates an option for all 'A' elements, and the other which looks for the 'UL' element. Each child element is then passed through the loop, creating an  for each  element found.
 
@@ -159,88 +174,93 @@ attachEvent is IE's version of addEventListener.
 
 Should all else fail, a default onchange has been added. These have been setup as if, else if, else statements for our browsers to run through and check which suits them.
 
-    var mobile = document.getElementById('mobile');
-    
-    if(mobile.addEventListener) {
-    	mobile.addEventListener('change', function () {
-    		window.location.href = mobile.options[mobile.selectedIndex].value;
-    	});
-    } else if(mobile.attachEvent) {
-    	mobile.attachEvent('onchange', function () {
-    		window.location.href = mobile.options[mobile.selectedIndex].value;
-    	});
-    } else {
-    	mobile.onchange = function () {
-    		window.location.href = mobile.options[mobile.selectedIndex].value;
-    	}
-    }
+{% highlight javascript %}
+var mobile = document.getElementById('mobile');
+
+if(mobile.addEventListener) {
+	mobile.addEventListener('change', function () {
+		window.location.href = mobile.options[mobile.selectedIndex].value;
+	});
+} else if(mobile.attachEvent) {
+	mobile.attachEvent('onchange', function () {
+		window.location.href = mobile.options[mobile.selectedIndex].value;
+	});
+} else {
+	mobile.onchange = function () {
+		window.location.href = mobile.options[mobile.selectedIndex].value;
+	}
+}
+{% endhighlight %}
 
 ### Putting everything together
 
 Now that we've created the main pieces of our script, we need to put it all together. I've wrapped it all inside a function named selectnav() which you need to call after the DOM structure has been rendered. You can either remove the function 'wrap' and add the script to the bottom of your page, or include it inside a DOM ready function - but you knew that already.
 
-    function selectnav() {
-    
-    	var select = document.createElement('select');
-    	var first = document.createElement('option');
-    
-    	first.innerHTML = 'Navigation';
-    	first.setAttribute('selected', 'selected');
-    	select.setAttribute('id', 'mobile');
-    	select.appendChild(first);
-    
-    	var nav = document.getElementById('nav');
-    	var loadLinks = function(element, hyphen, level) {
-    
-    		var e = element;
-    		var children = e.children;
-    
-    		for(var i = 0; i < e.children.length;   i) {
-    
-    			var currentLink = children[i];
-    
-    			switch(currentLink.nodeName) {
-    				case 'A':
-    					var option = document.createElement('option');
-    					option.innerHTML = (level   < 1 ? '' : hyphen)   currentLink.innerHTML;
-    					option.value = currentLink.href;
-    					select.appendChild(option);
-    					break;
-    				default:
-    					if(currentLink.nodeName === 'UL') {
-    						(level < 2) || (hyphen  = hyphen);
-    					}
-    					loadLinks(currentLink, hyphen, level);
-    					break;
-    			}
-    		}
-    	}
-    
-    	loadLinks(nav, '- ', 0);
-    
-    	nav.appendChild(select);
-    
-    	var mobile = document.getElementById('mobile');
-    
-    	if(mobile.addEventListener) {
-    		mobile.addEventListener('change', function () {
-    			window.location.href = mobile.options[mobile.selectedIndex].value;
-    		});
-    	} else if(mobile.attachEvent) {
-    		mobile.attachEvent('onchange', function () {
-    			window.location.href = mobile.options[mobile.selectedIndex].value;
-    		});
-    	} else {
-    		mobile.onchange = function () {
-    			window.location.href = mobile.options[mobile.selectedIndex].value;
-    		}
-    	}
-    
-    }
+{% highlight javascript %}
+function selectnav() {
+
+	var select = document.createElement('select');
+	var first = document.createElement('option');
+
+	first.innerHTML = 'Navigation';
+	first.setAttribute('selected', 'selected');
+	select.setAttribute('id', 'mobile');
+	select.appendChild(first);
+
+	var nav = document.getElementById('nav');
+	var loadLinks = function(element, hyphen, level) {
+
+		var e = element;
+		var children = e.children;
+
+		for(var i = 0; i < e.children.length; ++i) {
+
+			var currentLink = children[i];
+
+			switch(currentLink.nodeName) {
+				case 'A':
+					var option = document.createElement('option');
+					option.innerHTML = (level++ < 1 ? '' : hyphen) + currentLink.innerHTML;
+					option.value = currentLink.href;
+					select.appendChild(option);
+					break;
+				default:
+					if(currentLink.nodeName === 'UL') {
+						(level < 2) || (hyphen += hyphen);
+					}
+					loadLinks(currentLink, hyphen, level);
+					break;
+			}
+		}
+	}
+
+	loadLinks(nav, '- ', 0);
+
+	nav.appendChild(select);
+
+	var mobile = document.getElementById('mobile');
+
+	if(mobile.addEventListener) {
+		mobile.addEventListener('change', function () {
+			window.location.href = mobile.options[mobile.selectedIndex].value;
+		});
+	} else if(mobile.attachEvent) {
+		mobile.attachEvent('onchange', function () {
+			window.location.href = mobile.options[mobile.selectedIndex].value;
+		});
+	} else {
+		mobile.onchange = function () {
+			window.location.href = mobile.options[mobile.selectedIndex].value;
+		}
+	}
+}
+{% endhighlight %}
 
 Inside this script you'll notice this piece:
 
-    nav.appendChild(select);
+{% highlight javascript %}
+nav.appendChild(select);
+{% endhighlight %}
 
 This adds our newly created  menu inside our  element. This keeps them inside the same element, which is great from a styling perspective as everything will be inside the same element. 
 
@@ -248,75 +268,79 @@ This adds our newly created  menu inside our  element. This keeps them inside th
 
 Include the script inside your  tag, and call the function just before the closing  tag. For performance purposes you could include the script at the bottom of the page, and you wouldn't need to call the function. We merely call the function because it needs to be executed after the DOM elements have loaded.
 
-    <!DOCTYPE html>
-	<html>
-		<head>
-			<script src="js/selectnav.js"></script>
-		</head>
-		
-		<body>
-			<script>
-				selectnav();
-			</script>
-		</body>
-	</html>
+{% highlight html %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="js/selectnav.js"></script>
+	</head>
+	
+	<body>
+		<script>
+			selectnav();
+		</script>
+	</body>
+</html>
+{% endhighlight %}
 
-If you are using a DOM ready function handler, then you can of course remove the script entirely from it's function wrap, and add it inside your DOM ready function:
+If you are using a DOM ready function handler or putting scripts before the closing body tag, then you can of course remove the script entirely from it's function wrap, and add it like this:
 
-    var select = document.createElement('select');
-    var first = document.createElement('option');
-    
-    first.innerHTML = 'Navigation';
-    first.setAttribute('selected', 'selected');
-    select.setAttribute('id', 'mobile');
-    select.appendChild(first);
-    
-    var nav = document.getElementById('nav');
-    var loadLinks = function(element, hyphen, level) {
-    
-    	var e = element;
-    	var children = e.children;
-    
-    	for(var i = 0; i < e.children.length;   i) {
-    
-    		var currentLink = children[i];
-    
-    		switch(currentLink.nodeName) {
-    			case 'A':
-    				var option = document.createElement('option');
-    				option.innerHTML = (level   < 1 ? '' : hyphen)   currentLink.innerHTML;
-    				option.value = currentLink.href;
-    				select.appendChild(option);
-    				break;
-    			default:
-    				if(currentLink.nodeName === 'UL') {
-    					(level < 2) || (hyphen  = hyphen);
-    				}
-    				loadLinks(currentLink, hyphen, level);
-    				break;
-    		}
-    	}
-    }
-    
-    loadLinks(nav, '- ', 0);
-    
-    nav.appendChild(select);
-    
-    var mobile = document.getElementById('mobile');
-    
-    if(mobile.addEventListener) {
-    	mobile.addEventListener('change', function () {
-    		window.location.href = mobile.options[mobile.selectedIndex].value;
-    	});
-    } else if(mobile.attachEvent) {
-    	mobile.attachEvent('onchange', function () {
-    		window.location.href = mobile.options[mobile.selectedIndex].value;
-    	});
-    } else {
-    	mobile.onchange = function () {
-    		window.location.href = mobile.options[mobile.selectedIndex].value;
-    	}
-    }
+{% highlight javascript %}
+var select = document.createElement('select');
+var first = document.createElement('option');
+
+first.innerHTML = 'Navigation';
+first.setAttribute('selected', 'selected');
+select.setAttribute('id', 'mobile');
+select.appendChild(first);
+
+var nav = document.getElementById('nav');
+var loadLinks = function(element, hyphen, level) {
+
+	var e = element;
+	var children = e.children;
+
+	for(var i = 0; i < e.children.length; ++i) {
+
+		var currentLink = children[i];
+
+		switch(currentLink.nodeName) {
+			case 'A':
+				var option = document.createElement('option');
+				option.innerHTML = (level++ < 1 ? '' : hyphen) + currentLink.innerHTML;
+				option.value = currentLink.href;
+				select.appendChild(option);
+				break;
+			default:
+				if(currentLink.nodeName === 'UL') {
+					(level < 2) || (hyphen += hyphen);
+				}
+				loadLinks(currentLink, hyphen, level);
+				break;
+		}
+	}
+}
+
+loadLinks(nav, '- ', 0);
+
+nav.appendChild(select);
+
+var mobile = document.getElementById('mobile');
+
+if(mobile.addEventListener) {
+	mobile.addEventListener('change', function () {
+		window.location.href = mobile.options[mobile.selectedIndex].value;
+	});
+} else if(mobile.attachEvent) {
+	mobile.attachEvent('onchange', function () {
+		window.location.href = mobile.options[mobile.selectedIndex].value;
+	});
+} else {
+	mobile.onchange = function () {
+		window.location.href = mobile.options[mobile.selectedIndex].value;
+	}
+}
+{% endhighlight %}
 
 ### Browser compatibility
 

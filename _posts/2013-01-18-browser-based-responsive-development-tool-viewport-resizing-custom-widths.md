@@ -132,7 +132,7 @@ Here’s the main script, for those wishing to see how it works.
 		document.getElementById('ajax').remove();
 	}
 })();
-{% endhighlight %}    
+{% endhighlight %}  
 
 ### HTML5 and JavaScript
 

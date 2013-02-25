@@ -23,29 +23,34 @@ If you haven’t heard about it, the border-box model solves a lot of issues wit
 
 Without box-sizing:
 
-    <style>
-	.grid_6 { width: 460px; }
-	.inner-border { border: 1px solid #000; }
-	.inner-padding { padding: 20px; }
-	</style>
-	<div class="box grid_6">
-		<div class="inner-border">
-			<div class="inner-padding">
-				Content here
-			</div>
+{% highlight css %}
+.grid_6 { width: 460px; }
+.inner-border { border: 1px solid #000; }
+.inner-padding { padding: 20px; }
+{% endhighlight %}
+
+{% highlight html %}
+<div class="box grid_6">
+	<div class="inner-border">
+		<div class="inner-padding">
+			Content here
 		</div>
 	</div>
+</div>
+{% endhighlight %}
 	
 Without border-box, if we applied the padding and border on .box the width would grow to 502px—breaking the layout. This is because the total width equals the element width padding borders. In this case; 460px (element width) 40px (left and right padding) 2px (left and right border). This is why the extra divs are needed to keep .box at 460px wide. However with border-box we can do this:
 
-    <style>
-	.grid_6 { width: 460px; }
-	.box { border: 1px solid #000; padding: 20px; }
-	</style>
-	
-	<div class="box grid_6">
-		Content here
-	</div>
+{% highlight css %}
+.grid_6 { width: 460px; }
+.box { border: 1px solid #000; padding: 20px; }
+{% endhighlight %}
+
+{% highlight html %}
+<div class="box grid_6">
+	Content here
+</div>
+{% endhighlight %}
 
 As the border-box box model’s total width includes the padding and borders, this keeps .box at the width we want when padding and borders are applied. Basically, padding and borders no longer affect the overall width. Awesome. I can see border-box being included in future CSS resets as it makes things a lot simpler.
 
@@ -67,32 +72,33 @@ To make theming the banner simple to fit in, or stand out if you wish, with your
 
 Below is an example of usage with all the options:
 
-    <script src="jquery.js"></script>
-    <script src="browserblast.min.js"></script>
-
-	<script>
-	$(function() {
-		$.browserBlast({
-			devMode: false, // Toggle dev mode
-			supportedIE: "8", // Supported IE version
-			customCSS: false, // Use custom CSS
-			fixed: true, // Toggle between a fixed and non-fixed banner
-			linkColor: '#56a119', // Set link color
-			linkHover: '#333', // Set link hover color
-			linkUnderline: true, // Toggle link underline
-			bannerHeight: '40', // Height of banner
-			background: '#FAF4AF', // Background color of banner
-			textColor: '#333', // Text color
-			fontSize: '12px', // Font size
-			fontFamily: 'sans-serif', // Font familiy
-			borderSize: '2', // Border size
-			borderStyle: 'solid', // Border style
-			borderColor: '#D4C790', // Border color
-			warningID: 'unsupported', // Selector ID of banner
-			message: "Hey! Your browser is unsupported. Please &lt7a href='http://browsehappy.com' target='_blank'>upgrade</a> for the best experience." // Set your message, allows HTML
-		});
+{% highlight html %}
+<script src="jquery.js"></script>
+<script src="browserblast.min.js"></script>
+<script>
+$(function() {
+	$.browserBlast({
+		devMode: false, // Toggle dev mode
+		supportedIE: "8", // Supported IE version
+		customCSS: false, // Use custom CSS
+		fixed: true, // Toggle between a fixed and non-fixed banner
+		linkColor: '#56a119', // Set link color
+		linkHover: '#333', // Set link hover color
+		linkUnderline: true, // Toggle link underline
+		bannerHeight: '40', // Height of banner
+		background: '#FAF4AF', // Background color of banner
+		textColor: '#333', // Text color
+		fontSize: '12px', // Font size
+		fontFamily: 'sans-serif', // Font familiy
+		borderSize: '2', // Border size
+		borderStyle: 'solid', // Border style
+		borderColor: '#D4C790', // Border color
+		warningID: 'unsupported', // Selector ID of banner
+		message: "Hey! Your browser is unsupported. Please <a href='http://browsehappy.com' target='_blank'>upgrade</a> for the best experience." // Set your message, allows HTML
 	});
-	</script>
+});
+</script>
+{% endhighlight %}
 
 ### Summary
 

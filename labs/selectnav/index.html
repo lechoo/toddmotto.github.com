@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Pure JavaScript dynamic select navigation | toddmotto.com</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="author" content="@toddmotto">
+	<link rel="stylesheet" href="css/demo.css?=select">
+	
+	<!-- JavaScript Select Nav -->
+	<script src="js/selectnav.js"></script>
+</head>
+
+<body>
+	<div id="header">
+		<div id="logo">
+			<a href="http://www.toddmotto.com">
+				<img src="img/logo.png" alt="Logo">
+			</a>
+		</div>
+		<div id="view-tut">
+			<ul>
+				<li><a href="http://www.toddmotto.com/creating-a-responsive-dynamic-mobile-navigation-from-pure-javascript">Visit the Tutorial</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div class="wrapper">
+		<div id="main">
+		
+			<h1>The navigation is unstyled to show hierarchy, the dynamic &lt;select&gt; is below.</h1>
+		
+			<!-- Nav -->
+			<nav id="nav">
+				<ul>
+					<li>
+						<a href="?=item-1">Top Level Item 1</a>
+						<ul>
+							<li><a href="?=sub-1">Sub Item 1</a></li>
+							<li><a href="?=sub-2">Sub Item 2</a></li>
+							<li><a href="?=sub-3">Sub Item 3</a></li>
+							<li><a href="?=sub-4">Sub Item 4</a></li>
+							<li><a href="?=sub-5">Sub Item 5</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="?=item-2">Top Level Item 2</a>
+					</li>
+					<li>
+						<a href="?=item-3">Top Level Item 3</a>
+					</li>
+					<li>
+						<a href="?=item-4">Top Level Item 4</a>
+						<ul>
+							<li><a href="?=sub-1">Sub Item 1</a></li>
+							<li><a href="?=sub-2">Sub Item 2</a></li>
+							<li><a href="?=sub-3">Sub Item 3</a></li>
+							<li><a href="?=sub-4">Sub Item 4</a></li>
+							<li>
+								<a href="?=sub-5">Sub Item 5</a>
+								<ul>
+									<li><a href="?=sub-sub-1">Sub-sub Item 1</a></li>
+									<li><a href="?=sub-sub-2">Sub-sub Item 2</a></li>
+									<li><a href="?=sub-sub-3">Sub-sub Item 3</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+			<!-- /Nav -->
+			
+		</div>
+	</div>
+	
+	<script>
+		// Initiate selectnav function
+		selectnav();
+	</script>
+	
+	<!-- Analytics (Demo only) -->
+	<script>
+		var _gaq=[['_setAccount','UA-20440416-10'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src='//www.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+	</script>
+	
+	<!-- Carbon Ads Script (Demo only) -->
+	<script src="http://www.toddmotto.com/ads/ads.js"></script>
+	
+</body>
+</html>

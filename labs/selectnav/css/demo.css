@@ -1,0 +1,19 @@
+* {margin:0;padding:0;}
+a img {border:none;}
+a {text-decoration:none;}
+body {font:400 12px/1.625 "Helvetica Neue", Helvetica, Arial, sans-serif;-webkit-font-smoothing:antialiased;-moz-font-smoothing:antialiased;
+-o-font-smoothing:antialiased;font-smoothing:antialiased;text-rendering:optimizeLegibility;color:#444;background:#48093F url(../img/bg.jpg) top left repeat-y;}
+.wrapper {width:200px;margin:0 auto;position:relative;}
+#header {overflow:auto;background:#33363C;border-top:5px solid #2F3135;border-bottom:2px solid #04A4CC;}
+#logo {float:left;margin:10px 0 5px 40px;}
+#logo img {width:80px;height:36px;}
+#view-tut {float:right;font-size:13px;font-weight:900;margin:10px 40px 5px 0;}
+#view-tut ul {margin:0;}
+#view-tut ul li {display:inline-block;*display:inline;zoom:1;margin:0 5px 0 0;}
+#view-tut ul li a {display:block;padding:5px 10px;background:#04A4CC;color:#FFF;border-radius:20px;}
+#view-tut ul li a:hover {background:#0097CD;}
+#main a,#main {margin:60px auto;color:#FFF;}
+h1 {margin:20px -50px 50px;font-size:14px;border-bottom:1px solid #FFF;padding:0 0 10px;}
+#nav ul {}
+#nav ul li ul {margin:0 0 0 25px;}
+#nav ul li ul li ul {margin:0 0 0 25px;}

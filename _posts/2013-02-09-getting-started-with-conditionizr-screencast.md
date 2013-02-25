@@ -2,7 +2,7 @@
 layout: post
 permalink: /getting-started-with-conditionizr-screencast
 title: Getting started with Conditionizr (screencast)
-disqus: www.toddmotto.com/getting-started-with-conditionizr-screencast
+disqus: http://www.toddmotto.com/getting-started-with-conditionizr-screencast
 ---
 
 Conditionizr is a fast and lightweight (4KB) javascript utility that detects browser and pixel ratio, allowing you to serve conditional JavaScript and CSS files. Here’s my (first!) screencast on how to get started with Conditionizr in your projects.

@@ -14,7 +14,7 @@ In this tutorial, we're going to dive into HTML Geolocation and hook the locatio
 </div>
 
 ### Current location
-Using JavaScript, we can gather the details of our current location, or whichever device we are on. Please bear in mind though, some ISPs are a little quirky with Geolocation, and sometimes shows you in a different area than you actually, this I imagine is all down to the internet/DNS/ISP/something. But hey, we can still build something with it, and 99% of the time it's fine. Don't blame me, blame the internet.
+Using JavaScript, we can gather the details of our current location, or whichever device we are on. Please bear in mind though, some ISPs are a little quirky with Geolocation, and sometimes shows you in a different area than you actually are, or not at all. I imagine this is all down to the internet/DNS/ISP/something. But hey, we can still build something with it, and 99% of the time it's fine. Don't blame me, blame the internet. I haven't included any error handling in this script so if it doesn't work for you, try later.
 
 We'll be using the geolocation object, which allows us to gather geographic information from the device. This looks like so:
 

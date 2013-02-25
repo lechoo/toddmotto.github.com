@@ -21,49 +21,47 @@ Important: Unless you're going to run this function alongside jQuery (inside a D
 
 Here’s a look at the script, wrapped in an immediately-invoked anonymous function.
 
-    <script>
-    (function(){
-    
-    	// Create the ViewPort detector
-    	var viewDetector = document.createElement('div');
-    	document.getElementsByTagName('body')[0].insertBefore(viewDetector).id = 'viewport-detector';
-    
-    	// Load and Resize events
-    	window.onresize = dynamicResizer;
-    	window.onload = dynamicResizer;
-    	
-    	function dynamicResizer() {
-    	    var docWidth = window.innerWidth,
-    	    	docHeight = window.innerHeight;
-    	    spanDimensions.innerHTML = docWidth   " x "   docHeight;
-    	}
-    	
-    	// Create  and append
-    	var spanDimensions = document.createElement('span');
-    	spanDimensions.className = 'dimensions';
-    	document.getElementById('viewport-detector').appendChild(spanDimensions);
-    	
-    	// Create  and append
-    	var spanRetina = document.createElement('span');
-    	spanRetina.className = 'retina';
-    	document.getElementById('viewport-detector').appendChild(spanRetina);
-    	
-    	// Create  and append
-    	var spanPixels = document.createElement('span');
-    	spanPixels.className = 'pixel-ratio';
-    	document.getElementById('viewport-detector').appendChild(spanPixels);
-    	
-    	spanPixels.innerHTML = 'Pixel Ratio: '   window.devicePixelRatio;
-    	
-    	// Retina detect
-    	if (window.devicePixelRatio >= 2) {
-    		spanRetina.innerHTML = 'Retina Device';
-    	} else {
-    		spanRetina.innerHTML = 'No Retina Device';
-    	}
-    
-    })();
-    </script>
+{% highlight javascript %}
+(function() {
+
+	// Create the ViewPort detector
+	var viewDetector = document.createElement('div');
+	document.getElementsByTagName('body')[0].insertBefore(viewDetector).id = 'viewport-detector';
+	
+	// Load and Resize events
+	window.onresize = dynamicResizer;
+	window.onload = dynamicResizer;
+
+	function dynamicResizer() {
+		var docWidth = window.innerWidth,
+			docHeight = window.innerHeight;
+		spanDimensions.innerHTML = docWidth + " x " + docHeight;
+	}
+	
+	// Create <span class="dimensions"> and append
+	var spanDimensions = document.createElement('span');
+	spanDimensions.className = 'dimensions';
+	document.getElementById('viewport-detector').appendChild(spanDimensions);
+	
+	// Create <span class="retina"> and append
+	var spanRetina = document.createElement('span');
+	spanRetina.className = 'retina';
+	document.getElementById('viewport-detector').appendChild(spanRetina);
+	
+	// Create <span class="pixel-ratio"> and append
+	var spanPixels = document.createElement('span');
+	spanPixels.className = 'pixel-ratio';
+	document.getElementById('viewport-detector').appendChild(spanPixels);
+	spanPixels.innerHTML = 'Pixel Ratio: ' + window.devicePixelRatio;
+	
+	// Retina detect
+	if(window.devicePixelRatio >= 2) {
+		spanRetina.innerHTML = 'Retina Device';
+	} else {
+		spanRetina.innerHTML = 'No Retina Device';
+	}
+})();
+{% endhighlight %}
 
 First we create the div element which our detection elements will sit inside, there are a series of span classes.
 
@@ -79,19 +77,21 @@ Alongside Retina, we have a devicePixelRatio detector which will add the pixel r
 
 Here’s the CSS that goes with the widget, you can adopt it to fit your project. It uses position:fixed; to always remain in view. Tweak as you need, I’ve included some nice little icons to make the design more interesting, a semi-transparent background which you can also adjust so you can see some content underneath still.
 
-    <style>
-    	#viewport-detector {position:fixed;top:80px;left:0;padding:5px 10px;background:#FFF;background:rgba(255, 255, 255, 0.85);}
-    	#viewport-detector span {display:block;padding:2px 0 2px 30px;font:400 12px/1.625 "Helvetica Neue", Helvetica, Arial, sans-serif;}
-    	#viewport-detector .dimensions {background:url(img/icon-1.png) no-repeat left center;}
-    	#viewport-detector .retina {background:url(img/icon-2.png) no-repeat left center;}
-    	#viewport-detector .pixel-ratio {background:url(img/icon-3.png) no-repeat left center;}
-    </style>
+{% highlight css %}
+#viewport-detector {position:fixed;top:80px;left:0;padding:5px 10px;background:#FFF;background:rgba(255, 255, 255, 0.85);}
+#viewport-detector span {display:block;padding:2px 0 2px 30px;font:400 12px/1.625 "Helvetica Neue", Helvetica, Arial, sans-serif;}
+#viewport-detector .dimensions {background:url(img/icon-1.png) no-repeat left center;}
+#viewport-detector .retina {background:url(img/icon-2.png) no-repeat left center;}
+#viewport-detector .pixel-ratio {background:url(img/icon-3.png) no-repeat left center;}
+{% endhighlight %}
 
 ### Tips
 
 You’ll need the ViewPort meta tag (supplied in the download) to get the width of your responsive page. Here’s the ViewPort tag to copy and paste otherwise:
 
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+{% highlight html %}
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+{% endhighlight %}
 
 Place the ViewPort meta tag in the head of your document and remember – this script needs to be inside the body tag, not in the head.
 

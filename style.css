@@ -257,6 +257,12 @@ iframe[src*="twitter"] {
 .disqus {
 	margin:50px 0 0;
 }
+.social {
+	padding:20px;
+	background:#F9F9F9;
+	border:1px solid #E5E5E5;
+	margin:30px 0 50px;
+}
 
 /*------------------------------------*\
     TYPOGRAPHY

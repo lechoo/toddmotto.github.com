@@ -23,35 +23,36 @@ Prior to CSS3 gradients, box-shadows, border-radius and other fancy features, we
 
 Before we start to ‘think’ OOCSS, let’s look at how a basic button might look in regular HTML/CSS on a typical website:
 
-    <a href="#" class="button-blue">Click me!</a>
-    <style>
-    .button-blue-small {
-    	display:inline-block;
-    	zoom:1;
-    	vertical-align:bottom;
-    	text-align:center;
-    	margin:10px 5px;
-    	border-radius:3px;
-    	text-decoration:none;
-    	font-weight:900;
-    	font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
-    	text-shadow:0 1px 1px rgba(0,0,0,0.5);
-    	box-shadow:0 1px 3px rgba(0,0,0,0.3),inset 0 1px 0 rgba(250,250,250,0.4);
-    	-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.3),inset 0 1px 0 rgba(250,250,250,0.4);
-    	-moz-box-shadow:0 1px 3px rgba(0,0,0,0.3),inset 0 1px 0 rgba(250,250,250,0.4);
-    	color:#FFF;
-    	border:1px solid #0082BE;
-    	background:#00A4EF;
-    	background-image:linear-gradient(bottom, rgb(0,163,239) 1%, rgb(0,177,241) 51%);
-    	background-image:-o-linear-gradient(bottom, rgb(0,163,239) 1%, rgb(0,177,241) 51%);
-    	background-image:-moz-linear-gradient(bottom, rgb(0,163,239) 1%, rgb(0,177,241) 51%);
-    	background-image:-webkit-linear-gradient(bottom, rgb(0,163,239) 1%, rgb(0,177,241) 51%);
-    	background-image:-ms-linear-gradient(bottom, rgb(0,163,239) 1%, rgb(0,177,241) 51%);
-    	font-size:13px;
-    	padding:5px 20px;	
-    }
-    </style>
-    
+{% highlight html %}
+<a href="#" class="button-blue">Click me!</a>
+<style>
+.button-blue-small {
+	display:inline-block;
+	zoom:1;
+	vertical-align:bottom;
+	text-align:center;
+	margin:10px 5px;
+	border-radius:3px;
+	text-decoration:none;
+	font-weight:900;
+	font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+	text-shadow:0 1px 1px rgba(0,0,0,0.5);
+	box-shadow:0 1px 3px rgba(0,0,0,0.3),inset 0 1px 0 rgba(250,250,250,0.4);
+	-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.3),inset 0 1px 0 rgba(250,250,250,0.4);
+	-moz-box-shadow:0 1px 3px rgba(0,0,0,0.3),inset 0 1px 0 rgba(250,250,250,0.4);
+	color:#FFF;
+	border:1px solid #0082BE;
+	background:#00A4EF;
+	background-image:linear-gradient(bottom, rgb(0,163,239) 1%, rgb(0,177,241) 51%);
+	background-image:-o-linear-gradient(bottom, rgb(0,163,239) 1%, rgb(0,177,241) 51%);
+	background-image:-moz-linear-gradient(bottom, rgb(0,163,239) 1%, rgb(0,177,241) 51%);
+	background-image:-webkit-linear-gradient(bottom, rgb(0,163,239) 1%, rgb(0,177,241) 51%);
+	background-image:-ms-linear-gradient(bottom, rgb(0,163,239) 1%, rgb(0,177,241) 51%);
+	font-size:13px;
+	padding:5px 20px;	
+}
+</style>
+{% endhighlight %}
 
 Okay I’ll think you’ll agree, even without the vendor-prefixes it’s a nasty sight. Imagine creating a set of buttons for a few different colours and sizes, and 400 lines of CSS later you’ve done your buttons, ouch! It’ll slow down your CSS performance and also cause maintenance issues and inconsistencies. I myself have even struggled keeping everything in order, and I think OOCSS is the answer to this problem. The idea is that elements *share* properties, so play nice. I’m not advocating OOCSS for every aspect of your website, we would still like semantics, but for a lot of cases it can be a great idea to use it.
 

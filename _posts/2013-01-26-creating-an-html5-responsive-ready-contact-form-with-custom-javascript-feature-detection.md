@@ -27,7 +27,7 @@ HTML5 brings many great features that we can start using now, and many of them l
 
 First we’ll start with the markup, which we’ll first setup a basic form structure. A pretty bulletproof way to ensure form behaviours remain consistent and are easier to work with in CSS, we’ll wrap each form label and input inside it’s own . This acts as our safety net for each form field when manipulating them with styles and even JavaScript.
 
-HTML5 introduces a few new attributes that we can add to our inputs, but first let’s look at our labels. The  element is critical to keeping the user experience of your website easy for users, the last place you want to trip people up is contacting you. So what we do is keep our labels outside of our form inputs as this can be bad for the user’s experience. The issue with keeping labels looking like they’re inside the form field is; when the user starts typing, the meaning of the input is removed and is no longer visible. This is why labels are best kept outside of the inputs, preferably above or beside.
+HTML5 introduces a few new attributes that we can add to our inputs, but first let’s look at our labels. The &lt;label&gt; element is critical to keeping the user experience of your website easy for users, the last place you want to trip people up is contacting you. So what we do is keep our labels outside of our form inputs as this can be bad for the user’s experience. The issue with keeping labels looking like they’re inside the form field is; when the user starts typing, the meaning of the input is removed and is no longer visible. This is why labels are best kept outside of the inputs, preferably above or beside.
 
 A properly setup label and input looks like this:
 
@@ -47,7 +47,7 @@ Alternatively, you can link a form and input like this (using ‘for’ and the 
 
 I prefer the first method, as it saves markup and allows more control of the elements.
 
-We wrap the  around the  and  tags, which allows the user to actually ‘click’ on the label text and their cursor will automatically focus on the corresponding input field. Using CSS, we can add a hover style so that when the user hovers over the text, they know they can also click it to focus the input field, as they’re not always easy to focus on. The  tags are added for styling purposes.
+We wrap the &lt;label&gt; around the &lt;span&gt; and &lt;input&gt; tags, which allows the user to actually ‘click’ on the label text and their cursor will automatically focus on the corresponding input field. Using CSS, we can add a hover style so that when the user hovers over the text, they know they can also click it to focus the input field, as they’re not always easy to focus on. The &lt;span&gt; tags are added for styling purposes.
 
 Next we can look at the HTML5 placeholder attribute, which allow us to hint more information as to what the field is about and what the user can do with it. Under no circumstances must you simulate the label as the placeholder, sure it’s a lot easier to do, but semantically it isn’t correct and usability is bad. Setting a placeholder can be done like so:
 
@@ -110,7 +110,7 @@ Now we’ve added some great attributes to enhance the inputs, let’s look at c
 
 These three input types tell the browser what to expect in the field, validating it for you on the fly, and do come in really handy when also using a mobile or tablet. On iOS and Android devices (that I’ve tested), we get a relevant keyboard per each input type. For email, we get an ‘@’ symbol, for url we see the ‘.com’ and for tel it switches to a number keypad. The end user definitely feels valued at this point.
 
-Putting the above together, we can look at the finalised markup, with some heading tags to instruct the user. Instead of using  to submit the form, we’ll use a  element to submit the form. This is better and more flexible as you can have HTML content and images inside the , whereas  is limited to text only.
+Putting the above together, we can look at the finalised markup, with some heading tags to instruct the user. Instead of using &lt;input type="submit"&gt; to submit the form, we’ll use a &lt;button&gt; element. This is better and more flexible as you can have HTML content and images inside the , whereas &lt;input type="submit"&gt; is limited to text only.
 
 In terms of browser compatibility, if the browser doesn’t support the HTML5 input type, it will simply degrade itself to a text input type, which saves us creating a fallback.
 
@@ -186,7 +186,7 @@ Back to styling the inputs! Now they’re all setup to perfectly obey 100% width
 }
 {% endhighlight %}
 
-We can then target the  in the same way:
+We can then target the &lt;button&gt; in the same way:
 
 {% highlight css %}
 #contact-form button[type="submit"] {
@@ -330,7 +330,7 @@ if(!supports.autofocus) {
 
 For the ‘required’ attribute, each project will possibly take a different solution, client-side or server-side validation. You can validate with backend code such as PHP, or validate with front-end technology such as jQuery validation scripts or your own custom one.
 
-For the ‘placeholder’ attribute, this one you can either leave as an HTML5-only enhancement, and provide no fallback. It’s not essential as we’ve got the  to take care of the top-level information.
+For the ‘placeholder’ attribute, this one you can either leave as an HTML5-only enhancement, and provide no fallback. It’s not essential as we’ve got the &lt;label&gt; to take care of the top-level information.
 
 ### HTML5 data-* Attributes Submit
 

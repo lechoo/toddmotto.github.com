@@ -7,7 +7,7 @@ title: Progressively enhanced SVG sprite icons
 You may remember a while back, I coded up some nice CSS3 social media icons, to which I have had to remove from my website due to the fact I cannot run PHP on this Jekyll server, or even wanted to quickly convert them to HTML. Time would be better spent taking action into enhancing those icons, and creating some much better ones with better practices, with performance and retina displays in mind.
 
 Here's what I've learned since creating those previous icons:
-<ul>
+<ul class="post-list">
 	<li>Progressive enhancement techniques with JavaScript</li>
 	<li>Using an OOCSS method for creating the buttons</li>
 	<li>Better CSS techniques, enhanced performance</li>

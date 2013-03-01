@@ -263,6 +263,10 @@ iframe[src*="twitter"] {
 	border:1px solid #E5E5E5;
 	margin:30px 0 50px;
 }
+.posts-list {
+	margin:0 0 20px 25px;
+	color:#2BA6CB;
+}
 
 /*------------------------------------*\
     TYPOGRAPHY

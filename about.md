@@ -18,13 +18,15 @@ My ethos when it comes to development is to deliver top quality and maintainable
 My markup and code is lightweight, clean and minimal, through years of tweaking, perfecting and structuring code in different ways to achieve new feats. I love getting stuck in with things like OOCSS, HTML5 semantics/APIs, CSS sprites, responsive web design, UI interactions/events - and you'll probably see it in a download at some stage.
 
 ### Key skills
-HTML5, integrating some of the latest powerful technologies and APIs
-CSS3, core CSS2 skills complete with progressive enhancement styling and keyframe animation
-jQuery, working with animation, DOM events, AJAX and plugins
-JavaScript, creating rich features, interactions, feature detects and tools
-WordPress, powering many sites I build, along with basic PHP knowledge
-HTML 4.01/XHTML, creating standards/platform compliant HTML email templates
-Responsive Media Queries (#RWD), for creating websites that perfectly adapt to different viewports
+<ul class="post-list">
+	<li>HTML5, integrating some of the latest powerful technologies and APIs</li>
+	<li>CSS3, core CSS2 skills complete with progressive enhancement styling and keyframe animation</li>
+	<li>jQuery, working with animation, DOM events, AJAX and plugins</li>
+	<li>JavaScript, creating rich features, interactions, feature detects and tools</li>
+	<li>WordPress, powering many sites I build, along with basic PHP knowledge</li>
+	<li>HTML 4.01/XHTML, creating standards/platform compliant HTML email templates</li>
+	<li>Responsive Media Queries (#RWD), for creating websites that perfectly adapt to different viewports</li>
+</ul>
 
 ### Projects and plugins
 I have several popular <a href="//github.com/toddmotto" target="_blank">GitHub projects</a>, namely <a href="//html5blank.com" target="_blank">HTML5 Blank</a>, <a href="//conditionizr.com" target="_blank">Conditionizr</a> among a few others.

@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Attaching event handlers to dynamically created JavaScript elements by @toddmotto | toddmotto.com</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<meta name="author" content="@toddmotto">
+		<link href="css/main.css" rel="stylesheet">
+		<link href="css/demo.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="header">
+			<div class="logo">
+				<img src="img/logo.png" alt="Logo" class="logo-img">
+			</div>
+			<ul class="nav">
+				<li class="nav-link">
+					<a href="//toddmotto.com/progressively-enhanced-svg-sprite-icons/">Go to tutorial</a>
+				</li>
+			</ul>
+		</div>
+		<div class="wrapper">
+			<div class="main">
+				<form class="generate" method="post">
+					<h1 class="generate-title">Event handler generator</h1>
+					<input type="text" class="generate-input" placeholder="Type something">
+					<input type="submit" class="generate-submit" value="Create new item">
+				</form>
+				<ul id="links">
+				    <li class="dynamic-link">List item 1</li>
+				    <li class="dynamic-link">List item 2</li>
+				    <li class="dynamic-link">List item 3</li>
+				    <li class="dynamic-link">List item 4</li>
+				</ul>
+				
+			</div>
+		</div>
+		
+		<script>
+		(function(){
+		
+			// querySelector, jQuery style
+			var $ = function (selector) {
+				return document.querySelector(selector);
+			};
+			
+			// Create function outside loop
+			function dynamicEvent() {
+				this.innerHTML = 'Dynamic event success.';
+				this.className += ' dynamic-success';
+			}
+			
+			// Iterate over #links <li>
+			// Use querySelector to target #links and then get tag names <li>
+			var links = $('#links').getElementsByTagName('li');
+			
+			// For each <li> inside #links
+			for (var i = 0; i < links.length; i++) {
+				var link = links[i];
+				
+				// <li> onclick, runAlert function
+				link.onclick = dynamicEvent;
+			}
+			
+			// Onsubmit
+			$('.generate').onsubmit = function() {
+			
+				// Grab the input value
+				var dynamicValue = $('.generate-input').value;
+				
+				// If empty value
+				if(!dynamicValue) {
+				
+					alert('Please enter something.');
+					
+				} else {
+				
+					// Change the submit value
+					$('.generate-submit').value = 'Click your item below!';
+					
+					// Create the links with the input value as innerHTML
+					var li = document.createElement('li');
+					li.className = 'dynamic-link';
+					li.innerHTML = dynamicValue;
+					
+					// Append it and attach the event (via onclick)
+					$('#links').appendChild(li);
+					li.onclick = dynamicEvent;
+				}
+				
+				// Prevent the form submitting
+				return false;
+			}
+		})();
+		</script>
+		<script src="//www.toddmotto.com/ads/ads.js"></script>
+	</body>
+</html>

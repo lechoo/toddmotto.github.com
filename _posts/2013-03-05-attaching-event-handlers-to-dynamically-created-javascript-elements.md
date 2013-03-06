@@ -14,7 +14,7 @@ The problem with dynamically created elements, is that they aren't born with the
 </div>
 
 ### Creating some markup
-Let's create some HTML to get started from, I am going to take the list scenario into account here, and create a simple &lt;ul&gt with some links inside:
+Let's create some HTML to get started from, I am going to take the list scenario into account here, and create a simple &lt;ul&gt; with some links inside:
 
 {% highlight html %}
 <ul id="links">

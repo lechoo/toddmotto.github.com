@@ -226,7 +226,7 @@ CSS properties are technically variables, and can change, that's why presentatio
 You could then imagine the parent element of the 'alert-success' class being called 'alert', with an interchangable class name inside, for example:
 
 {% highlight css %}
-alert {
+.alert {
 	/* Create the alert box */
 }
 .alert-success {
@@ -246,6 +246,7 @@ Naming conventions: using a naming convention that shows a relationship between 
 
 {% highlight html %}
 <article class="post">
+	<h3 class="post-title">Post title</h3>
 	<img src="post-img" alt="Post Thumbnail">
 	<div class="post-content">
 		<!-- Text here -->
@@ -257,6 +258,9 @@ This makes it really easy when working with the CSS, as you can visually see the
 
 {% highlight css %}
 .post {
+
+}
+.post-title {
 
 }
 .post-img {

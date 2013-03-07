@@ -247,7 +247,7 @@ Naming conventions: using a naming convention that shows a relationship between 
 {% highlight html %}
 <article class="post">
 	<h3 class="post-title">Post title</h3>
-	<img src="post-img" alt="Post Thumbnail">
+	<img src="img/post.jpg" alt="Post Thumbnail" class="post-img">
 	<div class="post-content">
 		<!-- Text here -->
 	</div>

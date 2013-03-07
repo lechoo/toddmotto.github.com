@@ -56,7 +56,7 @@ And the CSS that we can link with our navigation will look like this:
 .nav-item a {}
 {% endhighlight %}
 	
-Perfect. The new CSS we've created is better for many reasons, the specificity has increased, and will only apply to the elements we tell it, we could change our &lt;ul&gt; to an &lt;ol&gt; and not have to change a single line of CSS. We also didn't have to nest our CSS to target and list elements inside. Our CSS is much more efficient now.
+Perfect. The new CSS we've created is better for many reasons, the specificity has increased, and will only apply to the elements we tell it, we could change our &lt;ul&gt; to an &lt;ol&gt; and not have to change a single line of CSS. We also didn't have to nest our CSS to target the &lt;li&gt; elements inside. Our CSS is much more efficient now.
 
 If you're still not sold on the approach, here's a killer example. We'll likely want to add a current item class to our HTML to show the current page, and using a non-agnostic approach is a challenge and we _could_ end up using the hacky !important method to override styles - which again we want to avoid.
 

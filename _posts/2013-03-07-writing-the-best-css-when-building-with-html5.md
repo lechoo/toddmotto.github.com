@@ -22,7 +22,7 @@ HTML agnostic means to use as little HTML in your CSS (or none). The key factor 
 </ul>  		    		
 {% endhighlight %}
 
-Here's what you might be used to seeing to target the above HTML:
+Here's what you might be used to seeing this to target the above HTML:
 
 {% highlight css %}
 ul {}

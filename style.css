@@ -292,6 +292,15 @@ iframe[src*="twitter"] {
 \*------------------------------------*/
 
 @media only screen and (min-width: 320px) and (max-width: 768px) {
+	.wrapper {
+		width:100%;
+	}
+	.header {
+		margin:0 0 20px;
+	}
+	.footer {
+		margin:0;
+	}
 	#nav .mobile {
 		display:block;
 		font-size:30px;
@@ -338,27 +347,6 @@ iframe[src*="twitter"] {
 		width:118px !important;
 	}
 }
-/*@media only screen and (min-width: 768px) {
-	#nav ul {
-		display:block;
-	}
-	#nav #mobile,
-	#nav .mobile {
-		display:none;
-	}
-	.sidebar {
-		position:absolute;
-		text-align:left;
-		float:none;
-		margin:0;
-		width:320px;
-	}
-	.full-post,
-	.pagination,
-	.post {
-		margin:0 340px 0 0;
-	}
-}*/
 
 /*------------------------------------*\
     MISC

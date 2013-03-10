@@ -107,6 +107,10 @@ p {
 	display:block;
 	padding:5px 10px;
 }
+#nav #mobile,
+#nav .mobile {
+	display:none;
+}
 .sidebar {
 	position:absolute;
 	right:0;

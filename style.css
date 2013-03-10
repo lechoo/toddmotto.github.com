@@ -339,6 +339,12 @@ iframe[src*="twitter"] {
 	.post {
 		margin:0;
 	}
+	.full-post {
+		padding:30px;
+	}
+	h3 {
+		margin:20px 0 20px -30px;
+	}
 	.carbonad {
 		text-align:left;
 		width:300px !important;

@@ -287,7 +287,7 @@ iframe[src*="twitter"] {
 	RESPONSIVE
 \*------------------------------------*/
 
-@media only screen and (min-width: 320px) {
+@media only screen and (min-width: 320px) and (max-width: 768px) {
 	#nav .mobile {
 		display:block;
 		font-size:30px;
@@ -334,7 +334,7 @@ iframe[src*="twitter"] {
 		width:118px !important;
 	}
 }
-@media only screen and (min-width: 768px) {
+/*@media only screen and (min-width: 768px) {
 	#nav ul {
 		display:block;
 	}
@@ -354,7 +354,7 @@ iframe[src*="twitter"] {
 	.post {
 		margin:0 340px 0 0;
 	}
-}
+}*/
 
 /*------------------------------------*\
     MISC
@@ -443,11 +443,11 @@ a:hover {
 .highlight .sh { color: #95e454; font-style: italic} /* Literal.String.Heredoc */
 .highlight .si { color: #95e454; font-style: italic} /* Literal.String.Interpol */
 .highlight .sx { color: #95e454; font-style: italic} /* Literal.String.Other */
-.highlight .sr { color: #95e454; font-style: italic} /* Literal.String.Regex */
-.highlight .s1 { color: #95e454; font-style: italic} /* Literal.String.Single */
-.highlight .ss { color: #95e454; font-style: italic} /* Literal.String.Symbol */
-.highlight .bp { color: #f6f3e8} /* Name.Builtin.Pseudo */
-.highlight .vc { color: #ADE82A} /* Name.Variable.Class */
-.highlight .vg { color: #ADE82A} /* Name.Variable.Global */
-.highlight .vi { color: #ADE82A} /* Name.Variable.Instance */
-.highlight .il { color: #e5786d} /* Literal.Number.Integer.Long */
+.highlight .sr { color: #95e454; font-style: italic}
+.highlight .s1 { color: #95e454; font-style: italic}
+.highlight .ss { color: #95e454; font-style: italic}
+.highlight .bp { color: #f6f3e8}
+.highlight .vc { color: #ADE82A}
+.highlight .vg { color: #ADE82A}
+.highlight .vi { color: #ADE82A}
+.highlight .il { color: #e5786d}

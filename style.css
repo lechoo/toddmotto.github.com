@@ -92,7 +92,8 @@ p {
 	float:left;
 }
 .logo-img {
-	
+	height:176px;
+	width:61px;
 }
 .nav {
 	float:right;

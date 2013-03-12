@@ -132,7 +132,7 @@ Now we need to style the clickable icon:
 }
 {% endhighlight %}
 	
-I've added these styles in the main area of the CSS, not inside any media queries. This is so that the menu can be styled in the main CSS area, and literally tweaked inside our media queries for easy management. It also benefits us again because if you were to style it inside a media query, older browsers would ignore it leaving it unstyled and randomly placed - which is why it includes 'display:none;' on the element. This method I've found to be the best.
+I've added these styles in the main area of the CSS, not inside any media queries. This is so that the menu can be styled in the main CSS area, and literally tweaked inside our media queries for easy management. It also benefits us again because if you were to style it inside a media query, older browsers would ignore it leaving it unstyled and randomly placed element - which is why it includes 'display:none;' by default. This method I've found to be the best.
 
 Using an [SVG](http://toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script/) again (pretty confident most browsers will support SVG and media queries, so let's use it) we create a scalable 'three-line' icon. This means we don't have to do any further optimisation for retina displays.
 

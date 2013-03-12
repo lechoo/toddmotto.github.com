@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Responsive navigation by @toddmotto | toddmotto.com</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<meta name="author" content="@toddmotto">
+		<link href="css/main.css" rel="stylesheet">
+		<link href="css/demo.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="header">
+			<div class="logo">
+				<a href="//toddmotto.com" target="_blank">
+					<img src="img/logo.png" alt="Logo" class="logo-img">
+				</a>
+			</div>
+			<ul class="demo-nav">
+				<li class="demo-nav-link">
+					<a href="http://toddmotto.com/building-an-html5-responsive-menu-with-media-queries-javascript">Go to tutorial</a>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="wrapper">
+			<div class="main">
+				
+				<!-- Nav -->
+				<nav class="nav">
+					<ul class="nav-list">
+						<li class="nav-item"><a href="#">Home</a></li>
+						<li class="nav-item"><a href="#">About</a></li>
+						<li class="nav-item"><a href="#">Services</a></li>
+						<li class="nav-item"><a href="#">Portfolio</a></li>
+						<li class="nav-item"><a href="#">Testimonials</a></li>
+						<li class="nav-item"><a href="#">Contact</a></li>
+					</ul>
+				</nav>
+				<!-- /Nav -->
+				
+				<div class="content">
+					<p class="content-text">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra interdum semper. 
+						Ut blandit adipiscing tempor. Etiam scelerisque, felis dignissim rutrum tempor, neque risus 
+						sagittis mi, ac aliquam est massa eget lectus. Class aptent taciti sociosqu ad litora torquent 
+						per conubia nostra, per inceptos himenaeos. Ut pretium adipiscing ipsum, id iaculis quam mattis 
+						et. Cras mollis eleifend tortor, ut venenatis turpis pulvinar id. In hac habitasse platea 
+						dictumst. Pellentesque feugiat mi sit amet ligula convallis rhoncus fermentum sem aliquam. 
+						Vivamus egestas justo ac nisl facilisis sed aliquam mi ultrices. Suspendisse potenti. Sed 
+						elementum blandit nisl eu tempus.
+					</p>
+					<p class="content-text">
+						Nulla egestas facilisis ipsum sit amet semper. Curabitur leo ante, scelerisque ut ornare ac, 
+						egestas sit amet nunc. Aenean eget scelerisque lorem. Donec sapien felis, aliquam id vehicula 
+						sit amet, posuere venenatis urna. Aenean at dui libero. Nullam interdum molestie sem, vitae 
+						egestas augue pretium at. Duis erat erat, ultrices eu accumsan vitae, consectetur quis orci.
+					</p>
+					<p class="content-text">
+						Etiam vulputate pellentesque lacus ac ullamcorper. Vestibulum ac semper lacus. Nunc id accumsan 
+						lectus. Sed lacinia dui vel nisi tincidunt vitae varius nunc tincidunt. In hac habitasse platea 
+						dictumst. Vestibulum purus sapien, eleifend quis commodo sed, euismod non velit. Morbi magna nisl, 
+						tincidunt sed pretium ut, consequat sed nunc. Cras at diam est, nec consectetur nisi. Nulla ante 
+						arcu, laoreet nec volutpat ut, malesuada quis velit.
+					</p>
+				</div>
+			</div>
+		</div>
+		
+		<script>
+		(function(){
+		
+			// Create mobile element
+			var mobile = document.createElement('div');
+			mobile.className = 'nav-mobile';
+			document.querySelector('.nav').appendChild(mobile);
+			
+			// hasClass
+			function hasClass(elem, className) {
+				return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+			}
+			
+			// toggleClass
+			function toggleClass(elem, className) {
+				var newClass = ' ' + elem.className.replace(/[\t\r\n]/g, ' ') + ' ';
+			    if (hasClass(elem, className)) {
+			        while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
+			            newClass = newClass.replace(' ' + className + ' ', ' ');
+			        }
+			        elem.className = newClass.replace(/^\s+|\s+$/g, '');
+			    } else {
+			        elem.className += ' ' + className;
+			    }
+			}
+			
+			// Mobile nav function
+			var mobileNav = document.querySelector('.nav-mobile');
+			var toggle = document.querySelector('.nav-list');
+			mobileNav.onclick = function() {
+				toggleClass(this, 'nav-mobile-open');
+				toggleClass(toggle, 'nav-active');
+			}
+		})();
+		</script>
+	
+		<!-- Demo Analytics -->
+		<script>
+			var _gaq=[['_setAccount','UA-20440416-10'],['_trackPageview']];
+			(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+			g.src='//www.google-analytics.com/ga.js';
+			s.parentNode.insertBefore(g,s)})(document,'script');
+		</script>
+		
+		<!-- Demo Ads -->
+		<script src="//toddmotto.com/ads/ads.js"></script>
+	</body>
+</html>

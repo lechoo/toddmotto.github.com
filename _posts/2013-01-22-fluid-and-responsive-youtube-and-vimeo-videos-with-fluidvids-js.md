@@ -134,7 +134,7 @@ Here's what our finished script looks like. The things we've been able to achiev
 (function() {
 	var iframes = document.getElementsByTagName('iframe');
 	
-	for (var i = 0; i < iframes.length;   i) {
+	for (var i = 0; i < iframes.length; i++) {
 		var iframe = iframes[i];
 		var players = /www.youtube.com|player.vimeo.com/;
 		if(iframe.src.search(players) !== -1) {
@@ -150,7 +150,7 @@ Here's what our finished script looks like. The things we've been able to achiev
 			div.className = 'video-wrap';
 			div.style.width = '100%';
 			div.style.position = 'relative';
-			div.style.paddingTop = videoRatio   '%';
+			div.style.paddingTop = videoRatio + '%';
 			
 			var parentNode = iframe.parentNode;
 			parentNode.insertBefore(div, iframe);

@@ -1,0 +1,21 @@
+/*
+	Todd Motto Labs
+	URL: www.toddmotto.com
+*/
+
+/*------------------------------------*\
+    HTML5 Geolocation/Google Maps API
+\*------------------------------------*/
+
+html,
+body,
+#google_canvas {
+	height:100%;
+}
+#google_canvas h1 {
+	font-size:16px;
+}
+#google_canvas h2 {
+	font-size:14px;
+	font-weight:300;
+}

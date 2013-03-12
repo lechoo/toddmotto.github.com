@@ -45,7 +45,7 @@ var iframes = document.getElementsByTagName('iframe');
 Next we need to setup a for loop, and loop through each of our iframes:
 
 {% highlight javascript %}
-for (var i = 0; i < iframes.length;   i) {
+for (var i = 0; i < iframes.length; i++) {
      // Do stuff
 }
 {% endhighlight %}
@@ -107,7 +107,7 @@ var div = document.createElement('div');
 div.className = 'video-wrap';
 div.style.width = '100%';
 div.style.position = 'relative';
-div.style.paddingTop = videoRatio   '%';
+div.style.paddingTop = videoRatio + '%';
 {% endhighlight %}
 
 The trick I've used here is to apply the styles inline, using style="", instead of injecting styles into the  - saving additional script. What I have done though is include a class, which is appended to the div, for extra styling purposes should you need it. You'll notice at the end, we bring back our videoRatio (which we multiplied by 100 to use as a percentage). Then we add this figure to a percentage sign, which uses padding-top to 'emulate' the video aspect ratio. It's merely a clever hack-trick, but a brilliant one (used in FitVids but taken from A List Apart).
@@ -162,7 +162,7 @@ Here's what our finished script looks like. The things we've been able to achiev
 
 ### Usage
 
-Just drop the JavaScript file into your page, and let it work it's magic. No config required. Minified version also included in the download.
+Just drop the JavaScript file into your page (this needs to be placed before the closing &lt;/body&gt; tag or inside a DOM ready function wrapper) and let it work it's magic. No config required. Minified version also included in the download.
 
 ### Browser Compatibility
 

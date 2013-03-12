@@ -173,7 +173,7 @@ if (!supportsSVG()) {
 {% endhighlight %}
 
 ### Outputting from Illustrator
-Once you've created your SVG from Illustrator, right-click it and open it inside a text-editor (Coda 2/Sublime Text 2/whatever) and remove the height and width that's generated from Illustrator, this will give you much more flexibility when working with your SVGs. All you'll need to do it add some styling to it instead.
+Once you've created your SVG from Illustrator, right-click it and open it inside a text-editor (Coda 2/Sublime Text 2/whatever) and remove the height and width that's generated. This will give you much more flexibility when working with your SVGs, all you'll need to do it add some styling to it instead with CSS.
 
 The pieces you need to remove are the 'width' and 'height' attributes, and can be found on the opening &lt;svg&gt; tag (I've removed it from mine):
 

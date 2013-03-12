@@ -171,3 +171,12 @@ if (!supportsSVG()) {
 	}
 }
 {% endhighlight %}
+
+### Outputting from Illustrator
+Once you've created your SVG from Illustrator, right-click it and open it inside a text-editor (Coda 2/Sublime Text 2/whatever) and remove the height and width that's generated from Illustrator, this will give you much more flexibility when working with your SVGs. All you'll need to do it add some styling to it instead.
+
+The pieces you need to remove are the 'width' and 'height' attributes, and can be found on the opening &lt;svg&gt; tag (I've removed it from mine):
+
+{% highlight html %}
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 136 61" enable-background="new 0 0 136 61" xml:space="preserve">
+{% endhighlight %}

@@ -1,7 +1,7 @@
 /*
 	FluidVids.js - Fluid and Responsive YouTube/Vimeo Videos v1.0.0
 	by Todd Motto: http://www.toddmotto.com
-	Latest version: https://github.com/toddmotto/Fluid-Responsive-Videos
+	Latest version: https://github.com/toddmotto/fluidvids
 	
 	Copyright 2013 Todd Motto
 	Licensed under the MIT license
@@ -12,7 +12,7 @@
 (function() {
 	var iframes = document.getElementsByTagName('iframe');
 	
-	for (var i = 0; i < iframes.length; ++i) {
+	for (var i = 0; i < iframes.length; i++) {
 		var iframe = iframes[i];
 		var players = /www.youtube.com|player.vimeo.com/;
 		if(iframe.src.search(players) !== -1) {

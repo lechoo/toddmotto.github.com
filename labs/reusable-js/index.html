@@ -127,6 +127,7 @@ function hasClass(elem, className) {
 			<h3>Demo - <a href="//jsfiddle.net/toddmotto/V489X/" target="_blank">//jsfiddle.net/toddmotto/V489X/</a></h3>
 			<h3>Get Code</h3>
 <textarea id="test" onclick="this.select();">
+// addClass
 function addClass(elem, className) {
     if (!hasClass(elem, className)) {
     	elem.className += ' ' + className;
@@ -162,6 +163,7 @@ function removeClass(elem, className) {
 			<h3>Demo - <a href="//jsfiddle.net/toddmotto/6UwF3/" target="_blank">//jsfiddle.net/toddmotto/6UwF3/</a></h3>
 			<h3>Get Code</h3>
 <textarea id="test" onclick="this.select();">
+// toggleClass
 function toggleClass(elem, className) {
 	var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, " " ) + ' ';
     if (hasClass(elem, className)) {
@@ -178,8 +180,16 @@ function toggleClass(elem, className) {
 			
 	</div>
 
-	<!-- Carbon Ads Script (Demo only) -->
-	<script src="http://www.toddmotto.com/ads/ads.js"></script>
+	<!-- Demo Analytics -->
+	<script>
+		var _gaq=[['_setAccount','UA-20440416-10'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src='//www.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)})(document,'script');
+	</script>
+	
+	<!-- Demo Ads -->
+	<script src="//www.toddmotto.com/ads/ads.js"></script>
 	
 </body>
 </html>

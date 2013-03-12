@@ -17,7 +17,7 @@ Responsive navigation menus come in all different shapes and sizes, you might re
 Depending on your project, a dynamic &lt;select&gt; menu may not be entirely appropriate, there is a massive debate on which way to steer your projects, so let's open the door for another option. In-page navigation is basically restyling your menu in such a way that it's responsive, but also looks like part of the design whilst delivering an awesome mobile and touch experience. I say touch because some menus deliver a nice mobile experience, but the rendering jutters and in a way puts a downer on the experience. Mobile experience is meant to be fast and efficient, so let's cut the junk and build something that really delivers a solution.
 
 ### Simplicity is key
-There's no point serving up tonnes of JavaScript to deliver a responsive menu solution, especially using jQuery, as this gives us a few things to worry about. The juttering as the menu expands/collapses, and two performance when actually loading the page.
+There's no point serving up tonnes of JavaScript to deliver a responsive menu solution, especially using jQuery, as this gives us a few things to worry about. The juttering as the menu expands/collapses, and the performance when actually loading the page.
 
 ### Creating our desktop navigation
 Let's break out the HTML5 elements and create a neat and basic menu:

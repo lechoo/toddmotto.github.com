@@ -1,7 +1,7 @@
 ---
 layout: post
 permalink: /building-an-html5-responsive-menu-with-media-queries-javascript
-title: Building an HTML5 responsive menu with media queries and javascript
+title: Building an HTML5 responsive menu with media queries and JavaScript
 ---
 
 ### Responsive menus

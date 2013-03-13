@@ -4,6 +4,16 @@ layout: page
 ---
 
 <div class="download-item">
+	<img src="/img/downloads/responsive-nav.jpg" alt="Responsive Nav">
+	<div class="download-details">
+		<h2>Responsive Navigation</h2>
+		<h4>Using a fluid-width approach and utilising JavaScript and media queries, here's an iconic 'three-line' menu approach.</h4>
+		<a href="//toddmotto.com/labs/responsive-nav" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo Responsive Nav', 'Responsive Nav Demo']);" target="_blank">Demo</a>
+		<a href="//toddmotto.com/labs/responsive-nav/responsive-nav.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download Responsive Nav', 'Responsive Nav Download']);">Download</a>
+		<a href="//toddmotto.com/building-an-html5-responsive-menu-with-media-queries-javascript">[article]</a>
+	</div>
+</div>
+<div class="download-item">
 	<img src="/img/downloads/fluidvids.jpg" alt="FluidVids">
 	<div class="download-details">
 		<h2>FluidVids</h2>
@@ -14,6 +24,16 @@ layout: page
 	</div>
 </div>
 <div class="download-item">
+	<img src="/img/downloads/oocss-buttons.jpg" alt="Responsive Nav">
+	<div class="download-details">
+		<h2>OOCSS Button Kit</h2>
+		<h4>Utilising Object-Orientated CSS to create an effective button kit for any website.</h4>
+		<a href="//toddmotto.com/labs/oocss-buttons" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo OOCSS Buttons', 'OOCSS Buttons Demo']);" target="_blank">Demo</a>
+		<a href="//toddmotto.com/labs/oocss-buttons/oocss-buttons.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download OOCSS Buttons', 'OOCSS Buttons Download']);">Download</a>
+		<a href="//toddmotto.com/getting-started-with-object-orientated-css-oocss-creating-a-button-kit/">[article]</a>
+	</div>
+</div>
+<div class="download-item">
 	<img src="/img/downloads/select-nav-js.jpg" alt="Select Nav">
 	<div class="download-details">
 		<h2>Pure JavaScript select nav</h2>
@@ -21,16 +41,6 @@ layout: page
 		<a href="//toddmotto.com/labs/selectnav" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo Select Nav', 'Select Nav Demo']);" target="_blank">Demo</a>
 		<a href="//toddmotto.com/labs/selectnav/selectnav.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download Select Nav', 'Select Nav Download']);">Download</a>
 		<a href="//toddmotto.com/creating-a-responsive-dynamic-mobile-navigation-from-pure-javascript">[article]</a>
-	</div>
-</div>
-<div class="download-item">
-	<img src="/img/downloads/responsive-nav.jpg" alt="Responsive Nav">
-	<div class="download-details">
-		<h2>Responsive Navigation</h2>
-		<h4>Using a fluid-width approach and utilising JavaScript and media queries, here's an iconic 'three-line' menu approach.</h4>
-		<a href="//toddmotto.com/labs/responsive-nav" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo Responsive Nav', 'Responsive Nav Demo']);" target="_blank">Demo</a>
-		<a href="//toddmotto.com/labs/responsive-nav/responsive-nav.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download Responsive Nav', 'Responsive Nav Download']);">Download</a>
-		<a href="//toddmotto.com/building-an-html5-responsive-menu-with-media-queries-javascript">[article]</a>
 	</div>
 </div>
 <div class="download-item">

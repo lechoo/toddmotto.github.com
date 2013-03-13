@@ -14,6 +14,26 @@ layout: page
 	</div>
 </div>
 <div class="download-item">
+	<img src="/img/downloads/select-nav-js.jpg" alt="Select Nav">
+	<div class="download-details">
+		<h2>Pure JavaScript select nav</h2>
+		<h4>Dynamically creates a select menu and populates it with menu items from an existing nav. jQuery free, hierarchy support, responsive-ready.</h4>
+		<a href="//toddmotto.com/labs/selectnav" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo Select Nav', 'Select Nav Demo']);" target="_blank">Demo</a>
+		<a href="//toddmotto.com/labs/selectnav/selectnav.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download Select Nav', 'Select Nav Download']);">Download</a>
+		<a href="//toddmotto.com/creating-a-responsive-dynamic-mobile-navigation-from-pure-javascript">[article]</a>
+	</div>
+</div>
+<div class="download-item">
+	<img src="/img/downloads/responsive-nav.jpg" alt="Responsive Nav">
+	<div class="download-details">
+		<h2>Responsive Navigation</h2>
+		<h4>Using a fluid-width approach and utilising JavaScript and media queries, here's an iconic 'three-line' menu approach.</h4>
+		<a href="//toddmotto.com/labs/responsive-nav" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo Responsive Nav', 'Responsive Nav Demo']);" target="_blank">Demo</a>
+		<a href="//toddmotto.com/labs/responsive-nav/responsive-nav.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download Responsive Nav', 'Responsive Nav Download']);">Download</a>
+		<a href="//toddmotto.com/building-an-html5-responsive-menu-with-media-queries-javascript">[article]</a>
+	</div>
+</div>
+<div class="download-item">
 	<img src="/img/downloads/bounce-this.jpg" alt="BounceThis">
 	<div class="download-details">
 		<h2>bounceThis</h2>
@@ -101,16 +121,6 @@ layout: page
 		<a href="//toddmotto.com/labs/hover-box/" onclick="_gaq.push(['_trackEvent', 'Click', 'jQuery Hover Box Demo', 'jQuery Hover Demo Button']);">Demo</a>
 		<a href="//toddmotto.com/labs/hover-box/hover-box.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'jQuery Hover Box Download', 'jQuery Hover Box Download Button']);">Download</a>
 		<a href="//toddmotto.com/create-a-simple-jquery-hover-call-to-action-box">[article]</a>
-	</div>
-</div>
-<div class="download-item">
-	<img src="/img/downloads/select-nav-js.jpg" alt="Select Nav">
-	<div class="download-details">
-		<h2>Pure JavaScript select nav</h2>
-		<h4>Dynamically creates a select menu and populates it with menu items from an existing nav. jQuery free, hierarchy support, responsive-ready.</h4>
-		<a href="//toddmotto.com/labs/selectnav" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo Select Nav', 'Select Nav Demo']);" target="_blank">Demo</a>
-		<a href="//toddmotto.com/labs/selectnav/selectnav.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download Select Nav', 'Select Nav Download']);">Download</a>
-		<a href="//toddmotto.com/creating-a-responsive-dynamic-mobile-navigation-from-pure-javascript">[article]</a>
 	</div>
 </div>
 <div class="download-item">

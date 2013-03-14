@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>HTML5 LocalStorage on Forms by @toddmotto | toddmotto.com</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<meta name="author" content="@toddmotto">
+		<link href="css/main.css" rel="stylesheet">
+		<link href="css/demo.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="header">
+			<div class="logo">
+				<a href="//toddmotto.com" target="_blank">
+					<img src="img/logo.png" alt="Logo" class="logo-img">
+				</a>
+			</div>
+			<ul class="demo-nav">
+				<li class="demo-nav-link">
+					<a href="#">Go to tutorial</a>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="wrapper">
+			<div class="main">
+				<div id="localstorage">
+					<p class="intro">
+						This HTML5 localStorage demo will save anything you type once per second, and store it in localStorage. 
+						You can clear the storage, or empty all data with the buttons below.
+					</p>
+					<textarea class="localstorage" placeholder="Anything you type here will be saved with HTML5 localStorage." autofocus></textarea>
+					<button class="clear">Clear localStorage</button>
+					<button class="empty">Empty localStorage</button>
+				</div>
+			</div>
+		</div>
+		
+		<script>
+		(function() {
+			
+			var demo = document.querySelector('.localstorage');
+			
+			function supportsLocalStorage() {
+				return typeof(Storage)!== 'undefined';
+			}
+			
+			if (!supportsLocalStorage()) {
+				demo.value = 'No HTML5 localStorage support, soz.';
+			} else {
+				try {
+					setInterval(function() {
+						localStorage.setItem('autosave', demo.value);
+					}, 1000);
+				} catch (e) {
+					if (e == QUOTA_EXCEEDED_ERR) {
+						alert('Quota exceeded!');
+					}
+				}
+				if (localStorage.getItem('autosave')) {
+					demo.value = localStorage.getItem('autosave');
+				}
+				document.querySelector('.clear').onclick = function() {
+					demo.value = '';
+					localStorage.removeItem('autosave');
+				};
+				document.querySelector('.empty').onclick = function() {
+					textarea.value = '';
+					localStorage.clear();	
+				};
+			}
+			
+		})();
+		</script>
+	
+		<!-- Demo Analytics -->
+		<script>
+			var _gaq=[['_setAccount','UA-20440416-10'],['_trackPageview']];
+			(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+			g.src='//www.google-analytics.com/ga.js';
+			s.parentNode.insertBefore(g,s)})(document,'script');
+		</script>
+		
+		<!-- Demo Ads -->
+		<script src="//toddmotto.com/ads/ads.js"></script>
+	</body>
+</html>

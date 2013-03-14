@@ -1,0 +1,63 @@
+/*
+	Todd Motto Labs
+	URL: www.toddmotto.com
+*/
+
+/*------------------------------------*\
+    HTML5 localStorage
+\*------------------------------------*/
+* {
+	font:300 13px/1.4 'Helvetica Neue', Helvetica, Arial, sans-serif;	
+}
+body {
+	background:url(../img/bg.jpg);
+}
+.wrapper {
+	max-width:400px;
+}
+.main {
+	margin:25px 0;
+}
+/* localStorage */
+#localstorage {
+	text-align:center;
+	background:#FAFAFA;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	padding:25px;
+}
+.intro {
+	text-align:left;
+	margin:0 0 20px;
+}
+.localstorage {
+	width:100%;
+	border:1px solid #DDD;
+	box-shadow:inset 0 1px 5px #EDEDED;
+	-webkit-box-shadow:inset 0 1px 5px #EDEDED;
+	-moz-box-shadow:inset 0 1px 5px #EDEDED;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	outline:0;
+	padding:20px;
+	margin:0 0 20px;
+}
+.empty,
+.clear {
+	color:#1A4D80;
+	font-size:14px;
+	font-weight:900;
+	text-shadow:0 1px 0 rgba(250,250,250,0.5);
+	background:#3295CC;
+	background-image:linear-gradient(bottom, #3296CC 35%, #4AAEE4 97%);
+	background-image:-moz-linear-gradient(bottom, #3296CC 35%, #4AAEE4 97%);
+	background-image:-webkit-linear-gradient(bottom, #3296CC 35%, #4AAEE4 97%);
+	border:1px solid #23698C;
+	border-radius:4px;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	padding:10px 15px;
+	cursor:pointer;
+}

@@ -3,7 +3,7 @@
 	by Todd Motto: http://www.toddmotto.com
 	Latest version: https://github.com/toddmotto/imgShufflr
 	
-	Copyright 2012 Todd Motto
+	Copyright 2013 Todd Motto
 	Licensed under the MIT license
 	http://www.opensource.org/licenses/mit-license.php
 

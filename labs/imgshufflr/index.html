@@ -1,94 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<title>imgShufflr by @toddmotto | toddmotto.com</title>
-	<meta name="author" content="@toddmotto">
-	<meta name="viewport" content="width=device-width,initial-scale=1.0">
-	
-	<link href="css/demo.css" rel="stylesheet">
-
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script src="js/imgshufflr.min.js"></script>
-	
-	<script>
-	$(function() {
-		$('#imgShufflr').imgShufflr({
-			imgType  : 'inline', // inline or background
-			imgs     : ["image-1.jpg","image-2.jpg","image-3.jpg","image-4.jpg"], // Image array
-			imgPath  : 'img/shuffle/', // Image directory
-			imgAlt   : 'Random Image', // Alternate text on images
-			imgTitle : 'Title', // Title text on images
-			imgClass : 'shuffled' // Class name for the images
-		});
-	});
-	</script>
-</head>
-
-<body>
-	<div id="header">
-		<div id="logo">
-			<a href="http://www.toddmotto.com">
-				<img src="img/logo.png" alt="Logo">
-			</a>
-		</div>
-		<div id="view-tut">
-			<ul>
-				<li><a href="http://www.toddmotto.com/imgshufflr-randomised-inline-and-css-background-images-plugin">Visit the Tutorial</a></li>
+	<head>
+		<meta charset="utf-8">
+		<title>imgShufflr by @toddmotto | toddmotto.com</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<meta name="author" content="@toddmotto">
+		<link href="css/main.css" rel="stylesheet">
+		<link href="css/demo.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="header">
+			<div class="logo">
+				<a href="http://toddmotto.com" target="_blank">
+					<img src="img/logo.png" alt="Logo" class="logo-img">
+				</a>
+			</div>
+			<ul class="demo-nav">
+				<li class="demo-nav-link">
+					<a href="http://toddmotto.com/imgshufflr-randomised-inline-and-css-background-images-plugin">Go to tutorial</a>
+				</li>
 			</ul>
 		</div>
-	</div>
-	
-	<div class="wrapper">
-		<div id="main">
 		
-			<div class="toggler">
-				<a href="index.html">Inline imgShufflr</a>
-				<a href="index-2.html">Background imgShufflr</a>
-			</div>
-		
-			<div class="polaroid">
-				<div id="imgShufflr"></div>
-				<h1>Inline imgShufflr &lt;img&gt;</h1> 
-			</div>
+		<div class="wrapper">
+			<div class="main">
+				
+				<div class="toggler">
+					<a href="index.html">Inline imgShufflr</a>
+					<a href="index-2.html">Background imgShufflr</a>
+				</div>
 			
-			<div>
-				<a href="#" class="reload">Reshuffle images</a>
+				<div class="polaroid">
+					<div id="imgShufflr"></div>
+					<h1>Inline imgShufflr &lt;img&gt;</h1> 
+				</div>
+				
+				<div>
+					<a href="#" class="reload">Reshuffle images</a>
+				</div>
+				
 			</div>
-			
 		</div>
 		
-	</div>
+		<!-- jQuery -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="js/imgshufflr.js"></script>
+		<script>
+		$(function() {
+			// imgShufflr
+			$('#imgShufflr').imgShufflr({
+				imgType  : 'inline', // inline or background
+				imgs     : ['image-1.jpg','image-2.jpg','image-3.jpg','image-4.jpg'], // Image array
+				imgPath  : 'img/shuffle/', // Image directory
+				imgAlt   : 'Random Image', // Alternate text on images
+				imgTitle : 'Title', // Title text on images
+				imgClass : 'shuffled' // Class name for the images
+			});
+		});
+		</script>
 	
-	<style>
-		#imgShufflr {height:250px;width:250px;border:1px solid #CCC;}
+		<!-- Demo Analytics -->
+		<script>
+			var _gaq=[['_setAccount','UA-20440416-10'],['_trackPageview']];
+			(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+			g.src='//www.google-analytics.com/ga.js';
+			s.parentNode.insertBefore(g,s)})(document,'script');
+		</script>
 		
-		.polaroid {background:#FFF;padding:10px;box-shadow:0 1px 6px #000;border-radius:1px;display:inline-block;}
-		.polaroid h1 {color:#555;font-size:13px;font-style:italic;padding:10px 0 0 0;}
+		<!-- Demo Ads -->
+		<script src="http://toddmotto.com/ads/ads.js"></script>
 		
-		.toggler {text-align:center;margin:0 0 50px;}
-		.toggler a {display:inline-block;padding:5px 10px;font-weight:900;background:#04A4CC;color:#FFF;border-radius:20px;}
-		
-		.reload {background:#FFF;border-radius:20px;padding:5px 10px;font-weight:900;display:inline-block;color:#333;margin:20px 0 0 0;}
-	</style>
+		<script>
+		// Demo script for reloading the page
+		$('.reload').click(function() {
+			location.reload();
+			return false;
+		});
+		</script>
 	
-	<!-- Analytics (Demo only) -->
-	<script>
-		var _gaq=[['_setAccount','UA-20440416-10'],['_trackPageview']];
-		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-		s.parentNode.insertBefore(g,s)}(document,'script'));
-	</script>
-	
-	<!-- Carbon Ads Script (Demo only) -->
-	<script src="http://www.toddmotto.com/ads/ads.js"></script>
-	
-	<script>
-	$('.reload').click(function() {
-		location.reload();
-		return false;
-	});
-	</script>
-	
-</body>
+	</body>
 </html>

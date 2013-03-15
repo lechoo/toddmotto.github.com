@@ -162,7 +162,7 @@ Putting the above together, we can create a really simple localStorage app that 
 		
 		// Empty button, onclick handler
 		document.querySelector('.empty').onclick = function() {
-			textarea.value = '';
+			demo.value = '';
 			localStorage.clear();	
 		};
 		
@@ -171,7 +171,7 @@ Putting the above together, we can create a really simple localStorage app that 
 })();
 {% endhighlight %}
 
-The above function is a really simple usage of the localStorage API, but you can see it's potential. If you visit the demo, type anything you want and providing your browser supports HTML5 localStorage,
+The above function is a really simple usage of the localStorage API, but you can see it's potential. If you visit the demo, type anything you want and providing your browser supports HTML5 localStorage, you can refresh the page as much as you want, close the browser and come back to it - and it'll still be there. If your browser doesn't support it, you'll get a note saying so.
 
 ### Browser support
 The web storage API was implemented a few years back now, and as such was integrated into IE8 (and obviously IE9). This makes it even better when working with it, as we can all start to move away from supporting IE7. IE8 is actually a blessing on a few levels compared to IE7, it's still a massively popular browser world-wide, but it supports things like querySelector, localStorage, and also CSS such as box-sizing:border-box - all things modern development thrives upon. It's not all doom and gloom, see the silver linings.

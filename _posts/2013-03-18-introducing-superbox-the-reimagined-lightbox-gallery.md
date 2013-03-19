@@ -11,6 +11,7 @@ SuperBox works wonders as a static image gallery, which you can click to reveal 
 <div class="download-box">
 	<a href="//toddmotto.com/labs/superbox" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo SuperBox, 'SuperBox Demo']);">Demo</a>
 	<a href="//toddmotto.com/labs/superbox/superbox.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download SuperBox, 'SuperBox Download']);">Download</a>
+	<a href="//github.com/toddmotto/superbox" onclick="_gaq.push(['_trackEvent', 'Click', 'Fork SuperBox', 'SuperBox Fork']);">Fork</a>
 </div>
 
 ### HTML
@@ -124,4 +125,5 @@ At the minute SuperBox is pretty flexible and a perfect platform to build upon. 
 <div class="download-box">
 	<a href="//toddmotto.com/labs/superbox" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo SuperBox, 'SuperBox Demo']);">Demo</a>
 	<a href="//toddmotto.com/labs/superbox/superbox.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download SuperBox, 'SuperBox Download']);">Download</a>
+	<a href="//github.com/toddmotto/superbox" onclick="_gaq.push(['_trackEvent', 'Click', 'Fork SuperBox', 'SuperBox Fork']);">Fork</a>
 </div>

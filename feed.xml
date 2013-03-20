@@ -19,9 +19,9 @@ layout: nil
    <title>{{ post.title }}</title>
    <link href="http://toddmotto.com{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
-   <id>http://toddmotto.com{{ post.id }}</id>
+   <id>Full article: http://toddmotto.com{{ post.id }}</id>
    {% if post.meta %}
-    <content type="html">{{ post.meta }}</content>
+    <content type="html">{{ post.content | xml_escape }} | {{ post.meta }}</content>
     {% endif %}
  </entry>
  {% endfor %}

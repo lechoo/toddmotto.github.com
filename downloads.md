@@ -14,6 +14,16 @@ layout: page
 	</div>
 </div>
 <div class="download-item">
+	<img src="/img/downloads/superbox.jpg" alt="SuperBox">
+	<div class="download-details">
+		<h2>SuperBox</h2>
+		<h4>The re-imagined expanding lightbox gallery, using HTML5 data-* attributes and responsive design.</h4>
+		<a href="//toddmotto.com/labs/superbox" onclick="_gaq.push(['_trackEvent', 'Click', 'Demo SuperBox, 'SuperBox Demo']);">Demo</a>
+		<a href="//toddmotto.com/labs/superbox/superbox.zip" onclick="_gaq.push(['_trackEvent', 'Click', 'Download SuperBox, 'SuperBox Download']);">Download</a>
+		<a href="//toddmotto.com/introducing-superbox-the-reimagined-lightbox-gallery/">[article]</a>
+	</div>
+</div>
+<div class="download-item">
 	<img src="/img/downloads/fluidvids.jpg" alt="FluidVids">
 	<div class="download-details">
 		<h2>FluidVids</h2>
